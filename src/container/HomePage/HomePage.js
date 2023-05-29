@@ -9,7 +9,6 @@ const HomePage = () => {
       <div className="homePage">
         <div></div>
       </div>
-      ;
     </Container>
   );
 };
