@@ -9,8 +9,8 @@ const HomePage = () => {
       <div className="homePage">
         <img src={piano_image} alt=""></img>
       </div>
-      ;
+    
     </Container>
-  );
-};
+  )
+}
 export default HomePage;
