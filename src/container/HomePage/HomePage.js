@@ -7,9 +7,8 @@ const HomePage = () => {
   return (
     <Container>
       <div className="homePage">
-        <img src={piano_image} alt=""></img>
+        <div></div>
       </div>
-      ;
     </Container>
   );
 };
