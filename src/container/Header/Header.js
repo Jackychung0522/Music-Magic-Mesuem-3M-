@@ -5,8 +5,8 @@ import "./Header.css";
 const Header = () => {
   return (
     <Container>
-      <div></div>;
+      <div></div>
     </Container>
-  )
-}
+  );
+};
 export default Header;
