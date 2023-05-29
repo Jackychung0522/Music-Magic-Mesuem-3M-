@@ -1,0 +1,30 @@
+.header {
+    background-color: #7d521b;
+    padding: 15px;
+    display: flex;
+  }
+  
+  .logo {
+    margin-right: auto;
+  }
+  
+  .navigation {
+    display: flex;
+    align-items: center;
+  }
+  
+  .btn {
+    margin-right: 10px;
+    padding: 5px 15px;
+    background-color: white;
+    color: black;
+    font-size: 15px; 
+    border: size 1px;
+    cursor: pointer;
+  }
+  /* #M3{
+    width: 50%;
+    height: auto;
+  
+  } */
+  
