@@ -1,7 +1,7 @@
 const routes = {
   home: "/",
   createyourself:"createyourself",
-  playgame:"playgame",
+  playgame:"selectsong/playgame",
   selectsong:"selectsong",
 };
 

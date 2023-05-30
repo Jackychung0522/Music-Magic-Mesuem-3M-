@@ -6,6 +6,41 @@ const  PlayGame= () => {
   return (
     <Container>
         <div className="pianoBlock">
+            
+        <div className="pianoBlockForBlack">
+            <button className="black" id='b2'>
+                <span className="blackButtonText">2</span>
+            </button>
+            <button className="black" id='b3'>
+                <span className="blackButtonText">3</span>
+            </button>
+            <button className="black" id='b5'>
+                <span className="blackButtonText">5</span>
+            </button>
+            <button className="black" id='b6'>
+                <span className="blackButtonText">6</span>
+            </button>
+            <button className="black" id='b7'>
+                <span className="blackButtonText">7</span>
+            </button>
+            <button className="black" id='bG'>
+                <span className="blackButtonText">G</span>
+            </button>
+            <button className="black" id='bH'>
+                <span className="blackButtonText">H</span>
+            </button>
+            <button className="black" id='bK'>
+                <span className="blackButtonText">K</span>
+            </button>
+            <button className="black" id='bL'>
+                <span className="blackButtonText">L</span>
+            </button>
+            <button className="black" id='b'>
+                <span className="blackButtonText">;</span>
+            </button>
+        </div>
+        <div className="pianoBlockForWhite">
+            
             <button className="white" id='Q'>
                 <span className="buttonText">Q</span>
             </button>
@@ -51,10 +86,7 @@ const  PlayGame= () => {
             <button className="white" id='/'>
                 <span className="buttonText">/</span>
             </button>
-            <button className="white" id='/'>
-                <span className="buttonText">/</span>
-            </button>
-            
+            </div>
         </div>
     </Container>
   );

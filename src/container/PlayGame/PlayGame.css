@@ -8,11 +8,111 @@
     flex-direction: column;
     align-items: center;
     justify-content: flex-end;
+    border-radius: 5%;
 }
 .buttonText{
     margin-bottom: 5px;
 }
-.pianoBlock{
+.pianoBlockForWhite{
     display: flex;
- 
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+.black{
+    width: 40px;
+    height: 100px;
+    background-color: black; 
+    border: 2px solid black; 
+    cursor:pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    
+}
+.blackButtonText{
+    margin-bottom: 5px;
+    color: white;
+}
+.pianoBlock{
+    position:relative;
+   
+}
+#b2{
+    position: absolute;
+  top: 0px;
+  left: 310px;
+
+}
+#b3{
+    position: absolute;
+  top: 0px;
+  left: 370px;
+
+}
+#b5{
+    position: absolute;
+  top: 0px;
+  left: 490px;
+
+}
+#b6{
+    position: absolute;
+  top: 0px;
+  left: 550px;
+
+}
+#b7{
+    position: absolute;
+  top: 0px;
+  left: 610px;
+
+}
+#bG{
+    position: absolute;
+  top: 0px;
+  left: 730px;
+
+}
+#bH{
+    position: absolute;
+  top: 0px;
+  left: 790px;
+
+}
+#bK{
+    position: absolute;
+  top: 0px;
+  left: 910px;
+
+}
+#bL{
+    position: absolute;
+  top: 0px;
+  left: 970px;
+
+}
+#b{
+    position: absolute;
+  top: 0px;
+  left: 1030px;
+
+}
+
+.white {
+    position: relative;
+    z-index: 1;
+  }
+  
+.black {
+    position: relative;
+    z-index: 2;
+    
+  }
+.black:active{
+    transform: translateY(3px);
+}
+.white:active{
+    transform: translateY(3px);
 }
