@@ -1,51 +1,45 @@
 .header {
-    background-color: #7d521b;
-    padding: 15px;
-    display: flex;
-  }
+  background-color: #7d521b;
+  padding: 15px;
+  display: flex;
+}
 
-  /* .logo {
+/* .logo {
     margin-right: auto;
   } */
-  
-  .navigation {
-    display: flex;
-    align-items: center;
-  }
-  
-  .btn {
-    margin-right: 10px;
-    padding: 5px 15px;
-    background-color: white;
-    color: black;
-    font-size: 15px; 
-    border: none;
-    cursor: pointer;
-    font-family: cursive;
-    font-weight: 600; 
 
-  }
-  .btn3m{
-    
-    cursor: pointer;
-    margin-right:20px ;
-    height: 100px;
-    border: none;
-    outline: none;
-    background-color: #7d521b;
-    box-shadow: none;
+.navigation {
+  display: flex;
+  align-items: center;
+}
 
+.btn {
+  margin-right: 10px;
+  padding: 5px 15px;
+  background-color: white;
+  color: black;
+  font-size: 15px;
+  border: none;
+  cursor: pointer;
+  font-family: cursive;
+  font-weight: 600;
+}
+.btn3m {
+  /* cursor: pointer; */
+  margin-right: 20px;
+  height: 100px;
+  border: none;
+  outline: none;
+  background-color: #7d521b;
+  box-shadow: none;
+}
 
-  }
-  
-  
-  .btn3m img {
-    max-width: 100%;
-    max-height: 100%;
-    border-radius: 10%;
-  }
-  .link{
-    text-decoration: none;
-    color: black;
-  }
-  
+.btn3m img {
+  max-width: 100%;
+  max-height: 100%;
+  border-radius: 10%;
+}
+.link {
+  text-decoration: none;
+  color: black;
+}

@@ -1,8 +1,8 @@
 import React from "react";
 import { Container } from "reactstrap";
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 import "./Header.css";
-import routes from '../../AppRouter';
+import routes from "../../AppRouter";
 import logo from "../../image/logo.png";
 
 const Header = () => {
@@ -10,24 +10,22 @@ const Header = () => {
     <Container>
       <header className="header">
         <nav className="navigation">
-
           <button className="btn3m" id="M3">
-          <Link to={routes.home}>
+            <Link to={routes.home}>
               <img src={logo} alt="" />
             </Link>
-              
-         </button>
+          </button>
 
           <button className="btn">
             <Link to={routes.createyourself} className="link">
               Create By Yourself
             </Link>
-            </button>
+          </button>
           <button className="btn">
-            <Link to={routes.selectsong}  className="link">
+            <Link to={routes.selectsong} className="link">
               Play a Game
             </Link>
-            </button>
+          </button>
         </nav>
       </header>
     </Container>
