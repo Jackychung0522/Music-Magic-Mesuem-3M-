@@ -118,6 +118,7 @@ const CreateYourselfPage = () => {
   });
   return (
     <Container>
+      <div className=""></div>
       <div className="pianoBlock">
         <div className="pianoBlockForBlack">
           <button className="black blackType1" id="b2">
