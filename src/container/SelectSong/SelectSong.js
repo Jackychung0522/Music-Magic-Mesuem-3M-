@@ -1,6 +1,8 @@
 import { React, useState } from "react";
 import { Container } from "reactstrap";
 import "./SelectSong.css";
+import { Link } from "react-router-dom";
+import routes from "../../AppRouter";
 
 const SelectSong = () => {
     const songs = ["Song 1", "Song 2", "Song 3"];
@@ -20,11 +22,14 @@ const SelectSong = () => {
             </p>
             <div className="songBlock">
                 <button id='up' className="triangleButton" onClick={handlePreviousSong}>&#9650;</button>
-                
+                <Link  to={routes.playgame} className="link">
                 <button id="songButton">
-                    <span className="songName">{songs[selectedSongIndex]}</span>
-                    <span className="difficulty">&#9733;10000</span>
+                    
+                        <span className="songName">{songs[selectedSongIndex]}</span>
+                        <span className="difficulty">&#9733;10000</span>
+                    
                 </button>
+                </Link>
                 <button id='down' className="triangleButton" onClick={handleNextSong}>&#9660;</button>
             </div>
 
