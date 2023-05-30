@@ -116,9 +116,48 @@ const CreateYourselfPage = () => {
       });
     }
   });
+  const handleTempoChange = (event) => {
+    const range = document.getElementById("bpmInput");
+    const tempoNumber = document.getElementById("tempoNumber");
+    range.addEventListener("input", () => {
+      range.value = event.target.value;
+      tempoNumber.innerHTML = event.target.value;
+    });
+  };
+  const handleTempoMin = () => {
+    const range = document.getElementById("bpmInput");
+    const tempoNumber = document.getElementById("tempoNumber");
+    const newTempo = parseInt(range.value) - 1;
+    range.value = newTempo;
+    tempoNumber.innerHTML = newTempo;
+  };
+  const handleTempoPlus = () => {
+    const range = document.getElementById("bpmInput");
+    const tempoNumber = document.getElementById("tempoNumber");
+    const newTempo = parseInt(range.value) + 1;
+    range.value = newTempo;
+    tempoNumber.innerHTML = newTempo;
+  };
   return (
     <Container>
-      <div className=""></div>
+      <div className="tempo">
+        <img></img>
+        <button className="keyMin" onClick={handleTempoMin}>
+          -
+        </button>
+        <input
+          id="bpmInput"
+          value="100"
+          max="244"
+          min="30"
+          type="range"
+          onChange={handleTempoChange}
+        ></input>
+        <button className="keyPlus" onClick={handleTempoPlus}>
+          +
+        </button>
+        <p id="tempoNumber">100</p>
+      </div>
       <div className="pianoBlock">
         <div className="pianoBlockForBlack">
           <button className="black blackType1" id="b2">
@@ -203,4 +242,5 @@ const CreateYourselfPage = () => {
     </Container>
   );
 };
+
 export default CreateYourselfPage;

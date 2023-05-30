@@ -74,3 +74,18 @@
   margin-left: 40px;
   margin-right: 10px;
 }
+.keyMin,
+.keyPlus {
+  transition: all 0.07s ease;
+  color: #333;
+  border: 1px solid #ccc;
+  width: 40px;
+  height: 40px;
+  border-radius: 20px;
+  cursor: pointer;
+}
+input[type="range"] {
+  width: 300px;
+  background: #882f2f;
+  margin: 0 1rem;
+}
