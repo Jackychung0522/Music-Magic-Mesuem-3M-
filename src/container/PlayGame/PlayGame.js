@@ -6,7 +6,7 @@ import { useEffect } from 'react';
 const PlayGame = () => {
 
     useEffect(() => {
-       
+        
        
         const synth = new Tone.Synth().toDestination();
 
@@ -144,6 +144,26 @@ const PlayGame = () => {
 
         window.addEventListener('keydown', handleKeyDown);
 
+
+        // return () => {
+        //     buttons[0].removeEventListener('click', handleButtonC3Click);
+        //     buttons[1].removeEventListener('click', handleButtonD3Click);
+        //     buttons[2].removeEventListener('click', handleButtonE3Click);
+        //     buttons[3].removeEventListener('click', handleButtonF3Click);
+        //     buttons[4].removeEventListener('click', handleButtonG3Click);
+        //     buttons[5].removeEventListener('click', handleButtonA3Click);
+        //     buttons[6].removeEventListener('click', handleButtonB3Click);
+        //     buttons[7].removeEventListener('click', handleButtonC4Click);
+        //     buttons[8].removeEventListener('click', handleButtonD4Click);
+        //     buttons[9].removeEventListener('click', handleButtonE4Click);
+        //     buttons[10].removeEventListener('click', handleButtonF4Click);
+        //     buttons[11].removeEventListener('click', handleButtonG4Click);
+        //     buttons[12].removeEventListener('click', handleButtonA4Click);
+        //     buttons[13].removeEventListener('click', handleButtonB4Click);
+        //     buttons[14].removeEventListener('click', handleButtonC5Click);
+            
+        //     window.removeEventListener('keydown', handleKeyDown);
+        // };
     }, []);
     return (
         <Container>
