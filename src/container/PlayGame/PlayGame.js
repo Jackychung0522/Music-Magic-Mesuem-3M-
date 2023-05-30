@@ -5,23 +5,22 @@ import * as Tone from 'tone';
 const PlayGame = () => {
     const synth = new Tone.Synth().toDestination();
     const buttonQ = document.getElementsByClassName('white');
-    console.log(buttonQ);
-    buttonQ.addEventListener('mousedown', () => {
-        let note = '';
-        if (buttonQ.id === 'Q') {
-            note = 'C3';
-        }
+    // console.log(buttonQ);
+    // buttonQ.addEventListener('mousedown', () => {
+    //     let note = '';
+    //     if (buttonQ.id === 'Q') {
+    //         note = 'C3';
+    //     }
 
-        const now = Tone.now();
+    //     const now = Tone.now();
 
-        synth.triggerAttack(note, now);
-    });
-    buttonQ.addEventListener('mouseup', () => {
+    //     synth.triggerAttack(note, now);
+    // });
+    // buttonQ.addEventListener('mouseup', () => {
 
-        synth.triggerRelease();
-    });
+    //     synth.triggerRelease();
+    // });
 
-const  PlayGame= () => {
   return (
     <Container>
         <div className="pianoBlock">

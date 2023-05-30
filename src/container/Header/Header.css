@@ -16,13 +16,13 @@
 .btn {
   margin-right: 10px;
   padding: 5px 15px;
-  background-color: white;
-  color: black;
-  font-size: 15px;
+  color: white;
+  font-size: 30px;
   border: none;
   cursor: pointer;
   font-family: cursive;
   font-weight: 600;
+  background-color: transparent;
 }
 .btn3m {
   /* cursor: pointer; */
@@ -39,7 +39,14 @@
   max-height: 100%;
   border-radius: 10%;
 }
+.btn:hover{
+  transform: translateY(-1px); 
+}
 .link {
   text-decoration: none;
-  color: black;
+  color: white;
+}
+.link:hover{
+  color: orangered; 
+  
 }
