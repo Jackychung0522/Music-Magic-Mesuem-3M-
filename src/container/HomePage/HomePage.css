@@ -26,3 +26,6 @@
 .project_full_name {
   font-size: 2cm;
 }
+.button_left {
+  cursor: pointer;
+}
