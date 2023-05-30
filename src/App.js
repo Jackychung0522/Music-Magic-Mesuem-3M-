@@ -12,19 +12,19 @@ function App() {
     <div>
       <Header />
       <div>
-        
-          <Routes>
-            <Route exact path={routes.home} element={<HomePage />} />
-            <Route exact path={routes.createyourself} element={<CreateYourselfPage />} />
-            <Route exact path={routes.playgame} element={<PlayGame />} />
-            <Route exact path={routes.selectsong} element={<SelectSong/>} />
-
-          </Routes>
-        
+        <Routes>
+          <Route exact path={routes.home} element={<HomePage />} />
+          <Route
+            exact
+            path={routes.createyourself}
+            element={<CreateYourselfPage />}
+          />
+          <Route exact path={routes.playgame} element={<PlayGame />} />
+          <Route exact path={routes.selectsong} element={<SelectSong />} />
+        </Routes>
       </div>
       <Footer />
     </div>
   );
 }
-
 export default App;

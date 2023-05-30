@@ -43,6 +43,7 @@
   width: 200px;
   height: 120px;
   border-radius: 20px;
+  font-family: cursive;
 }
 .button_right {
   font-size: 30px;
@@ -52,6 +53,7 @@
   width: 200px;
   height: 120px;
   border-radius: 20px;
+  font-family: cursive;
 }
 .buttons {
   display: flex;
