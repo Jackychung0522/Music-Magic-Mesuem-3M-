@@ -143,15 +143,15 @@ const PlayGame = () => {
         synth.triggerAttackRelease("B4", "4n");
       } else if (event.code === "Slash") {
         synth.triggerAttackRelease("C5", "4n");
-      } else if (event.code === "Key2") {
+      } else if (event.code === "Digit2") {
         synth.triggerAttackRelease("C#3", "4n");
-      } else if (event.code === "Key3") {
+      } else if (event.code === "Digit3") {
         synth.triggerAttackRelease("D#3'", "4n");
-      } else if (event.code === "Key5") {
+      } else if (event.code === "Digit5") {
         synth.triggerAttackRelease("F#3'", "4n");
-      } else if (event.code === "Key6") {
+      } else if (event.code === "Digit6") {
         synth.triggerAttackRelease("G#3", "4n");
-      } else if (event.code === "Key7") {
+      } else if (event.code === "Digit7") {
         synth.triggerAttackRelease("A#3", "4n");
       } else if (event.code === "KeyG") {
         synth.triggerAttackRelease("C#4", "4n");
