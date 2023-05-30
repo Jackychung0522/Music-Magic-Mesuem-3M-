@@ -4,8 +4,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 1;
 }
-.homePage::before {
+.homePage::after {
   content: "";
   background-image: url("../../image/piano.jpg");
   background-size: cover;
@@ -19,13 +20,48 @@
 }
 .home_center {
   width: 1000px;
-  display: flex;
+  /* display: flex; */
   justify-content: center;
   align-items: center;
+  z-index: 2;
+  background-color: antiquewhite;
+  opacity: 0.8;
+  border-radius: 50px;
 }
 .project_full_name {
   font-size: 2cm;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 3;
 }
 .button_left {
+  font-size: 30px;
   cursor: pointer;
+  margin-right: 50px;
+  margin-bottom: 50px;
+  width: 200px;
+  height: 120px;
+  border-radius: 20px;
+}
+.button_right {
+  font-size: 30px;
+  cursor: pointer;
+  margin-left: 50px;
+  margin-bottom: 50px;
+  width: 200px;
+  height: 120px;
+  border-radius: 20px;
+}
+.buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 3;
+}
+.button_left:hover {
+  transform: translateY(-5px);
+}
+.button_right:hover {
+  transform: translateY(-5px);
 }

@@ -1,6 +1,8 @@
 import React from "react";
 import { Container } from "reactstrap";
 import "./HomePage.css";
+import { Link } from "react-router-dom";
+import routes from "../../AppRouter";
 
 const HomePage = () => {
   return (
@@ -11,8 +13,12 @@ const HomePage = () => {
             <p>Music-Magic-Museum</p>
           </div>
           <div className="buttons">
-            <button className="button_left">Play</button>
-            <button className="button_right">Create</button>
+            <Link to={routes.createyourself} className="link">
+              <button className="button_left">Create Now</button>
+            </Link>
+            <Link to={routes.playgame} className="link">
+              <button className="button_right">Play Now</button>
+            </Link>
           </div>
         </div>
       </div>
