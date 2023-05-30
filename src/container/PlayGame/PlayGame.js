@@ -8,7 +8,8 @@ const PlayGame = () => {
     useEffect(() => {
 
 
-        const synth = new Tone.Synth().toDestination();
+        const synth = new Tone.DuoSynth().toDestination();
+          
 
 
         const handleButtonC3Click = () => {
@@ -56,6 +57,37 @@ const PlayGame = () => {
         const handleButtonC5Click = () => {
             synth.triggerAttackRelease("C5", "4n");
         };
+        const handleButtonDoClick = () => {
+            synth.triggerAttackRelease('C#3', "4n");
+        };
+        const handleButtonReClick = () => {
+            synth.triggerAttackRelease("D#3'", "4n");
+        };
+        const handleButtonFaClick = () => {
+            synth.triggerAttackRelease("F#3'", "4n");
+        };
+       
+        const handleButtonSoClick = () => {
+            synth.triggerAttackRelease("G#3", "4n");
+        };
+        const handleButtonLaClick = () => {
+            synth.triggerAttackRelease("A#3", "4n");
+        };
+        const handleButtonMDoClick = () => {
+            synth.triggerAttackRelease("C#4", "4n");
+        };
+        const handleButtonMReClick = () => {
+            synth.triggerAttackRelease("D#4", "4n");
+        };
+        const handleButtonMFaClick = () => {
+            synth.triggerAttackRelease("F#4", "4n");
+        };
+        const handleButtonMSoClick = () => {
+            synth.triggerAttackRelease("G#4", "4n");
+        };
+        const handleButtonMLaClick = () => {
+            synth.triggerAttackRelease("A#4", "4n");
+        };
 
         const buttons = document.getElementsByClassName("white");
         buttons[0].addEventListener("click", handleButtonC3Click);
@@ -73,6 +105,17 @@ const PlayGame = () => {
         buttons[12].addEventListener("click", handleButtonA4Click);
         buttons[13].addEventListener("click", handleButtonB4Click);
         buttons[14].addEventListener("click", handleButtonC5Click);
+        const buttons2 = document.getElementsByClassName("black");
+        buttons2[0].addEventListener("click", handleButtonDoClick);
+        buttons2[1].addEventListener("click", handleButtonReClick);
+        buttons2[2].addEventListener("click", handleButtonFaClick);
+        buttons2[3].addEventListener("click", handleButtonSoClick);
+        buttons2[4].addEventListener("click", handleButtonLaClick);
+        buttons2[5].addEventListener("click", handleButtonMDoClick);
+        buttons2[6].addEventListener("click", handleButtonMReClick);
+        buttons2[7].addEventListener("click", handleButtonMFaClick);
+        buttons2[8].addEventListener("click", handleButtonMSoClick);
+        buttons2[9].addEventListener("click", handleButtonMLaClick);
 
         const handleKeyDown = (event) => {
             if (event.code === "KeyQ") {
