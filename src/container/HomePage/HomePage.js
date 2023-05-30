@@ -16,7 +16,7 @@ const HomePage = () => {
             <Link to={routes.createyourself} className="link">
               <button className="button_left">Create Now</button>
             </Link>
-            <Link to={routes.playgame} className="link">
+            <Link to={routes.selectsong} className="link">
               <button className="button_right">Play Now</button>
             </Link>
           </div>
