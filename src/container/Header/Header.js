@@ -1,17 +1,35 @@
 import React from "react";
 import { Container } from "reactstrap";
+import { Link } from 'react-router-dom';
 import "./Header.css";
-import m3 from  "../../image/3M.jpg"
+import routes from '../../AppRouter';
+import logo from "../../image/logo.png";
+
 const Header = () => {
   return (
     <Container>
-       <header className="header">
-      <nav className="navigation">
-        <button className="btn" id="M3"> <img src={m3}/></button>
-        <button className="btn">Create By Yourself</button>
-        <button className="btn">Play</button>
-      </nav>
-    </header>
+      <header className="header">
+        <nav className="navigation">
+
+          <button className="btn3m" id="M3">
+          <Link to={routes.home}>
+              <img src={logo} alt="" />
+            </Link>
+              
+         </button>
+
+          <button className="btn">
+            <Link to={routes.createyourself} className="link">
+              Create By Yourself
+            </Link>
+            </button>
+          <button className="btn">
+            <Link to={routes.selectsong}  className="link">
+              Play a Game
+            </Link>
+            </button>
+        </nav>
+      </header>
     </Container>
   );
 };
