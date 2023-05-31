@@ -1,7 +1,9 @@
 import React from "react";
+import { useState } from "react";
 import { Container } from "reactstrap";
 import "./CreateYourselfPage.css";
 import * as Tone from "tone";
+import db from "../../index";
 const CreateYourselfPage = () => {
   const sampler = new Tone.Sampler({
     urls: {
@@ -118,26 +120,26 @@ const CreateYourselfPage = () => {
   });
   const handleTempoChange = (event) => {
     const range = document.getElementById("bpmInput");
-    const tempoNumber = document.getElementById("tempoNumber");
     range.addEventListener("input", () => {
-      range.value = event.target.value;
-      tempoNumber.innerHTML = event.target.value;
+      setTempoNumber(event.target.value);
     });
   };
   const handleTempoMin = () => {
-    const range = document.getElementById("bpmInput");
-    const tempoNumber = document.getElementById("tempoNumber");
-    const newTempo = parseInt(range.value) - 1;
-    range.value = newTempo;
-    tempoNumber.innerHTML = newTempo;
+    setTempoNumber(parseInt(tempoNumber) - 1);
+    db.collection("game")
+      .get()
+      .then((snapshot) => {
+        if (snapshot.empty) {
+          console.log("未找到匹配的文档");
+        } else {
+          console.log(snapshot);
+        }
+      });
   };
   const handleTempoPlus = () => {
-    const range = document.getElementById("bpmInput");
-    const tempoNumber = document.getElementById("tempoNumber");
-    const newTempo = parseInt(range.value) + 1;
-    range.value = newTempo;
-    tempoNumber.innerHTML = newTempo;
+    setTempoNumber(parseInt(tempoNumber) + 1);
   };
+  const [tempoNumber, setTempoNumber] = useState("100");
   return (
     <Container>
       <div className="tempo">
@@ -147,7 +149,7 @@ const CreateYourselfPage = () => {
         </button>
         <input
           id="bpmInput"
-          value="100"
+          value={tempoNumber}
           max="244"
           min="30"
           type="range"
@@ -156,7 +158,7 @@ const CreateYourselfPage = () => {
         <button className="keyPlus" onClick={handleTempoPlus}>
           +
         </button>
-        <p id="tempoNumber">100</p>
+        <p id="tempoNumber">{tempoNumber}</p>
       </div>
       <div className="pianoBlock">
         <div className="pianoBlockForBlack">
