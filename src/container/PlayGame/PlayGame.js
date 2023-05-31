@@ -4,12 +4,74 @@ import "./PlayGame.css";
 import * as Tone from "tone";
 import { useEffect } from "react";
 const PlayGame = () => {
+  const notes = [
+    { note: "G4" },
+    { note: "E4" },
+    { note: "E4" },
+    { note: "" },
+    { note: "F4" },
+    { note: "D4" },
+    { note: "D4" },
+    { note: "" },
+    { note: "C4" },
+    { note: "D4" },
+    { note: "E4" },
+    { note: "F4" },
+    { note: "G4" },
+    { note: "G4" },
+    { note: "G4" },
+    { note: "" },
+    { note: "G4" },
+    { note: "E4" },
+    { note: "E4" },
+    { note: "" },
+    { note: "F4" },
+    { note: "D4" },
+    { note: "D4" },
+    { note: "" },
+    { note: "C4" },
+    { note: "E4" },
+    { note: "G4" },
+    { note: "G4" },
+    { note: "E4" },
+    { note: "" },
+    { note: "" },
+    { note: "" },
+    { note: "D4" },
+    { note: "D4" },
+    { note: "D4" },
+    { note: "D4" },
+    { note: "D4" },
+    { note: "E4" },
+    { note: "F4" },
+    { note: "E4" },
+    { note: "E4" },
+    { note: "E4" },
+    { note: "E4" },
+    { note: "E4" },
+    { note: "F4" },
+    { note: "G4" },
+    { note: "" },
+    { note: "G4" },
+    { note: "E4" },
+    { note: "E4" },
+    { note: "" },
+    { note: "F4" },
+    { note: "D4" },
+    { note: "D4" },
+    { note: "" },
+    { note: "C4" },
+    { note: "E4" },
+    { note: "G4" },
+    { note: "G4" },
+    { note: "C4" },
+  ];
   useEffect(() => {
     const synth = new Tone.Sampler({
       urls: {
         C3: "C3.mp3",
       },
-      // release: 1,
+      release: 1,
       baseUrl: "https://tonejs.github.io/audio/salamander/",
     }).toDestination();
 
@@ -171,12 +233,259 @@ const PlayGame = () => {
       } else if (event.code === "KeyL") {
         synth.triggerAttackRelease("A#4", "4n");
       }
+      const keyPressed = event.key.toUpperCase();
+      if (keyPressed === "Q") {
+        const block = blocks.find((block) => block.element.id === "blockc3");
+
+        if (block && block.top >= 450 && block.top <= 490) {
+          block.isAlive = false;
+          container.removeChild(block.element);
+          blocks.splice(blocks.indexOf(block), 1);
+        }
+      }
+      if (keyPressed === "W") {
+        const block = blocks.find((block) => block.element.id === "blockd3");
+
+        if (block && block.top >= 450 && block.top <= 490) {
+          block.isAlive = false;
+          container.removeChild(block.element);
+          blocks.splice(blocks.indexOf(block), 1);
+        }
+      }
+      if (keyPressed === "E") {
+        const block = blocks.find((block) => block.element.id === "blocke3");
+
+        if (block && block.top >= 450 && block.top <= 490) {
+          block.isAlive = false;
+          container.removeChild(block.element);
+          blocks.splice(blocks.indexOf(block), 1);
+        }
+      }
+      if (keyPressed === "R") {
+        const block = blocks.find((block) => block.element.id === "blockf3");
+
+        if (block && block.top >= 450 && block.top <= 490) {
+          block.isAlive = false;
+          container.removeChild(block.element);
+          blocks.splice(blocks.indexOf(block), 1);
+        }
+      }
+      if (keyPressed === "T") {
+        const block = blocks.find((block) => block.element.id === "blockg3");
+
+        if (block && block.top >= 450 && block.top <= 490) {
+          block.isAlive = false;
+          container.removeChild(block.element);
+          blocks.splice(blocks.indexOf(block), 1);
+        }
+      }
+      if (keyPressed === "Y") {
+        const block = blocks.find((block) => block.element.id === "blocka3");
+
+        if (block && block.top >= 450 && block.top <= 490) {
+          block.isAlive = false;
+          container.removeChild(block.element);
+          blocks.splice(blocks.indexOf(block), 1);
+        }
+      }
+      if (keyPressed === "U") {
+        const block = blocks.find((block) => block.element.id === "blockb3");
+
+        if (block && block.top >= 450 && block.top <= 490) {
+          block.isAlive = false;
+          container.removeChild(block.element);
+          blocks.splice(blocks.indexOf(block), 1);
+        }
+      }
+      if (keyPressed === "C") {
+        console.log("C");
+        const block = blocks.find((block) => block.element.id === "blockc4");
+
+        if (block && block.top >= 450 && block.top <= 490) {
+          block.isAlive = false;
+          container.removeChild(block.element);
+          blocks.splice(blocks.indexOf(block), 1);
+        }
+      }
+      if (keyPressed === "V") {
+        const block = blocks.find((block) => block.element.id === "blockd4");
+
+        if (block && block.top >= 450 && block.top <= 490) {
+          block.isAlive = false;
+          container.removeChild(block.element);
+          blocks.splice(blocks.indexOf(block), 1);
+        }
+      }
+      if (keyPressed === "B") {
+        const block = blocks.find((block) => block.element.id === "blocke4");
+
+        if (block && block.top >= 450 && block.top <= 490) {
+          block.isAlive = false;
+          container.removeChild(block.element);
+          blocks.splice(blocks.indexOf(block), 1);
+        }
+      }
+      if (keyPressed === "N") {
+        const block = blocks.find((block) => block.element.id === "blockf4");
+
+        if (block && block.top >= 450 && block.top <= 490) {
+          block.isAlive = false;
+          container.removeChild(block.element);
+          blocks.splice(blocks.indexOf(block), 1);
+        }
+      }
+      if (keyPressed === "M") {
+        const block = blocks.find((block) => block.element.id === "blockg4");
+
+        if (block && block.top >= 450 && block.top <= 490) {
+          block.isAlive = false;
+          container.removeChild(block.element);
+          blocks.splice(blocks.indexOf(block), 1);
+        }
+      }
+      if (keyPressed === ",") {
+        const block = blocks.find((block) => block.element.id === "blocka4");
+        console.log(keyPressed);
+        if (block && block.top >= 450 && block.top <= 490) {
+          block.isAlive = false;
+          container.removeChild(block.element);
+          blocks.splice(blocks.indexOf(block), 1);
+        }
+      }
+      if (keyPressed === ".") {
+        const block = blocks.find((block) => block.element.id === "blockb4");
+        console.log(keyPressed);
+        if (block && block.top >= 450 && block.top <= 490) {
+          block.isAlive = false;
+          container.removeChild(block.element);
+          blocks.splice(blocks.indexOf(block), 1);
+        }
+      }
+      if (keyPressed === "/") {
+        const block = blocks.find((block) => block.element.id === "blockc5");
+        console.log(keyPressed);
+        if (block && block.top >= 450 && block.top <= 490) {
+          block.isAlive = false;
+          container.removeChild(block.element);
+          blocks.splice(blocks.indexOf(block), 1);
+        }
+      }
+    };
+    const container = document.getElementById("container");
+
+    const blocks = [];
+    let currentIndex = 0;
+    // 创建方块函数
+    const createBlock = (note) => {
+      // 创建新方块元素
+      const block = document.createElement("div");
+      block.className = "block";
+      if (note === "C3") {
+        block.id = "blockc3";
+      } else if (note === "D3") {
+        block.id = "blockd3";
+      } else if (note === "E3") {
+        block.id = "blocke3";
+      } else if (note === "F3") {
+        block.id = "blockf3";
+      } else if (note === "G3") {
+        block.id = "blockg3";
+      } else if (note === "A3") {
+        block.id = "blocka3";
+      } else if (note === "B3") {
+        block.id = "blockb3";
+      } else if (note === "C4") {
+        block.id = "blockc4";
+      } else if (note === "D4") {
+        block.id = "blockd4";
+      } else if (note === "E4") {
+        block.id = "blocke4";
+      } else if (note === "F4") {
+        block.id = "blockf4";
+      } else if (note === "G4") {
+        block.id = "blockg4";
+      } else if (note === "A4") {
+        block.id = "blocka4";
+      } else if (note === "B4") {
+        block.id = "blockb4";
+      } else if (note === "C5") {
+        block.id = "blockc5";
+      } else if (note === "C#3") {
+        block.id = "blockc#3";
+      } else if (note === "D#3") {
+        block.id = "blockd#3";
+      } else if (note === "F#3") {
+        block.id = "blockf#3";
+      } else if (note === "G#3") {
+        block.id = "blockg#3";
+      } else if (note === "A#3") {
+        block.id = "blocka#3";
+      } else if (note === "C#4") {
+        block.id = "blockc#4";
+      } else if (note === "D#4") {
+        block.id = "blockd#4";
+      } else if (note === "F#4") {
+        block.id = "blockf#4";
+      } else if (note === "G#4") {
+        block.id = "blockg#4";
+      } else if (note === "A#4") {
+        block.id = "blocka#4";
+      }
+      if (note !== "") {
+        container.appendChild(block);
+        blocks.push({
+          element: block,
+          top: 100,
+          isAlive: true,
+        });
+      }
     };
 
+    // 定义动画函数
+    const animate = () => {
+      for (let i = 0; i < blocks.length; i++) {
+        const block = blocks[i];
+        if (block.isAlive) {
+          block.top += 2;
+          block.element.style.top = block.top + "px";
+          if (block.top >= 600) {
+            // 将方块从数组和容器中移除
+            block.isAlive = false;
+            container.removeChild(block.element);
+            blocks.splice(i, 1);
+            i--;
+          }
+        }
+      }
+      requestAnimationFrame(animate);
+    };
+
+    // 设置方块的初始位置
+
     window.addEventListener("keydown", handleKeyDown);
+    const loadNotes = (notes) => {
+      setInterval(() => {
+        if (currentIndex < notes.length) {
+          createBlock(notes[currentIndex].note);
+          currentIndex++;
+        }
+      }, 1000);
+    };
+    loadNotes(notes);
+    animate();
   }, []);
+
+  // 启动动画
+
   return (
     <Container>
+      <p className="test"> test</p>
+      <div className="playingBlock">
+        <div id="container"></div>
+      </div>
+      <div className="receivingareaBlock">
+        <div className="receivingarea"></div>
+      </div>
       <div className="pianoBlock">
         <div className="pianoBlockForBlack">
           <button className="black blackType1" id="b2">

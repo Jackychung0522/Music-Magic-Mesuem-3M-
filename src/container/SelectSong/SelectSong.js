@@ -3,9 +3,24 @@ import { Container } from "reactstrap";
 import "./SelectSong.css";
 import { Link } from "react-router-dom";
 import routes from "../../AppRouter";
-
+import firebase from "firebase/compat/app";
+import "firebase/compat/auth";
+import "firebase/compat/firestore";
 const SelectSong = () => {
-  const songs = ["Song 1", "Song 2", "Song 3"];
+  const songs = [];
+  const db = firebase.firestore();
+  db.collection("game")
+    .get()
+    .then((querySnapshot) => {
+      querySnapshot.forEach((doc) => {
+        const songData = doc.data().name;
+        songs.push(songData);
+      });
+      console.log(songs);
+    })
+    .catch((error) => {
+      console.log("Error getting songs: ", error);
+    });
   const [selectedSongIndex, setSelectedSongIndex] = useState(0);
 
   const handlePreviousSong = () => {
