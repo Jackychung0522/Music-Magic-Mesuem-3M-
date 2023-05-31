@@ -131,29 +131,42 @@ const CreateYourselfPage = () => {
   const handleTempoPlus = () => {
     setTempoNumber(parseInt(tempoNumber) + 1);
   };
+  const handleSwitchOnTempoRun = () => {
+    if (IsTempoRun === true) {
+      setIsTempoRun(false);
+    } else {
+      setIsTempoRun(true);
+    }
+  };
   const [tempoNumber, setTempoNumber] = useState("100");
+  const [IsTempoRun, setIsTempoRun] = useState(false);
   return (
     <Container>
       <div className="tempo">
-        <button>
-          <img src={tempoRun} className="pikachu"></img>
-        </button>
-
-        <button className="keyMin" onClick={handleTempoMin}>
-          -
-        </button>
-        <input
-          id="bpmInput"
-          value={tempoNumber}
-          max="244"
-          min="30"
-          type="range"
-          onChange={handleTempoChange}
-        ></input>
-        <button className="keyPlus" onClick={handleTempoPlus}>
-          +
-        </button>
-        <p id="tempoNumber">{tempoNumber}</p>
+        <div className="pikachuButtonBlock">
+          <button className="pikachuButton" onClick={handleSwitchOnTempoRun}>
+            <img src={tempoRun} className="pikachu"></img>
+          </button>
+        </div>
+        <div className="bpmBlock">
+          <button className="keyMin" onClick={handleTempoMin}>
+            -
+          </button>
+          <input
+            id="bpmInput"
+            value={tempoNumber}
+            max="244"
+            min="30"
+            type="range"
+            onChange={handleTempoChange}
+          ></input>
+          <button className="keyPlus" onClick={handleTempoPlus}>
+            +
+          </button>
+        </div>
+        <div className="tempoNumberBlock">
+          <p id="tempoNumber">{tempoNumber}bpm</p>
+        </div>
       </div>
       <div className="pianoBlock">
         <div className="pianoBlockForBlack">
