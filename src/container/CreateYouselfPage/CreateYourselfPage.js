@@ -1,5 +1,5 @@
 import React from "react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Container } from "reactstrap";
 import "./CreateYourselfPage.css";
 import * as Tone from "tone";
@@ -131,20 +131,38 @@ const CreateYourselfPage = () => {
   const handleTempoPlus = () => {
     setTempoNumber(parseInt(tempoNumber) + 1);
   };
+  async function pikachuShot() {
+    sampler.triggerAttackRelease(["A#4"], "8n");
+  }
   const handleSwitchOnTempoRun = () => {
-    if (IsTempoRun === true) {
-      setIsTempoRun(false);
-    } else {
-      setIsTempoRun(true);
-    }
+    setIsTempoRun((prevIsTempoRun) => !prevIsTempoRun);
   };
   const [tempoNumber, setTempoNumber] = useState("100");
   const [IsTempoRun, setIsTempoRun] = useState(false);
+  useEffect(() => {
+    let intervalId;
+    async function playWithDelay() {
+      if (IsTempoRun) {
+        intervalId = setInterval(async () => {
+          await pikachuShot();
+        }, 60000 / parseInt(tempoNumber));
+      }
+    }
+    playWithDelay();
+    // console.log(60000 / parseInt(tempoNumber));
+    return () => {
+      clearInterval(intervalId);
+    };
+  }, [IsTempoRun, tempoNumber]);
   return (
     <Container>
       <div className="tempo">
         <div className="pikachuButtonBlock">
-          <button className="pikachuButton" onClick={handleSwitchOnTempoRun}>
+          <button
+            style={{ backgroundColor: IsTempoRun ? "red" : "blue" }}
+            className="pikachuButton"
+            onClick={handleSwitchOnTempoRun}
+          >
             <img src={tempoRun} className="pikachu"></img>
           </button>
         </div>
