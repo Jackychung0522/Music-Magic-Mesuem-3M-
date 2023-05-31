@@ -1,10 +1,163 @@
 import React from "react";
 import { Container } from "reactstrap";
 import "./CreateYourselfPage.css";
-
+import * as Tone from "tone";
 const CreateYourselfPage = () => {
+  const sampler = new Tone.Sampler({
+    urls: {
+      C3: "C3.mp3",
+      "D#4": "Ds4.mp3",
+      "F#4": "Fs4.mp3",
+      A4: "A4.mp3",
+    },
+    baseUrl: "https://tonejs.github.io/audio/salamander/",
+  }).toDestination();
+  document.addEventListener("keydown", function (event) {
+    const key = event.key;
+    if (key === "Q") {
+      Tone.loaded().then(() => {
+        sampler.triggerAttackRelease(["C3"], "2n");
+      });
+    } else if (key === "W") {
+      Tone.loaded().then(() => {
+        sampler.triggerAttackRelease(["D3"], "2n");
+      });
+    } else if (key === "E") {
+      Tone.loaded().then(() => {
+        sampler.triggerAttackRelease(["E3"], "2n");
+      });
+    } else if (key === "R") {
+      Tone.loaded().then(() => {
+        sampler.triggerAttackRelease(["F3"], "2n");
+      });
+    } else if (key === "T") {
+      Tone.loaded().then(() => {
+        sampler.triggerAttackRelease(["G3"], "2n");
+      });
+    } else if (key === "Y") {
+      Tone.loaded().then(() => {
+        sampler.triggerAttackRelease(["A3"], "2n");
+      });
+    } else if (key === "U") {
+      Tone.loaded().then(() => {
+        sampler.triggerAttackRelease(["B3"], "2n");
+      });
+    } else if (key === "C") {
+      Tone.loaded().then(() => {
+        sampler.triggerAttackRelease(["C4"], "2n");
+      });
+    } else if (key === "V") {
+      Tone.loaded().then(() => {
+        sampler.triggerAttackRelease(["D4"], "2n");
+      });
+    } else if (key === "B") {
+      Tone.loaded().then(() => {
+        sampler.triggerAttackRelease(["E4"], "2n");
+      });
+    } else if (key === "N") {
+      Tone.loaded().then(() => {
+        sampler.triggerAttackRelease(["F4"], "2n");
+      });
+    } else if (key === "M") {
+      Tone.loaded().then(() => {
+        sampler.triggerAttackRelease(["G4"], "2n");
+      });
+    } else if (key === ",") {
+      Tone.loaded().then(() => {
+        sampler.triggerAttackRelease(["A4"], "2n");
+      });
+    } else if (key === ".") {
+      Tone.loaded().then(() => {
+        sampler.triggerAttackRelease(["B4"], "2n");
+      });
+    } else if (key === "/") {
+      Tone.loaded().then(() => {
+        sampler.triggerAttackRelease(["C5"], "2n");
+      });
+    } else if (key === "2") {
+      Tone.loaded().then(() => {
+        sampler.triggerAttackRelease(["C#3"], "2n");
+      });
+    } else if (key === "3") {
+      Tone.loaded().then(() => {
+        sampler.triggerAttackRelease(["D#3"], "2n");
+      });
+    } else if (key === "5") {
+      Tone.loaded().then(() => {
+        sampler.triggerAttackRelease(["F#3"], "2n");
+      });
+    } else if (key === "6") {
+      Tone.loaded().then(() => {
+        sampler.triggerAttackRelease(["G#3"], "2n");
+      });
+    } else if (key === "7") {
+      Tone.loaded().then(() => {
+        sampler.triggerAttackRelease(["A#3"], "2n");
+      });
+    } else if (key === "F") {
+      Tone.loaded().then(() => {
+        sampler.triggerAttackRelease(["C#4"], "2n");
+      });
+    } else if (key === "G") {
+      Tone.loaded().then(() => {
+        sampler.triggerAttackRelease(["D#4"], "2n");
+      });
+    } else if (key === "J") {
+      Tone.loaded().then(() => {
+        sampler.triggerAttackRelease(["F#4"], "2n");
+      });
+    } else if (key === "K") {
+      Tone.loaded().then(() => {
+        sampler.triggerAttackRelease(["G#4"], "2n");
+      });
+    } else if (key === "L") {
+      Tone.loaded().then(() => {
+        sampler.triggerAttackRelease(["A#4"], "2n");
+      });
+    }
+  });
+  const handleTempoChange = (event) => {
+    const range = document.getElementById("bpmInput");
+    const tempoNumber = document.getElementById("tempoNumber");
+    range.addEventListener("input", () => {
+      range.value = event.target.value;
+      tempoNumber.innerHTML = event.target.value;
+    });
+  };
+  const handleTempoMin = () => {
+    const range = document.getElementById("bpmInput");
+    const tempoNumber = document.getElementById("tempoNumber");
+    const newTempo = parseInt(range.value) - 1;
+    range.value = newTempo;
+    tempoNumber.innerHTML = newTempo;
+  };
+  const handleTempoPlus = () => {
+    const range = document.getElementById("bpmInput");
+    const tempoNumber = document.getElementById("tempoNumber");
+    const newTempo = parseInt(range.value) + 1;
+    range.value = newTempo;
+    tempoNumber.innerHTML = newTempo;
+  };
   return (
     <Container>
+      <div className="tempo">
+        <img></img>
+        <button className="keyMin" onClick={handleTempoMin}>
+          -
+        </button>
+        <input
+          id="bpmInput"
+          value="100"
+          max="244"
+          min="30"
+          type="range"
+          onChange={handleTempoChange}
+        ></input>
+        <button className="keyPlus" onClick={handleTempoPlus}>
+          +
+        </button>
+        <p id="tempoNumber">100</p>
+      </div>
       <div className="pianoBlock">
         <div className="pianoBlockForBlack">
           <button className="black blackType1" id="b2">
@@ -23,19 +176,19 @@ const CreateYourselfPage = () => {
             <span className="blackButtonText">7</span>
           </button>
           <button className="black blackType3" id="bG">
-            <span className="blackButtonText">G</span>
+            <span className="blackButtonText">F</span>
           </button>
           <button className="black blackType2" id="bH">
-            <span className="blackButtonText">H</span>
+            <span className="blackButtonText">G</span>
           </button>
           <button className="black blackType3" id="bK">
-            <span className="blackButtonText">K</span>
+            <span className="blackButtonText">J</span>
           </button>
           <button className="black blackType1" id="bL">
-            <span className="blackButtonText">L</span>
+            <span className="blackButtonText">K</span>
           </button>
           <button className="black blackType1" id="b">
-            <span className="blackButtonText">;</span>
+            <span className="blackButtonText">L</span>
           </button>
         </div>
         <div className="pianoBlockForWhite">
@@ -89,4 +242,5 @@ const CreateYourselfPage = () => {
     </Container>
   );
 };
+
 export default CreateYourselfPage;
