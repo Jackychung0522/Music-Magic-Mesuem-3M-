@@ -5,7 +5,13 @@ import * as Tone from "tone";
 import { useEffect } from "react";
 const PlayGame = () => {
   useEffect(() => {
-    const synth = new Tone.DuoSynth().toDestination();
+    const synth = new Tone.Sampler({
+      urls: {
+        C3: "C3.mp3",
+      },
+      // release: 1,
+      baseUrl: "https://tonejs.github.io/audio/salamander/",
+    }).toDestination();
 
     const handleButtonC3Click = () => {
       synth.triggerAttackRelease("C3", "4n");
@@ -85,32 +91,33 @@ const PlayGame = () => {
     };
 
     const buttons = document.getElementsByClassName("white");
-    buttons[0].addEventListener("click", handleButtonC3Click);
-    buttons[1].addEventListener("click", handleButtonD3Click);
-    buttons[2].addEventListener("click", handleButtonE3Click);
-    buttons[3].addEventListener("click", handleButtonF3Click);
-    buttons[4].addEventListener("click", handleButtonG3Click);
-    buttons[5].addEventListener("click", handleButtonA3Click);
-    buttons[6].addEventListener("click", handleButtonB3Click);
-    buttons[7].addEventListener("click", handleButtonC4Click);
-    buttons[8].addEventListener("click", handleButtonD4Click);
-    buttons[9].addEventListener("click", handleButtonE4Click);
-    buttons[10].addEventListener("click", handleButtonF4Click);
-    buttons[11].addEventListener("click", handleButtonG4Click);
-    buttons[12].addEventListener("click", handleButtonA4Click);
-    buttons[13].addEventListener("click", handleButtonB4Click);
-    buttons[14].addEventListener("click", handleButtonC5Click);
+    buttons[0].addEventListener("mousedown", handleButtonC3Click);
+    buttons[1].addEventListener("mousedown", handleButtonD3Click);
+    buttons[2].addEventListener("mousedown", handleButtonE3Click);
+    buttons[3].addEventListener("mousedown", handleButtonF3Click);
+    buttons[4].addEventListener("mousedown", handleButtonG3Click);
+    buttons[5].addEventListener("mousedown", handleButtonA3Click);
+    buttons[6].addEventListener("mousedown", handleButtonB3Click);
+    buttons[7].addEventListener("mousedown", handleButtonC4Click);
+    buttons[8].addEventListener("mousedown", handleButtonD4Click);
+    buttons[9].addEventListener("mousedown", handleButtonE4Click);
+    buttons[10].addEventListener("mousedown", handleButtonF4Click);
+    buttons[11].addEventListener("mousedown", handleButtonG4Click);
+    buttons[12].addEventListener("mousedown", handleButtonA4Click);
+    buttons[13].addEventListener("mousedown", handleButtonB4Click);
+    buttons[14].addEventListener("mousedown", handleButtonC5Click);
+
     const buttons2 = document.getElementsByClassName("black");
-    buttons2[0].addEventListener("click", handleButtonDoClick);
-    buttons2[1].addEventListener("click", handleButtonReClick);
-    buttons2[2].addEventListener("click", handleButtonFaClick);
-    buttons2[3].addEventListener("click", handleButtonSoClick);
-    buttons2[4].addEventListener("click", handleButtonLaClick);
-    buttons2[5].addEventListener("click", handleButtonMDoClick);
-    buttons2[6].addEventListener("click", handleButtonMReClick);
-    buttons2[7].addEventListener("click", handleButtonMFaClick);
-    buttons2[8].addEventListener("click", handleButtonMSoClick);
-    buttons2[9].addEventListener("click", handleButtonMLaClick);
+    buttons2[0].addEventListener("mousedown", handleButtonDoClick);
+    buttons2[1].addEventListener("mousedown", handleButtonReClick);
+    buttons2[2].addEventListener("mousedown", handleButtonFaClick);
+    buttons2[3].addEventListener("mousedown", handleButtonSoClick);
+    buttons2[4].addEventListener("mousedown", handleButtonLaClick);
+    buttons2[5].addEventListener("mousedown", handleButtonMDoClick);
+    buttons2[6].addEventListener("mousedown", handleButtonMReClick);
+    buttons2[7].addEventListener("mousedown", handleButtonMFaClick);
+    buttons2[8].addEventListener("mousedown", handleButtonMSoClick);
+    buttons2[9].addEventListener("mousedown", handleButtonMLaClick);
 
     const handleKeyDown = (event) => {
       if (event.code === "KeyQ") {
@@ -153,15 +160,15 @@ const PlayGame = () => {
         synth.triggerAttackRelease("G#3", "4n");
       } else if (event.code === "Digit7") {
         synth.triggerAttackRelease("A#3", "4n");
-      } else if (event.code === "KeyG") {
+      } else if (event.code === "KeyF") {
         synth.triggerAttackRelease("C#4", "4n");
-      } else if (event.code === "KeyH") {
+      } else if (event.code === "KeyG") {
         synth.triggerAttackRelease("D#4", "4n");
-      } else if (event.code === "KeyK") {
+      } else if (event.code === "KeyJ") {
         synth.triggerAttackRelease("F#4", "4n");
-      } else if (event.code === "KeyL") {
+      } else if (event.code === "KeyK") {
         synth.triggerAttackRelease("G#4", "4n");
-      } else if (event.code === "Semicolon") {
+      } else if (event.code === "KeyL") {
         synth.triggerAttackRelease("A#4", "4n");
       }
     };
@@ -187,20 +194,20 @@ const PlayGame = () => {
           <button className="black blackType2" id="b7">
             <span className="blackButtonText">7</span>
           </button>
-          <button className="black blackType3" id="bG">
+          <button className="black blackType3" id="bF">
+            <span className="blackButtonText">F</span>
+          </button>
+          <button className="black blackType2" id="bG">
             <span className="blackButtonText">G</span>
           </button>
-          <button className="black blackType2" id="bH">
-            <span className="blackButtonText">H</span>
+          <button className="black blackType3" id="bJ">
+            <span className="blackButtonText">J</span>
           </button>
-          <button className="black blackType3" id="bK">
+          <button className="black blackType1" id="bK">
             <span className="blackButtonText">K</span>
           </button>
           <button className="black blackType1" id="bL">
             <span className="blackButtonText">L</span>
-          </button>
-          <button className="black blackType1" id="b">
-            <span className="blackButtonText">;</span>
           </button>
         </div>
         <div className="pianoBlockForWhite">
