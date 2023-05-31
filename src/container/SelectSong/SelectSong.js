@@ -1,4 +1,4 @@
-import { React, useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Container } from "reactstrap";
 import "./SelectSong.css";
 import { Link } from "react-router-dom";
@@ -7,22 +7,25 @@ import firebase from "firebase/compat/app";
 import "firebase/compat/auth";
 import "firebase/compat/firestore";
 import db from "../../index";
+
 const SelectSong = () => {
-  const songs = [];
-  // const db = firebase.firestore();
-  db.collection("game")
-    .get()
-    .then((querySnapshot) => {
-      querySnapshot.forEach((doc) => {
-        const songData = doc.data().name;
-        songs.push(songData);
-      });
-      console.log(songs);
-    })
-    .catch((error) => {
-      console.log("Error getting songs: ", error);
-    });
+  const [songs, setSongs] = useState([]);
   const [selectedSongIndex, setSelectedSongIndex] = useState(0);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const querySnapshot = await db.collection("Game").get();
+        const fetchedSongs = querySnapshot.docs.map((doc) => doc.data().name);
+        setSongs(fetchedSongs);
+        console.log(fetchedSongs);
+      } catch (error) {
+        console.log("Error getting songs: ", error);
+      }
+    };
+
+    fetchData();
+  }, []);
 
   const handlePreviousSong = () => {
     setSelectedSongIndex((prevIndex) =>
@@ -35,6 +38,7 @@ const SelectSong = () => {
       prevIndex === songs.length - 1 ? 0 : prevIndex + 1
     );
   };
+
   return (
     <Container>
       <p id="selectsong">
@@ -60,4 +64,5 @@ const SelectSong = () => {
     </Container>
   );
 };
+
 export default SelectSong;

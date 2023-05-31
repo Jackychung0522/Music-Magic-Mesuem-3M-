@@ -44,6 +44,7 @@ const PlayGame = () => {
     { note: "D4" },
     { note: "E4" },
     { note: "F4" },
+    { note: "" },
     { note: "E4" },
     { note: "E4" },
     { note: "E4" },
@@ -237,7 +238,7 @@ const PlayGame = () => {
       if (keyPressed === "Q") {
         const block = blocks.find((block) => block.element.id === "blockc3");
 
-        if (block && block.top >= 450 && block.top <= 490) {
+        if (block && block.top >= 330 && block.top <= 370) {
           block.isAlive = false;
           playingBlock.removeChild(block.element);
           blocks.splice(blocks.indexOf(block), 1);
@@ -246,7 +247,7 @@ const PlayGame = () => {
       if (keyPressed === "W") {
         const block = blocks.find((block) => block.element.id === "blockd3");
 
-        if (block && block.top >= 450 && block.top <= 490) {
+        if (block && block.top >= 330 && block.top <= 370) {
           block.isAlive = false;
           playingBlock.removeChild(block.element);
           blocks.splice(blocks.indexOf(block), 1);
@@ -255,7 +256,7 @@ const PlayGame = () => {
       if (keyPressed === "E") {
         const block = blocks.find((block) => block.element.id === "blocke3");
 
-        if (block && block.top >= 450 && block.top <= 490) {
+        if (block && block.top >= 330 && block.top <= 370) {
           block.isAlive = false;
           playingBlock.removeChild(block.element);
           blocks.splice(blocks.indexOf(block), 1);
@@ -264,7 +265,7 @@ const PlayGame = () => {
       if (keyPressed === "R") {
         const block = blocks.find((block) => block.element.id === "blockf3");
 
-        if (block && block.top >= 450 && block.top <= 490) {
+        if (block && block.top >= 330 && block.top <= 370) {
           block.isAlive = false;
           playingBlock.removeChild(block.element);
           blocks.splice(blocks.indexOf(block), 1);
@@ -273,7 +274,7 @@ const PlayGame = () => {
       if (keyPressed === "T") {
         const block = blocks.find((block) => block.element.id === "blockg3");
 
-        if (block && block.top >= 450 && block.top <= 490) {
+        if (block && block.top >= 330 && block.top <= 370) {
           block.isAlive = false;
           playingBlock.removeChild(block.element);
           blocks.splice(blocks.indexOf(block), 1);
@@ -282,7 +283,7 @@ const PlayGame = () => {
       if (keyPressed === "Y") {
         const block = blocks.find((block) => block.element.id === "blocka3");
 
-        if (block && block.top >= 450 && block.top <= 490) {
+        if (block && block.top >= 330 && block.top <= 370) {
           block.isAlive = false;
           playingBlock.removeChild(block.element);
           blocks.splice(blocks.indexOf(block), 1);
@@ -291,7 +292,7 @@ const PlayGame = () => {
       if (keyPressed === "U") {
         const block = blocks.find((block) => block.element.id === "blockb3");
 
-        if (block && block.top >= 450 && block.top <= 490) {
+        if (block && block.top >= 330 && block.top <= 370) {
           block.isAlive = false;
           playingBlock.removeChild(block.element);
           blocks.splice(blocks.indexOf(block), 1);
@@ -301,7 +302,7 @@ const PlayGame = () => {
         console.log("C");
         const block = blocks.find((block) => block.element.id === "blockc4");
 
-        if (block && block.top >= 450 && block.top <= 490) {
+        if (block && block.top >= 330 && block.top <= 370) {
           block.isAlive = false;
           playingBlock.removeChild(block.element);
           blocks.splice(blocks.indexOf(block), 1);
@@ -310,7 +311,7 @@ const PlayGame = () => {
       if (keyPressed === "V") {
         const block = blocks.find((block) => block.element.id === "blockd4");
 
-        if (block && block.top >= 450 && block.top <= 490) {
+        if (block && block.top >= 330 && block.top <= 370) {
           block.isAlive = false;
           playingBlock.removeChild(block.element);
           blocks.splice(blocks.indexOf(block), 1);
@@ -319,7 +320,7 @@ const PlayGame = () => {
       if (keyPressed === "B") {
         const block = blocks.find((block) => block.element.id === "blocke4");
 
-        if (block && block.top >= 450 && block.top <= 490) {
+        if (block && block.top >= 330 && block.top <= 370) {
           block.isAlive = false;
           playingBlock.removeChild(block.element);
           blocks.splice(blocks.indexOf(block), 1);
@@ -328,7 +329,7 @@ const PlayGame = () => {
       if (keyPressed === "N") {
         const block = blocks.find((block) => block.element.id === "blockf4");
 
-        if (block && block.top >= 450 && block.top <= 490) {
+        if (block && block.top >= 330 && block.top <= 370) {
           block.isAlive = false;
           playingBlock.removeChild(block.element);
           blocks.splice(blocks.indexOf(block), 1);
@@ -337,7 +338,7 @@ const PlayGame = () => {
       if (keyPressed === "M") {
         const block = blocks.find((block) => block.element.id === "blockg4");
 
-        if (block && block.top >= 450 && block.top <= 490) {
+        if (block && block.top >= 330 && block.top <= 370) {
           block.isAlive = false;
           playingBlock.removeChild(block.element);
           blocks.splice(blocks.indexOf(block), 1);
@@ -346,7 +347,7 @@ const PlayGame = () => {
       if (keyPressed === ",") {
         const block = blocks.find((block) => block.element.id === "blocka4");
         console.log(keyPressed);
-        if (block && block.top >= 450 && block.top <= 490) {
+        if (block && block.top >= 330 && block.top <= 370) {
           block.isAlive = false;
           playingBlock.removeChild(block.element);
           blocks.splice(blocks.indexOf(block), 1);
@@ -355,7 +356,7 @@ const PlayGame = () => {
       if (keyPressed === ".") {
         const block = blocks.find((block) => block.element.id === "blockb4");
         console.log(keyPressed);
-        if (block && block.top >= 450 && block.top <= 490) {
+        if (block && block.top >= 330 && block.top <= 370) {
           block.isAlive = false;
           playingBlock.removeChild(block.element);
           blocks.splice(blocks.indexOf(block), 1);
@@ -364,7 +365,7 @@ const PlayGame = () => {
       if (keyPressed === "/") {
         const block = blocks.find((block) => block.element.id === "blockc5");
         console.log(keyPressed);
-        if (block && block.top >= 450 && block.top <= 490) {
+        if (block && block.top >= 330 && block.top <= 370) {
           block.isAlive = false;
           playingBlock.removeChild(block.element);
           blocks.splice(blocks.indexOf(block), 1);
@@ -373,7 +374,7 @@ const PlayGame = () => {
       if (keyPressed === "2") {
         const block = blocks.find((block) => block.element.id === "blockuc3");
         console.log(keyPressed);
-        if (block && block.top >= 450 && block.top <= 490) {
+        if (block && block.top >= 330 && block.top <= 370) {
           block.isAlive = false;
           playingBlock.removeChild(block.element);
           blocks.splice(blocks.indexOf(block), 1);
@@ -382,7 +383,7 @@ const PlayGame = () => {
       if (keyPressed === "3") {
         const block = blocks.find((block) => block.element.id === "blockud3");
         console.log(keyPressed);
-        if (block && block.top >= 450 && block.top <= 490) {
+        if (block && block.top >= 330 && block.top <= 370) {
           block.isAlive = false;
           playingBlock.removeChild(block.element);
           blocks.splice(blocks.indexOf(block), 1);
@@ -391,7 +392,7 @@ const PlayGame = () => {
       if (keyPressed === "5") {
         const block = blocks.find((block) => block.element.id === "blockuf3");
         console.log(keyPressed);
-        if (block && block.top >= 450 && block.top <= 490) {
+        if (block && block.top >= 330 && block.top <= 370) {
           block.isAlive = false;
           playingBlock.removeChild(block.element);
           blocks.splice(blocks.indexOf(block), 1);
@@ -400,7 +401,7 @@ const PlayGame = () => {
       if (keyPressed === "6") {
         const block = blocks.find((block) => block.element.id === "blockug3");
         console.log(keyPressed);
-        if (block && block.top >= 450 && block.top <= 490) {
+        if (block && block.top >= 330 && block.top <= 370) {
           block.isAlive = false;
           playingBlock.removeChild(block.element);
           blocks.splice(blocks.indexOf(block), 1);
@@ -409,7 +410,7 @@ const PlayGame = () => {
       if (keyPressed === "7") {
         const block = blocks.find((block) => block.element.id === "blockua3");
         console.log(keyPressed);
-        if (block && block.top >= 450 && block.top <= 490) {
+        if (block && block.top >= 330 && block.top <= 370) {
           block.isAlive = false;
           playingBlock.removeChild(block.element);
           blocks.splice(blocks.indexOf(block), 1);
@@ -418,7 +419,7 @@ const PlayGame = () => {
       if (keyPressed === "F") {
         const block = blocks.find((block) => block.element.id === "blockuc4");
         console.log(keyPressed);
-        if (block && block.top >= 450 && block.top <= 490) {
+        if (block && block.top >= 330 && block.top <= 370) {
           block.isAlive = false;
           playingBlock.removeChild(block.element);
           blocks.splice(blocks.indexOf(block), 1);
@@ -427,7 +428,7 @@ const PlayGame = () => {
       if (keyPressed === "G") {
         const block = blocks.find((block) => block.element.id === "blockud4");
         console.log(keyPressed);
-        if (block && block.top >= 450 && block.top <= 490) {
+        if (block && block.top >= 330 && block.top <= 370) {
           block.isAlive = false;
           playingBlock.removeChild(block.element);
           blocks.splice(blocks.indexOf(block), 1);
@@ -436,7 +437,7 @@ const PlayGame = () => {
       if (keyPressed === "J") {
         const block = blocks.find((block) => block.element.id === "blockuf4");
         console.log(keyPressed);
-        if (block && block.top >= 450 && block.top <= 490) {
+        if (block && block.top >= 330 && block.top <= 370) {
           block.isAlive = false;
           playingBlock.removeChild(block.element);
           blocks.splice(blocks.indexOf(block), 1);
@@ -445,7 +446,7 @@ const PlayGame = () => {
       if (keyPressed === "K") {
         const block = blocks.find((block) => block.element.id === "blockug4");
         console.log(keyPressed);
-        if (block && block.top >= 450 && block.top <= 490) {
+        if (block && block.top >= 330 && block.top <= 370) {
           block.isAlive = false;
           playingBlock.removeChild(block.element);
           blocks.splice(blocks.indexOf(block), 1);
@@ -454,7 +455,7 @@ const PlayGame = () => {
       if (keyPressed === "L") {
         const block = blocks.find((block) => block.element.id === "blockua4");
         console.log(keyPressed);
-        if (block && block.top >= 450 && block.top <= 490) {
+        if (block && block.top >= 330 && block.top <= 370) {
           block.isAlive = false;
           container.removeChild(block.element);
           blocks.splice(blocks.indexOf(block), 1);
