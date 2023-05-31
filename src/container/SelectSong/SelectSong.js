@@ -38,6 +38,9 @@ const SelectSong = () => {
       prevIndex === songs.length - 1 ? 0 : prevIndex + 1
     );
   };
+  const handleClick = () => {
+    sessionStorage.setItem("currentSong", songs[selectedSongIndex]);
+  };
 
   return (
     <Container>
@@ -52,7 +55,7 @@ const SelectSong = () => {
           &#9650;
         </button>
         <Link to={routes.playgame} className="link">
-          <button id="songButton">
+          <button id="songButton" onClick={handleClick}>
             <span className="songName">{songs[selectedSongIndex]}</span>
             <span className="difficulty">&#9733;10000</span>
           </button>
