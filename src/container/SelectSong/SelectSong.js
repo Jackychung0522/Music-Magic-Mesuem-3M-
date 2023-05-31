@@ -6,9 +6,10 @@ import routes from "../../AppRouter";
 import firebase from "firebase/compat/app";
 import "firebase/compat/auth";
 import "firebase/compat/firestore";
+import db from "../../index";
 const SelectSong = () => {
   const songs = [];
-  const db = firebase.firestore();
+  // const db = firebase.firestore();
   db.collection("game")
     .get()
     .then((querySnapshot) => {

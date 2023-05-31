@@ -112,12 +112,33 @@
   position: absolute;
   left:360px
 }
+#blockc3{
+  width: 30px;
+  height: 30px;
+  background-color: red;
+  position: absolute;
+  left:360px
+}
+#blockuc3{
+  width: 30px;
+  height: 30px;
+  background-color: red;
+  position: absolute;
+  left:390px
+}
 #blockd3{
   width: 30px;
   height: 30px;
   background-color: red;
   position: absolute;
   left:420px
+}
+#blockud3{
+  width: 30px;
+  height: 30px;
+  background-color: red;
+  position: absolute;
+  left:450px
 }
 #blocke3{
   width: 30px;
@@ -133,6 +154,13 @@
   position: absolute;
   left:535px
 }
+#blockuf3{
+  width: 30px;
+  height: 30px;
+  background-color: red;
+  position: absolute;
+  left:570px
+}
 #blockg3{
   width: 30px;
   height: 30px;
@@ -140,12 +168,26 @@
   position: absolute;
   left:605px
 }
+#blockug3{
+  width: 30px;
+  height: 30px;
+  background-color: red;
+  position: absolute;
+  left:630px
+}
 #blocka3{
   width: 30px;
   height: 30px;
   background-color: red;
   position: absolute;
   left:665px
+}
+#blockua3{
+  width: 30px;
+  height: 30px;
+  background-color: red;
+  position: absolute;
+  left:690px
 }
 #blockb3{
   width: 30px;
@@ -161,12 +203,26 @@
   position: absolute;
   left:780px
 }
+#blockuc4{
+  width: 30px;
+  height: 30px;
+  background-color: red;
+  position: absolute;
+  left:810px
+}
 #blockd4{
   width: 30px;
   height: 30px;
   background-color: red;
   position: absolute;
   left:840px
+}
+#blockud4{
+  width: 30px;
+  height: 30px;
+  background-color: red;
+  position: absolute;
+  left:870px
 }
 #blocke4{
   width: 30px;
@@ -182,12 +238,26 @@
   position: absolute;
   left:955px
 }
+#blockuf4{
+  width: 30px;
+  height: 30px;
+  background-color: red;
+  position: absolute;
+  left:990px
+}
 #blockg4{
   width: 30px;
   height: 30px;
   background-color: red;
   position: absolute;
   left:1025px
+}
+#blockug4{
+  width: 30px;
+  height: 30px;
+  background-color: red;
+  position: absolute;
+  left:1050px
 }
 #blocka4{
   width: 30px;
@@ -196,12 +266,26 @@
   position: absolute;
   left:1085px
 }
+#blockua4{
+  width: 30px;
+  height: 30px;
+  background-color: red;
+  position: absolute;
+  left:1110px
+}
 #blockb4{
   width: 30px;
   height: 30px;
   background-color: red;
   position: absolute;
   left:1150px
+}
+#blockc5{
+  width: 30px;
+  height: 30px;
+  background-color: red;
+  position: absolute;
+  left:1210px
 }
 .test{
   position:absolute;

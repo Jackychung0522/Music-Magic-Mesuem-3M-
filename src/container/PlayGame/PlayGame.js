@@ -370,6 +370,96 @@ const PlayGame = () => {
           blocks.splice(blocks.indexOf(block), 1);
         }
       }
+      if (keyPressed === "2") {
+        const block = blocks.find((block) => block.element.id === "blockuc3");
+        console.log(keyPressed);
+        if (block && block.top >= 450 && block.top <= 490) {
+          block.isAlive = false;
+          container.removeChild(block.element);
+          blocks.splice(blocks.indexOf(block), 1);
+        }
+      }
+      if (keyPressed === "3") {
+        const block = blocks.find((block) => block.element.id === "blockud3");
+        console.log(keyPressed);
+        if (block && block.top >= 450 && block.top <= 490) {
+          block.isAlive = false;
+          container.removeChild(block.element);
+          blocks.splice(blocks.indexOf(block), 1);
+        }
+      }
+      if (keyPressed === "5") {
+        const block = blocks.find((block) => block.element.id === "blockuf3");
+        console.log(keyPressed);
+        if (block && block.top >= 450 && block.top <= 490) {
+          block.isAlive = false;
+          container.removeChild(block.element);
+          blocks.splice(blocks.indexOf(block), 1);
+        }
+      }
+      if (keyPressed === "6") {
+        const block = blocks.find((block) => block.element.id === "blockug3");
+        console.log(keyPressed);
+        if (block && block.top >= 450 && block.top <= 490) {
+          block.isAlive = false;
+          container.removeChild(block.element);
+          blocks.splice(blocks.indexOf(block), 1);
+        }
+      }
+      if (keyPressed === "7") {
+        const block = blocks.find((block) => block.element.id === "blockua3");
+        console.log(keyPressed);
+        if (block && block.top >= 450 && block.top <= 490) {
+          block.isAlive = false;
+          container.removeChild(block.element);
+          blocks.splice(blocks.indexOf(block), 1);
+        }
+      }
+      if (keyPressed === "F") {
+        const block = blocks.find((block) => block.element.id === "blockuc4");
+        console.log(keyPressed);
+        if (block && block.top >= 450 && block.top <= 490) {
+          block.isAlive = false;
+          container.removeChild(block.element);
+          blocks.splice(blocks.indexOf(block), 1);
+        }
+      }
+      if (keyPressed === "G") {
+        const block = blocks.find((block) => block.element.id === "blockud4");
+        console.log(keyPressed);
+        if (block && block.top >= 450 && block.top <= 490) {
+          block.isAlive = false;
+          container.removeChild(block.element);
+          blocks.splice(blocks.indexOf(block), 1);
+        }
+      }
+      if (keyPressed === "J") {
+        const block = blocks.find((block) => block.element.id === "blockuf4");
+        console.log(keyPressed);
+        if (block && block.top >= 450 && block.top <= 490) {
+          block.isAlive = false;
+          container.removeChild(block.element);
+          blocks.splice(blocks.indexOf(block), 1);
+        }
+      }
+      if (keyPressed === "K") {
+        const block = blocks.find((block) => block.element.id === "blockug4");
+        console.log(keyPressed);
+        if (block && block.top >= 450 && block.top <= 490) {
+          block.isAlive = false;
+          container.removeChild(block.element);
+          blocks.splice(blocks.indexOf(block), 1);
+        }
+      }
+      if (keyPressed === "L") {
+        const block = blocks.find((block) => block.element.id === "blockua4");
+        console.log(keyPressed);
+        if (block && block.top >= 450 && block.top <= 490) {
+          block.isAlive = false;
+          container.removeChild(block.element);
+          blocks.splice(blocks.indexOf(block), 1);
+        }
+      }
     };
     const container = document.getElementById("container");
 
@@ -411,25 +501,25 @@ const PlayGame = () => {
       } else if (note === "C5") {
         block.id = "blockc5";
       } else if (note === "C#3") {
-        block.id = "blockc#3";
+        block.id = "blockuc3";
       } else if (note === "D#3") {
-        block.id = "blockd#3";
+        block.id = "blockud3";
       } else if (note === "F#3") {
-        block.id = "blockf#3";
+        block.id = "blockuf3";
       } else if (note === "G#3") {
-        block.id = "blockg#3";
+        block.id = "blockug3";
       } else if (note === "A#3") {
-        block.id = "blocka#3";
+        block.id = "blockua3";
       } else if (note === "C#4") {
-        block.id = "blockc#4";
+        block.id = "blockuc4";
       } else if (note === "D#4") {
-        block.id = "blockd#4";
+        block.id = "blockud4";
       } else if (note === "F#4") {
-        block.id = "blockf#4";
+        block.id = "blockuf4";
       } else if (note === "G#4") {
-        block.id = "blockg#4";
+        block.id = "blockug4";
       } else if (note === "A#4") {
-        block.id = "blocka#4";
+        block.id = "blockua4";
       }
       if (note !== "") {
         container.appendChild(block);
