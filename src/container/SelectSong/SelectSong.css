@@ -34,10 +34,24 @@
     align-items: center;
     justify-content: space-between;
     cursor: pointer;
+    border-radius: 5px;
+    padding: 10px;
+    background-color: rgba(210, 180, 140, 0.7); 
 }
 .songName{
-    margin-left: 20px;
+    margin-left: 0px;
+    font-size: 24px;
+    color: #ffffff;
+    font-weight: bold;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.9);
+    font-family: cursive;
+
 }
 .difficulty{
-    margin-right: 20px;
+    margin-right: 00px;
+    font-size: 24px;
+    color: #ffffff;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.9);
+    font-family: cursive;
+
 }

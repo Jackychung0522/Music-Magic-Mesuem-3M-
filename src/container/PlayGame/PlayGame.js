@@ -2,71 +2,16 @@ import React from "react";
 import { Container } from "reactstrap";
 import "./PlayGame.css";
 import * as Tone from "tone";
-import { useEffect } from "react";
+import { useState, useEffect } from "react";
+import db from "../../index";
+import bigyellowbee from "../../ spectrum/bigyellowbee.json";
+
 const PlayGame = () => {
-  const notes = [
-    { note: "G4" },
-    { note: "E4" },
-    { note: "E4" },
-    { note: "" },
-    { note: "F4" },
-    { note: "D4" },
-    { note: "D4" },
-    { note: "" },
-    { note: "C4" },
-    { note: "D4" },
-    { note: "E4" },
-    { note: "F4" },
-    { note: "G4" },
-    { note: "G4" },
-    { note: "G4" },
-    { note: "" },
-    { note: "G4" },
-    { note: "E4" },
-    { note: "E4" },
-    { note: "" },
-    { note: "F4" },
-    { note: "D4" },
-    { note: "D4" },
-    { note: "" },
-    { note: "C4" },
-    { note: "E4" },
-    { note: "G4" },
-    { note: "G4" },
-    { note: "E4" },
-    { note: "" },
-    { note: "" },
-    { note: "" },
-    { note: "D4" },
-    { note: "D4" },
-    { note: "D4" },
-    { note: "D4" },
-    { note: "D4" },
-    { note: "E4" },
-    { note: "F4" },
-    { note: "" },
-    { note: "E4" },
-    { note: "E4" },
-    { note: "E4" },
-    { note: "E4" },
-    { note: "E4" },
-    { note: "F4" },
-    { note: "G4" },
-    { note: "" },
-    { note: "G4" },
-    { note: "E4" },
-    { note: "E4" },
-    { note: "" },
-    { note: "F4" },
-    { note: "D4" },
-    { note: "D4" },
-    { note: "" },
-    { note: "C4" },
-    { note: "E4" },
-    { note: "G4" },
-    { note: "G4" },
-    { note: "C4" },
-  ];
+  const currentSong = sessionStorage.getItem("currentSong");
+  let notes = [];
+  if (currentSong === "Big Yellow Bee") {
+    notes = bigyellowbee;
+  }
   useEffect(() => {
     const synth = new Tone.Sampler({
       urls: {
