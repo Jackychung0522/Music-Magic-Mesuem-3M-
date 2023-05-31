@@ -3,7 +3,8 @@ import { useState } from "react";
 import { Container } from "reactstrap";
 import "./CreateYourselfPage.css";
 import * as Tone from "tone";
-import db from "../../index";
+import tempoRun from "../../image/tempoRun.png";
+
 const CreateYourselfPage = () => {
   const sampler = new Tone.Sampler({
     urls: {
@@ -126,15 +127,6 @@ const CreateYourselfPage = () => {
   };
   const handleTempoMin = () => {
     setTempoNumber(parseInt(tempoNumber) - 1);
-    db.collection("game")
-      .get()
-      .then((snapshot) => {
-        if (snapshot.empty) {
-          console.log("未找到匹配的文档");
-        } else {
-          console.log(snapshot);
-        }
-      });
   };
   const handleTempoPlus = () => {
     setTempoNumber(parseInt(tempoNumber) + 1);
@@ -143,7 +135,10 @@ const CreateYourselfPage = () => {
   return (
     <Container>
       <div className="tempo">
-        <img></img>
+        <button>
+          <img src={tempoRun} className="pikachu"></img>
+        </button>
+
         <button className="keyMin" onClick={handleTempoMin}>
           -
         </button>
