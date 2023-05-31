@@ -239,7 +239,7 @@ const PlayGame = () => {
 
         if (block && block.top >= 450 && block.top <= 490) {
           block.isAlive = false;
-          container.removeChild(block.element);
+          playingBlock.removeChild(block.element);
           blocks.splice(blocks.indexOf(block), 1);
         }
       }
@@ -248,7 +248,7 @@ const PlayGame = () => {
 
         if (block && block.top >= 450 && block.top <= 490) {
           block.isAlive = false;
-          container.removeChild(block.element);
+          playingBlock.removeChild(block.element);
           blocks.splice(blocks.indexOf(block), 1);
         }
       }
@@ -257,7 +257,7 @@ const PlayGame = () => {
 
         if (block && block.top >= 450 && block.top <= 490) {
           block.isAlive = false;
-          container.removeChild(block.element);
+          playingBlock.removeChild(block.element);
           blocks.splice(blocks.indexOf(block), 1);
         }
       }
@@ -266,7 +266,7 @@ const PlayGame = () => {
 
         if (block && block.top >= 450 && block.top <= 490) {
           block.isAlive = false;
-          container.removeChild(block.element);
+          playingBlock.removeChild(block.element);
           blocks.splice(blocks.indexOf(block), 1);
         }
       }
@@ -275,7 +275,7 @@ const PlayGame = () => {
 
         if (block && block.top >= 450 && block.top <= 490) {
           block.isAlive = false;
-          container.removeChild(block.element);
+          playingBlock.removeChild(block.element);
           blocks.splice(blocks.indexOf(block), 1);
         }
       }
@@ -284,7 +284,7 @@ const PlayGame = () => {
 
         if (block && block.top >= 450 && block.top <= 490) {
           block.isAlive = false;
-          container.removeChild(block.element);
+          playingBlock.removeChild(block.element);
           blocks.splice(blocks.indexOf(block), 1);
         }
       }
@@ -293,7 +293,7 @@ const PlayGame = () => {
 
         if (block && block.top >= 450 && block.top <= 490) {
           block.isAlive = false;
-          container.removeChild(block.element);
+          playingBlock.removeChild(block.element);
           blocks.splice(blocks.indexOf(block), 1);
         }
       }
@@ -303,7 +303,7 @@ const PlayGame = () => {
 
         if (block && block.top >= 450 && block.top <= 490) {
           block.isAlive = false;
-          container.removeChild(block.element);
+          playingBlock.removeChild(block.element);
           blocks.splice(blocks.indexOf(block), 1);
         }
       }
@@ -312,7 +312,7 @@ const PlayGame = () => {
 
         if (block && block.top >= 450 && block.top <= 490) {
           block.isAlive = false;
-          container.removeChild(block.element);
+          playingBlock.removeChild(block.element);
           blocks.splice(blocks.indexOf(block), 1);
         }
       }
@@ -321,7 +321,7 @@ const PlayGame = () => {
 
         if (block && block.top >= 450 && block.top <= 490) {
           block.isAlive = false;
-          container.removeChild(block.element);
+          playingBlock.removeChild(block.element);
           blocks.splice(blocks.indexOf(block), 1);
         }
       }
@@ -330,7 +330,7 @@ const PlayGame = () => {
 
         if (block && block.top >= 450 && block.top <= 490) {
           block.isAlive = false;
-          container.removeChild(block.element);
+          playingBlock.removeChild(block.element);
           blocks.splice(blocks.indexOf(block), 1);
         }
       }
@@ -339,7 +339,7 @@ const PlayGame = () => {
 
         if (block && block.top >= 450 && block.top <= 490) {
           block.isAlive = false;
-          container.removeChild(block.element);
+          playingBlock.removeChild(block.element);
           blocks.splice(blocks.indexOf(block), 1);
         }
       }
@@ -348,7 +348,7 @@ const PlayGame = () => {
         console.log(keyPressed);
         if (block && block.top >= 450 && block.top <= 490) {
           block.isAlive = false;
-          container.removeChild(block.element);
+          playingBlock.removeChild(block.element);
           blocks.splice(blocks.indexOf(block), 1);
         }
       }
@@ -357,7 +357,7 @@ const PlayGame = () => {
         console.log(keyPressed);
         if (block && block.top >= 450 && block.top <= 490) {
           block.isAlive = false;
-          container.removeChild(block.element);
+          playingBlock.removeChild(block.element);
           blocks.splice(blocks.indexOf(block), 1);
         }
       }
@@ -366,7 +366,7 @@ const PlayGame = () => {
         console.log(keyPressed);
         if (block && block.top >= 450 && block.top <= 490) {
           block.isAlive = false;
-          container.removeChild(block.element);
+          playingBlock.removeChild(block.element);
           blocks.splice(blocks.indexOf(block), 1);
         }
       }
@@ -375,7 +375,7 @@ const PlayGame = () => {
         console.log(keyPressed);
         if (block && block.top >= 450 && block.top <= 490) {
           block.isAlive = false;
-          container.removeChild(block.element);
+          playingBlock.removeChild(block.element);
           blocks.splice(blocks.indexOf(block), 1);
         }
       }
@@ -384,7 +384,7 @@ const PlayGame = () => {
         console.log(keyPressed);
         if (block && block.top >= 450 && block.top <= 490) {
           block.isAlive = false;
-          container.removeChild(block.element);
+          playingBlock.removeChild(block.element);
           blocks.splice(blocks.indexOf(block), 1);
         }
       }
@@ -393,7 +393,7 @@ const PlayGame = () => {
         console.log(keyPressed);
         if (block && block.top >= 450 && block.top <= 490) {
           block.isAlive = false;
-          container.removeChild(block.element);
+          playingBlock.removeChild(block.element);
           blocks.splice(blocks.indexOf(block), 1);
         }
       }
@@ -402,7 +402,7 @@ const PlayGame = () => {
         console.log(keyPressed);
         if (block && block.top >= 450 && block.top <= 490) {
           block.isAlive = false;
-          container.removeChild(block.element);
+          playingBlock.removeChild(block.element);
           blocks.splice(blocks.indexOf(block), 1);
         }
       }
@@ -411,7 +411,7 @@ const PlayGame = () => {
         console.log(keyPressed);
         if (block && block.top >= 450 && block.top <= 490) {
           block.isAlive = false;
-          container.removeChild(block.element);
+          playingBlock.removeChild(block.element);
           blocks.splice(blocks.indexOf(block), 1);
         }
       }
@@ -420,7 +420,7 @@ const PlayGame = () => {
         console.log(keyPressed);
         if (block && block.top >= 450 && block.top <= 490) {
           block.isAlive = false;
-          container.removeChild(block.element);
+          playingBlock.removeChild(block.element);
           blocks.splice(blocks.indexOf(block), 1);
         }
       }
@@ -429,7 +429,7 @@ const PlayGame = () => {
         console.log(keyPressed);
         if (block && block.top >= 450 && block.top <= 490) {
           block.isAlive = false;
-          container.removeChild(block.element);
+          playingBlock.removeChild(block.element);
           blocks.splice(blocks.indexOf(block), 1);
         }
       }
@@ -438,7 +438,7 @@ const PlayGame = () => {
         console.log(keyPressed);
         if (block && block.top >= 450 && block.top <= 490) {
           block.isAlive = false;
-          container.removeChild(block.element);
+          playingBlock.removeChild(block.element);
           blocks.splice(blocks.indexOf(block), 1);
         }
       }
@@ -447,7 +447,7 @@ const PlayGame = () => {
         console.log(keyPressed);
         if (block && block.top >= 450 && block.top <= 490) {
           block.isAlive = false;
-          container.removeChild(block.element);
+          playingBlock.removeChild(block.element);
           blocks.splice(blocks.indexOf(block), 1);
         }
       }
@@ -462,7 +462,7 @@ const PlayGame = () => {
       }
     };
     const container = document.getElementById("container");
-
+    const playingBlock = document.querySelector(".playingBlock");
     const blocks = [];
     let currentIndex = 0;
     // 创建方块函数
@@ -522,7 +522,7 @@ const PlayGame = () => {
         block.id = "blockua4";
       }
       if (note !== "") {
-        container.appendChild(block);
+        playingBlock.appendChild(block);
         blocks.push({
           element: block,
           top: 100,
@@ -538,10 +538,10 @@ const PlayGame = () => {
         if (block.isAlive) {
           block.top += 2;
           block.element.style.top = block.top + "px";
-          if (block.top >= 600) {
+          if (block.top >= 400) {
             // 将方块从数组和容器中移除
             block.isAlive = false;
-            container.removeChild(block.element);
+            playingBlock.removeChild(block.element);
             blocks.splice(i, 1);
             i--;
           }
@@ -559,7 +559,7 @@ const PlayGame = () => {
           createBlock(notes[currentIndex].note);
           currentIndex++;
         }
-      }, 1000);
+      }, 500);
     };
     loadNotes(notes);
     animate();
@@ -570,8 +570,10 @@ const PlayGame = () => {
   return (
     <Container>
       <p className="test"> test</p>
-      <div className="playingBlock">
-        <div id="container"></div>
+      <div className="playingBlockBlock">
+        <div className="playingBlock">
+          <div id="container"></div>
+        </div>
       </div>
       <div className="receivingareaBlock">
         <div className="receivingarea"></div>

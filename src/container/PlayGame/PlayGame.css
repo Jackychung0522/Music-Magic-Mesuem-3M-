@@ -75,6 +75,13 @@
 }
 .playingBlock{
   height: 350px;
+  width: 900px;
+  position: relative;
+}
+.playingBlockBlock{
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 #block {
   width: 30px;
@@ -110,182 +117,176 @@
   height: 30px;
   background-color: red;
   position: absolute;
-  left:360px
-}
-#blockc3{
-  width: 30px;
-  height: 30px;
-  background-color: red;
-  position: absolute;
-  left:360px
+  left:15px
 }
 #blockuc3{
   width: 30px;
   height: 30px;
   background-color: red;
   position: absolute;
-  left:390px
+  left:45px
 }
 #blockd3{
   width: 30px;
   height: 30px;
   background-color: red;
   position: absolute;
-  left:420px
+  left:75px
 }
 #blockud3{
   width: 30px;
   height: 30px;
   background-color: red;
   position: absolute;
-  left:450px
+  left:105px
 }
 #blocke3{
   width: 30px;
   height: 30px;
   background-color: red;
   position: absolute;
-  left:495px
+  left:150px
 }
 #blockf3{
   width: 30px;
   height: 30px;
   background-color: red;
   position: absolute;
-  left:535px
+  left:190px
 }
 #blockuf3{
   width: 30px;
   height: 30px;
   background-color: red;
   position: absolute;
-  left:570px
+  left:225px
 }
 #blockg3{
   width: 30px;
   height: 30px;
   background-color: red;
   position: absolute;
-  left:605px
+  left:260px
 }
 #blockug3{
   width: 30px;
   height: 30px;
   background-color: red;
   position: absolute;
-  left:630px
+  left:285px
 }
 #blocka3{
   width: 30px;
   height: 30px;
   background-color: red;
   position: absolute;
-  left:665px
+  left:320px
 }
 #blockua3{
   width: 30px;
   height: 30px;
   background-color: red;
   position: absolute;
-  left:690px
+  left:345px
 }
 #blockb3{
   width: 30px;
   height: 30px;
   background-color: red;
   position: absolute;
-  left:730px
+  left:385px
 }
 #blockc4{
   width: 30px;
   height: 30px;
   background-color: red;
   position: absolute;
-  left:780px
+  left:435px
 }
 #blockuc4{
   width: 30px;
   height: 30px;
   background-color: red;
   position: absolute;
-  left:810px
+  left:465px
 }
 #blockd4{
   width: 30px;
   height: 30px;
   background-color: red;
   position: absolute;
-  left:840px
+  left:495px
 }
 #blockud4{
   width: 30px;
   height: 30px;
   background-color: red;
   position: absolute;
-  left:870px
+  left:525px
 }
 #blocke4{
   width: 30px;
   height: 30px;
   background-color: red;
   position: absolute;
-  left:915px
+  left:570px
 }
 #blockf4{
   width: 30px;
   height: 30px;
   background-color: red;
   position: absolute;
-  left:955px
+  left:610px
 }
 #blockuf4{
   width: 30px;
   height: 30px;
   background-color: red;
   position: absolute;
-  left:990px
+  left:645px
 }
 #blockg4{
   width: 30px;
   height: 30px;
   background-color: red;
   position: absolute;
-  left:1025px
+  left: 680px;
+
 }
 #blockug4{
   width: 30px;
   height: 30px;
   background-color: red;
   position: absolute;
-  left:1050px
+  left:705px
 }
 #blocka4{
   width: 30px;
   height: 30px;
   background-color: red;
   position: absolute;
-  left:1085px
+  left:740px
 }
 #blockua4{
   width: 30px;
   height: 30px;
   background-color: red;
   position: absolute;
-  left:1110px
+  left:765px
 }
 #blockb4{
   width: 30px;
   height: 30px;
   background-color: red;
   position: absolute;
-  left:1150px
+  left:805px
 }
 #blockc5{
   width: 30px;
   height: 30px;
   background-color: red;
   position: absolute;
-  left:1210px
+  left:865px
 }
 .test{
   position:absolute;
