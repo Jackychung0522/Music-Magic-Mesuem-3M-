@@ -131,3 +131,35 @@ input[type="range"] {
 .keyPlus:active {
   transform: scale(1.2);
 }
+
+.recordButton {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  cursor: pointer;
+  background-color: rgb(163, 185, 111);
+  margin-top: 250px;
+}
+.record {
+  width: 100%;
+  display: flex;
+}
+.recordBlock {
+  width: 50%;
+  display: flex;
+  justify-content: flex-end;
+}
+@keyframes colorChange {
+  0% {
+    background-color: red;
+    transform: scale(1);
+  }
+  50% {
+    background-color: rgb(198, 50, 50);
+    transform: scale(1.2);
+  }
+  100% {
+    background-color: red;
+    transform: scale(1);
+  }
+}

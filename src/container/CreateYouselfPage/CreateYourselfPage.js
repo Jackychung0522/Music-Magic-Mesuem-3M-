@@ -6,6 +6,7 @@ import * as Tone from "tone";
 import tempoRun from "../../image/tempoRun.png";
 import { Player } from "tone";
 import tempoNoise from "../../mp3/1111.mp3";
+import record from "../../image/record.png";
 
 const CreateYourselfPage = () => {
   const sound = new Player({
@@ -159,12 +160,13 @@ const CreateYourselfPage = () => {
   };
   const [tempoNumber, setTempoNumber] = useState("100");
   const [IsTempoRun, setIsTempoRun] = useState(false);
+  const [IsRecord, setIsRecord] = useState(false);
   useEffect(() => {
     let intervalId;
     async function playWithDelay() {
       if (IsTempoRun) {
         intervalId = setInterval(async () => {
-          await pikachuShot();
+          pikachuShot();
         }, 60000 / parseInt(tempoNumber));
       }
     }
@@ -174,6 +176,10 @@ const CreateYourselfPage = () => {
       clearInterval(intervalId);
     };
   }, [IsTempoRun, tempoNumber]);
+
+  const handleRecordChange = () => {
+    setIsRecord((prevIsRecord) => !prevIsRecord);
+  };
   return (
     <Container>
       <div className="topOfPiano" style={{ display: "flex" }}>
@@ -209,7 +215,15 @@ const CreateYourselfPage = () => {
           </div>
         </div>
         <div className="recordBlock">
-          <button></button>
+          <div style={{ float: "right" }}>
+            <button
+              className="recordButton"
+              style={{ animation: IsRecord ? "colorChange 1s infinite" : "" }}
+              onClick={handleRecordChange}
+            >
+              <img className="record" src={record} />
+            </button>
+          </div>
         </div>
       </div>
 
