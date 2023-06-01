@@ -98,7 +98,8 @@ input[type="range"] {
   cursor: pointer;
 }
 .pikachuButton:active {
-  background: #6127ff;
+  transform: scale(0.8);
+  /* transition: 0.2s; */
 }
 .tempo {
   width: 500px;
@@ -123,4 +124,10 @@ input[type="range"] {
 }
 #tempoNumber {
   font-size: 0.8cm;
+}
+.keyMin:active {
+  transform: scale(1.2);
+}
+.keyPlus:active {
+  transform: scale(1.2);
 }
