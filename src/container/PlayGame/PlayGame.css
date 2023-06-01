@@ -27,6 +27,7 @@
 }
 .buttonText {
   margin-bottom: 5px;
+  font-size: larger;
 }
 .black {
   width: 40px;
@@ -115,176 +116,201 @@
 #blockc3{
   width: 30px;
   height: 30px;
-  background-color: red;
+  background-color: brown;
+  border-radius: 10%;
   position: absolute;
   left:15px
 }
 #blockuc3{
   width: 30px;
   height: 30px;
-  background-color: red;
+  background-color: brown;
+  border-radius: 10%;
   position: absolute;
   left:45px
 }
 #blockd3{
   width: 30px;
   height: 30px;
-  background-color: red;
+  background-color: brown;
+  border-radius: 10%;
   position: absolute;
   left:75px
 }
 #blockud3{
   width: 30px;
   height: 30px;
-  background-color: red;
+  background-color: brown;
+  border-radius: 10%;
   position: absolute;
   left:105px
 }
 #blocke3{
   width: 30px;
   height: 30px;
-  background-color: red;
+  background-color: brown;
+  border-radius: 10%;
   position: absolute;
   left:150px
 }
 #blockf3{
   width: 30px;
   height: 30px;
-  background-color: red;
+  background-color: brown;
+  border-radius: 10%;
   position: absolute;
   left:190px
 }
 #blockuf3{
   width: 30px;
   height: 30px;
-  background-color: red;
+  background-color: brown;
+  border-radius: 10%;
   position: absolute;
   left:225px
 }
 #blockg3{
   width: 30px;
   height: 30px;
-  background-color: red;
   position: absolute;
-  left:260px
+  left:260px;
+  background-color: brown;
+  border-radius: 10%;
 }
 #blockug3{
   width: 30px;
   height: 30px;
-  background-color: red;
+  background-color: brown;
+  border-radius: 10%;
   position: absolute;
   left:285px
 }
 #blocka3{
   width: 30px;
   height: 30px;
-  background-color: red;
+  background-color: brown;
+  border-radius: 10%;
   position: absolute;
   left:320px
 }
 #blockua3{
   width: 30px;
   height: 30px;
-  background-color: red;
+  background-color: brown;
+  border-radius: 10%;
   position: absolute;
   left:345px
 }
 #blockb3{
   width: 30px;
   height: 30px;
-  background-color: red;
+  background-color: brown;
+  border-radius: 10%;
   position: absolute;
   left:385px
 }
 #blockc4{
   width: 30px;
   height: 30px;
-  background-color: red;
+  background-color: brown;
+  border-radius: 10%;
   position: absolute;
   left:435px
 }
 #blockuc4{
   width: 30px;
   height: 30px;
-  background-color: red;
+  background-color: brown;
+  border-radius: 10%;
   position: absolute;
   left:465px
 }
 #blockd4{
   width: 30px;
   height: 30px;
-  background-color: red;
+  background-color: brown;
+  border-radius: 10%;
   position: absolute;
   left:495px
 }
 #blockud4{
   width: 30px;
   height: 30px;
-  background-color: red;
+  background-color: brown;
+  border-radius: 10%;
   position: absolute;
   left:525px
 }
 #blocke4{
   width: 30px;
   height: 30px;
-  background-color: red;
+  background-color: brown;
+  border-radius: 10%;
   position: absolute;
   left:570px
 }
 #blockf4{
   width: 30px;
   height: 30px;
-  background-color: red;
+  background-color: brown;
+  border-radius: 10%;
   position: absolute;
   left:610px
 }
 #blockuf4{
   width: 30px;
   height: 30px;
-  background-color: red;
+  background-color: brown;
+  border-radius: 10%;
   position: absolute;
   left:645px
 }
 #blockg4{
   width: 30px;
   height: 30px;
-  background-color: red;
+  background-color: brown;
   position: absolute;
   left: 680px;
+  border-radius: 10%;
 
 }
 #blockug4{
   width: 30px;
   height: 30px;
-  background-color: red;
+  background-color: brown;
+  border-radius: 10%;
   position: absolute;
   left:705px
 }
 #blocka4{
   width: 30px;
   height: 30px;
-  background-color: red;
+  background-color: brown;
+  border-radius: 10%;
   position: absolute;
   left:740px
 }
 #blockua4{
   width: 30px;
   height: 30px;
-  background-color: red;
+  background-color: brown;
+  border-radius: 10%;
   position: absolute;
   left:765px
 }
 #blockb4{
   width: 30px;
   height: 30px;
-  background-color: red;
+  background-color: brown;
+  border-radius: 10%;
   position: absolute;
   left:805px
 }
 #blockc5{
   width: 30px;
   height: 30px;
-  background-color: red;
+  background-color: brown;
+  border-radius: 10%;
   position: absolute;
   left:865px
 }
@@ -312,7 +338,7 @@
   font-size: 36px;
   font-family: 'Courier New', Courier, monospace;
   font-weight: bold;
-  color: #FF4500;
+  color: rgb(188, 4, 188);
   text-shadow: 1px 1px 2px #000000;
   position: relative;
   left: 40%;
@@ -321,11 +347,18 @@
   font-size: 36px;
   font-family: 'Courier New', Courier, monospace;
   font-weight: bold;
-  color: grey;
+  color:rgb(252, 186, 5);
   text-shadow: 1px 1px 2px #000000;
   position: relative;
   left: 40%;
 }
-.active{
-  background-color: plum;
+.active-white{
+  background-color: rgb(247, 169, 124);
+  
+  
+}
+.active-black{
+  background-color: rgb(172, 29, 29);
+ 
+  
 }
