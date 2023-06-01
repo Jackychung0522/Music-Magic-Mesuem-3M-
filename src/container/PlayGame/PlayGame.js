@@ -195,70 +195,217 @@ const PlayGame = () => {
         const block = blocks.find((block) => block.element.id === "blockc3");
 
         if (block && block.top >= 330 && block.top <= 370) {
-          block.isAlive = false;
-          playingBlock.removeChild(block.element);
-          blocks.splice(blocks.indexOf(block), 1);
-          score += singlepoint;
+          if (block && block.top >= 345 && block.top <= 355) {
+            block.isAlive = false;
+            playingBlock.removeChild(block.element);
+            const perfectText = document.createElement("div");
+            perfectText.className = "perfect-text";
+            perfectText.textContent = "Perfect";
+            forscore.appendChild(perfectText);
+            setTimeout(() => {
+              forscore.removeChild(perfectText);
+            }, 1000);
+            blocks.splice(blocks.indexOf(block), 1);
+            score += singlepoint;
+          } else {
+            block.isAlive = false;
+            playingBlock.removeChild(block.element);
+            const goodText = document.createElement("div");
+            goodText.className = "good-text";
+            goodText.textContent = "Good";
+            forscore.appendChild(goodText);
+            setTimeout(() => {
+              forscore.removeChild(goodText);
+            }, 1000);
+            blocks.splice(blocks.indexOf(block), 1);
+            score += singlepoint / 2;
+          }
         }
       }
       if (keyPressed === "W") {
         const block = blocks.find((block) => block.element.id === "blockd3");
 
         if (block && block.top >= 330 && block.top <= 370) {
-          block.isAlive = false;
-          playingBlock.removeChild(block.element);
-          blocks.splice(blocks.indexOf(block), 1);
-          score += singlepoint;
+          if (block && block.top >= 345 && block.top <= 355) {
+            block.isAlive = false;
+            playingBlock.removeChild(block.element);
+            const perfectText = document.createElement("div");
+            perfectText.className = "perfect-text";
+            perfectText.textContent = "Perfect";
+            forscore.appendChild(perfectText);
+            setTimeout(() => {
+              forscore.removeChild(perfectText);
+            }, 1000);
+            blocks.splice(blocks.indexOf(block), 1);
+            score += singlepoint;
+          } else {
+            block.isAlive = false;
+            playingBlock.removeChild(block.element);
+            const goodText = document.createElement("div");
+            goodText.className = "good-text";
+            goodText.textContent = "Good";
+            forscore.appendChild(goodText);
+            setTimeout(() => {
+              forscore.removeChild(goodText);
+            }, 1000);
+            blocks.splice(blocks.indexOf(block), 1);
+            score += singlepoint / 2;
+          }
         }
       }
       if (keyPressed === "E") {
         const block = blocks.find((block) => block.element.id === "blocke3");
 
         if (block && block.top >= 330 && block.top <= 370) {
-          block.isAlive = false;
-          playingBlock.removeChild(block.element);
-          blocks.splice(blocks.indexOf(block), 1);
-          score += singlepoint;
+          if (block && block.top >= 345 && block.top <= 355) {
+            block.isAlive = false;
+            playingBlock.removeChild(block.element);
+            const perfectText = document.createElement("div");
+            perfectText.className = "perfect-text";
+            perfectText.textContent = "Perfect";
+            forscore.appendChild(perfectText);
+            setTimeout(() => {
+              forscore.removeChild(perfectText);
+            }, 1000);
+            blocks.splice(blocks.indexOf(block), 1);
+            score += singlepoint;
+          } else {
+            block.isAlive = false;
+            playingBlock.removeChild(block.element);
+            const goodText = document.createElement("div");
+            goodText.className = "good-text";
+            goodText.textContent = "Good";
+            forscore.appendChild(goodText);
+            setTimeout(() => {
+              forscore.removeChild(goodText);
+            }, 1000);
+            blocks.splice(blocks.indexOf(block), 1);
+            score += singlepoint / 2;
+          }
         }
       }
       if (keyPressed === "R") {
         const block = blocks.find((block) => block.element.id === "blockf3");
 
         if (block && block.top >= 330 && block.top <= 370) {
-          block.isAlive = false;
-          playingBlock.removeChild(block.element);
-          blocks.splice(blocks.indexOf(block), 1);
-          score += singlepoint;
+          if (block && block.top >= 345 && block.top <= 355) {
+            block.isAlive = false;
+            playingBlock.removeChild(block.element);
+            const perfectText = document.createElement("div");
+            perfectText.className = "perfect-text";
+            perfectText.textContent = "Perfect";
+            forscore.appendChild(perfectText);
+            setTimeout(() => {
+              forscore.removeChild(perfectText);
+            }, 1000);
+            blocks.splice(blocks.indexOf(block), 1);
+            score += singlepoint;
+          } else {
+            block.isAlive = false;
+            playingBlock.removeChild(block.element);
+            const goodText = document.createElement("div");
+            goodText.className = "good-text";
+            goodText.textContent = "Good";
+            forscore.appendChild(goodText);
+            setTimeout(() => {
+              forscore.removeChild(goodText);
+            }, 1000);
+            blocks.splice(blocks.indexOf(block), 1);
+            score += singlepoint / 2;
+          }
         }
       }
       if (keyPressed === "T") {
         const block = blocks.find((block) => block.element.id === "blockg3");
 
         if (block && block.top >= 330 && block.top <= 370) {
-          block.isAlive = false;
-          playingBlock.removeChild(block.element);
-          blocks.splice(blocks.indexOf(block), 1);
-          score += singlepoint;
+          if (block && block.top >= 345 && block.top <= 355) {
+            block.isAlive = false;
+            playingBlock.removeChild(block.element);
+            const perfectText = document.createElement("div");
+            perfectText.className = "perfect-text";
+            perfectText.textContent = "Perfect";
+            forscore.appendChild(perfectText);
+            setTimeout(() => {
+              forscore.removeChild(perfectText);
+            }, 1000);
+            blocks.splice(blocks.indexOf(block), 1);
+            score += singlepoint;
+          } else {
+            block.isAlive = false;
+            playingBlock.removeChild(block.element);
+            const goodText = document.createElement("div");
+            goodText.className = "good-text";
+            goodText.textContent = "Good";
+            forscore.appendChild(goodText);
+            setTimeout(() => {
+              forscore.removeChild(goodText);
+            }, 1000);
+            blocks.splice(blocks.indexOf(block), 1);
+            score += singlepoint / 2;
+          }
         }
       }
       if (keyPressed === "Y") {
         const block = blocks.find((block) => block.element.id === "blocka3");
 
         if (block && block.top >= 330 && block.top <= 370) {
-          block.isAlive = false;
-          playingBlock.removeChild(block.element);
-          blocks.splice(blocks.indexOf(block), 1);
-          score += singlepoint;
+          if (block && block.top >= 345 && block.top <= 355) {
+            block.isAlive = false;
+            playingBlock.removeChild(block.element);
+            const perfectText = document.createElement("div");
+            perfectText.className = "perfect-text";
+            perfectText.textContent = "Perfect";
+            forscore.appendChild(perfectText);
+            setTimeout(() => {
+              forscore.removeChild(perfectText);
+            }, 1000);
+            blocks.splice(blocks.indexOf(block), 1);
+            score += singlepoint;
+          } else {
+            block.isAlive = false;
+            playingBlock.removeChild(block.element);
+            const goodText = document.createElement("div");
+            goodText.className = "good-text";
+            goodText.textContent = "Good";
+            forscore.appendChild(goodText);
+            setTimeout(() => {
+              forscore.removeChild(goodText);
+            }, 1000);
+            blocks.splice(blocks.indexOf(block), 1);
+            score += singlepoint / 2;
+          }
         }
       }
       if (keyPressed === "U") {
         const block = blocks.find((block) => block.element.id === "blockb3");
 
         if (block && block.top >= 330 && block.top <= 370) {
-          block.isAlive = false;
-          playingBlock.removeChild(block.element);
-          blocks.splice(blocks.indexOf(block), 1);
-          score += singlepoint;
+          if (block && block.top >= 345 && block.top <= 355) {
+            block.isAlive = false;
+            playingBlock.removeChild(block.element);
+            const perfectText = document.createElement("div");
+            perfectText.className = "perfect-text";
+            perfectText.textContent = "Perfect";
+            forscore.appendChild(perfectText);
+            setTimeout(() => {
+              forscore.removeChild(perfectText);
+            }, 1000);
+            blocks.splice(blocks.indexOf(block), 1);
+            score += singlepoint;
+          } else {
+            block.isAlive = false;
+            playingBlock.removeChild(block.element);
+            const goodText = document.createElement("div");
+            goodText.className = "good-text";
+            goodText.textContent = "Good";
+            forscore.appendChild(goodText);
+            setTimeout(() => {
+              forscore.removeChild(goodText);
+            }, 1000);
+            blocks.splice(blocks.indexOf(block), 1);
+            score += singlepoint / 2;
+          }
         }
       }
       if (keyPressed === "C") {
@@ -266,187 +413,564 @@ const PlayGame = () => {
         const block = blocks.find((block) => block.element.id === "blockc4");
 
         if (block && block.top >= 330 && block.top <= 370) {
-          block.isAlive = false;
-          playingBlock.removeChild(block.element);
-          blocks.splice(blocks.indexOf(block), 1);
-          score += singlepoint;
+          if (block && block.top >= 345 && block.top <= 355) {
+            block.isAlive = false;
+            playingBlock.removeChild(block.element);
+            const perfectText = document.createElement("div");
+            perfectText.className = "perfect-text";
+            perfectText.textContent = "Perfect";
+            forscore.appendChild(perfectText);
+            setTimeout(() => {
+              forscore.removeChild(perfectText);
+            }, 1000);
+            blocks.splice(blocks.indexOf(block), 1);
+            score += singlepoint;
+          } else {
+            block.isAlive = false;
+            playingBlock.removeChild(block.element);
+            const goodText = document.createElement("div");
+            goodText.className = "good-text";
+            goodText.textContent = "Good";
+            forscore.appendChild(goodText);
+            setTimeout(() => {
+              forscore.removeChild(goodText);
+            }, 1000);
+            blocks.splice(blocks.indexOf(block), 1);
+            score += singlepoint / 2;
+          }
         }
       }
       if (keyPressed === "V") {
         const block = blocks.find((block) => block.element.id === "blockd4");
 
         if (block && block.top >= 330 && block.top <= 370) {
-          block.isAlive = false;
-          playingBlock.removeChild(block.element);
-          blocks.splice(blocks.indexOf(block), 1);
-          score += singlepoint;
+          if (block && block.top >= 345 && block.top <= 355) {
+            block.isAlive = false;
+            playingBlock.removeChild(block.element);
+            const perfectText = document.createElement("div");
+            perfectText.className = "perfect-text";
+            perfectText.textContent = "Perfect";
+            forscore.appendChild(perfectText);
+            setTimeout(() => {
+              forscore.removeChild(perfectText);
+            }, 1000);
+            blocks.splice(blocks.indexOf(block), 1);
+            score += singlepoint;
+          } else {
+            block.isAlive = false;
+            playingBlock.removeChild(block.element);
+            const goodText = document.createElement("div");
+            goodText.className = "good-text";
+            goodText.textContent = "Good";
+            forscore.appendChild(goodText);
+            setTimeout(() => {
+              forscore.removeChild(goodText);
+            }, 1000);
+            blocks.splice(blocks.indexOf(block), 1);
+            score += singlepoint / 2;
+          }
         }
       }
       if (keyPressed === "B") {
         const block = blocks.find((block) => block.element.id === "blocke4");
 
         if (block && block.top >= 330 && block.top <= 370) {
-          block.isAlive = false;
-          playingBlock.removeChild(block.element);
-          blocks.splice(blocks.indexOf(block), 1);
-          score += singlepoint;
+          if (block && block.top >= 345 && block.top <= 355) {
+            block.isAlive = false;
+            playingBlock.removeChild(block.element);
+            const perfectText = document.createElement("div");
+            perfectText.className = "perfect-text";
+            perfectText.textContent = "Perfect";
+            forscore.appendChild(perfectText);
+            setTimeout(() => {
+              forscore.removeChild(perfectText);
+            }, 1000);
+            blocks.splice(blocks.indexOf(block), 1);
+            score += singlepoint;
+          } else {
+            block.isAlive = false;
+            playingBlock.removeChild(block.element);
+            const goodText = document.createElement("div");
+            goodText.className = "good-text";
+            goodText.textContent = "Good";
+            forscore.appendChild(goodText);
+            setTimeout(() => {
+              forscore.removeChild(goodText);
+            }, 1000);
+            blocks.splice(blocks.indexOf(block), 1);
+            score += singlepoint / 2;
+          }
         }
       }
       if (keyPressed === "N") {
         const block = blocks.find((block) => block.element.id === "blockf4");
 
         if (block && block.top >= 330 && block.top <= 370) {
-          block.isAlive = false;
-          playingBlock.removeChild(block.element);
-          blocks.splice(blocks.indexOf(block), 1);
-          score += singlepoint;
+          if (block && block.top >= 345 && block.top <= 355) {
+            block.isAlive = false;
+            playingBlock.removeChild(block.element);
+            const perfectText = document.createElement("div");
+            perfectText.className = "perfect-text";
+            perfectText.textContent = "Perfect";
+            forscore.appendChild(perfectText);
+            setTimeout(() => {
+              forscore.removeChild(perfectText);
+            }, 1000);
+            blocks.splice(blocks.indexOf(block), 1);
+            score += singlepoint;
+          } else {
+            block.isAlive = false;
+            playingBlock.removeChild(block.element);
+            const goodText = document.createElement("div");
+            goodText.className = "good-text";
+            goodText.textContent = "Good";
+            forscore.appendChild(goodText);
+            setTimeout(() => {
+              forscore.removeChild(goodText);
+            }, 1000);
+            blocks.splice(blocks.indexOf(block), 1);
+            score += singlepoint / 2;
+          }
         }
       }
       if (keyPressed === "M") {
         const block = blocks.find((block) => block.element.id === "blockg4");
 
         if (block && block.top >= 330 && block.top <= 370) {
-          block.isAlive = false;
-          playingBlock.removeChild(block.element);
-          blocks.splice(blocks.indexOf(block), 1);
-          score += singlepoint;
+          if (block && block.top >= 345 && block.top <= 355) {
+            block.isAlive = false;
+            playingBlock.removeChild(block.element);
+            const perfectText = document.createElement("div");
+            perfectText.className = "perfect-text";
+            perfectText.textContent = "Perfect";
+            forscore.appendChild(perfectText);
+            setTimeout(() => {
+              forscore.removeChild(perfectText);
+            }, 1000);
+            blocks.splice(blocks.indexOf(block), 1);
+            score += singlepoint;
+          } else {
+            block.isAlive = false;
+            playingBlock.removeChild(block.element);
+            const goodText = document.createElement("div");
+            goodText.className = "good-text";
+            goodText.textContent = "Good";
+            forscore.appendChild(goodText);
+            setTimeout(() => {
+              forscore.removeChild(goodText);
+            }, 1000);
+            blocks.splice(blocks.indexOf(block), 1);
+            score += singlepoint / 2;
+          }
         }
       }
       if (keyPressed === ",") {
         const block = blocks.find((block) => block.element.id === "blocka4");
         console.log(keyPressed);
         if (block && block.top >= 330 && block.top <= 370) {
-          block.isAlive = false;
-          playingBlock.removeChild(block.element);
-          blocks.splice(blocks.indexOf(block), 1);
-          score += singlepoint;
+          if (block && block.top >= 345 && block.top <= 355) {
+            block.isAlive = false;
+            playingBlock.removeChild(block.element);
+            const perfectText = document.createElement("div");
+            perfectText.className = "perfect-text";
+            perfectText.textContent = "Perfect";
+            forscore.appendChild(perfectText);
+            setTimeout(() => {
+              forscore.removeChild(perfectText);
+            }, 1000);
+            blocks.splice(blocks.indexOf(block), 1);
+            score += singlepoint;
+          } else {
+            block.isAlive = false;
+            playingBlock.removeChild(block.element);
+            const goodText = document.createElement("div");
+            goodText.className = "good-text";
+            goodText.textContent = "Good";
+            forscore.appendChild(goodText);
+            setTimeout(() => {
+              forscore.removeChild(goodText);
+            }, 1000);
+            blocks.splice(blocks.indexOf(block), 1);
+            score += singlepoint / 2;
+          }
         }
       }
       if (keyPressed === ".") {
         const block = blocks.find((block) => block.element.id === "blockb4");
         console.log(keyPressed);
         if (block && block.top >= 330 && block.top <= 370) {
-          block.isAlive = false;
-          playingBlock.removeChild(block.element);
-          blocks.splice(blocks.indexOf(block), 1);
-          score += singlepoint;
+          if (block && block.top >= 345 && block.top <= 355) {
+            block.isAlive = false;
+            playingBlock.removeChild(block.element);
+            const perfectText = document.createElement("div");
+            perfectText.className = "perfect-text";
+            perfectText.textContent = "Perfect";
+            forscore.appendChild(perfectText);
+            setTimeout(() => {
+              forscore.removeChild(perfectText);
+            }, 1000);
+            blocks.splice(blocks.indexOf(block), 1);
+            score += singlepoint;
+          } else {
+            block.isAlive = false;
+            playingBlock.removeChild(block.element);
+            const goodText = document.createElement("div");
+            goodText.className = "good-text";
+            goodText.textContent = "Good";
+            forscore.appendChild(goodText);
+            setTimeout(() => {
+              forscore.removeChild(goodText);
+            }, 1000);
+            blocks.splice(blocks.indexOf(block), 1);
+            score += singlepoint / 2;
+          }
         }
       }
       if (keyPressed === "/") {
         const block = blocks.find((block) => block.element.id === "blockc5");
         console.log(keyPressed);
         if (block && block.top >= 330 && block.top <= 370) {
-          block.isAlive = false;
-          playingBlock.removeChild(block.element);
-          blocks.splice(blocks.indexOf(block), 1);
-          score += singlepoint;
+          if (block && block.top >= 345 && block.top <= 355) {
+            block.isAlive = false;
+            playingBlock.removeChild(block.element);
+            const perfectText = document.createElement("div");
+            perfectText.className = "perfect-text";
+            perfectText.textContent = "Perfect";
+            forscore.appendChild(perfectText);
+            setTimeout(() => {
+              forscore.removeChild(perfectText);
+            }, 1000);
+            blocks.splice(blocks.indexOf(block), 1);
+            score += singlepoint;
+          } else {
+            block.isAlive = false;
+            playingBlock.removeChild(block.element);
+            const goodText = document.createElement("div");
+            goodText.className = "good-text";
+            goodText.textContent = "Good";
+            forscore.appendChild(goodText);
+            setTimeout(() => {
+              forscore.removeChild(goodText);
+            }, 1000);
+            blocks.splice(blocks.indexOf(block), 1);
+            score += singlepoint / 2;
+          }
         }
       }
       if (keyPressed === "2") {
         const block = blocks.find((block) => block.element.id === "blockuc3");
         console.log(keyPressed);
         if (block && block.top >= 330 && block.top <= 370) {
-          block.isAlive = false;
-          playingBlock.removeChild(block.element);
-          blocks.splice(blocks.indexOf(block), 1);
-          score += singlepoint;
+          if (block && block.top >= 345 && block.top <= 355) {
+            block.isAlive = false;
+            playingBlock.removeChild(block.element);
+            const perfectText = document.createElement("div");
+            perfectText.className = "perfect-text";
+            perfectText.textContent = "Perfect";
+            forscore.appendChild(perfectText);
+            setTimeout(() => {
+              forscore.removeChild(perfectText);
+            }, 1000);
+            blocks.splice(blocks.indexOf(block), 1);
+            score += singlepoint;
+          } else {
+            block.isAlive = false;
+            playingBlock.removeChild(block.element);
+            const goodText = document.createElement("div");
+            goodText.className = "good-text";
+            goodText.textContent = "Good";
+            forscore.appendChild(goodText);
+            setTimeout(() => {
+              forscore.removeChild(goodText);
+            }, 1000);
+            blocks.splice(blocks.indexOf(block), 1);
+            score += singlepoint / 2;
+          }
         }
       }
       if (keyPressed === "3") {
         const block = blocks.find((block) => block.element.id === "blockud3");
         console.log(keyPressed);
         if (block && block.top >= 330 && block.top <= 370) {
-          block.isAlive = false;
-          playingBlock.removeChild(block.element);
-          blocks.splice(blocks.indexOf(block), 1);
-          score += singlepoint;
+          if (block && block.top >= 345 && block.top <= 355) {
+            block.isAlive = false;
+            playingBlock.removeChild(block.element);
+            const perfectText = document.createElement("div");
+            perfectText.className = "perfect-text";
+            perfectText.textContent = "Perfect";
+            forscore.appendChild(perfectText);
+            setTimeout(() => {
+              forscore.removeChild(perfectText);
+            }, 1000);
+            blocks.splice(blocks.indexOf(block), 1);
+            score += singlepoint;
+          } else {
+            block.isAlive = false;
+            playingBlock.removeChild(block.element);
+            const goodText = document.createElement("div");
+            goodText.className = "good-text";
+            goodText.textContent = "Good";
+            forscore.appendChild(goodText);
+            setTimeout(() => {
+              forscore.removeChild(goodText);
+            }, 1000);
+            blocks.splice(blocks.indexOf(block), 1);
+            score += singlepoint / 2;
+          }
         }
       }
       if (keyPressed === "5") {
         const block = blocks.find((block) => block.element.id === "blockuf3");
         console.log(keyPressed);
         if (block && block.top >= 330 && block.top <= 370) {
-          block.isAlive = false;
-          playingBlock.removeChild(block.element);
-          blocks.splice(blocks.indexOf(block), 1);
-          score += singlepoint;
+          if (block && block.top >= 345 && block.top <= 355) {
+            block.isAlive = false;
+            playingBlock.removeChild(block.element);
+            const perfectText = document.createElement("div");
+            perfectText.className = "perfect-text";
+            perfectText.textContent = "Perfect";
+            forscore.appendChild(perfectText);
+            setTimeout(() => {
+              forscore.removeChild(perfectText);
+            }, 1000);
+            blocks.splice(blocks.indexOf(block), 1);
+            score += singlepoint;
+          } else {
+            block.isAlive = false;
+            playingBlock.removeChild(block.element);
+            const goodText = document.createElement("div");
+            goodText.className = "good-text";
+            goodText.textContent = "Good";
+            forscore.appendChild(goodText);
+            setTimeout(() => {
+              forscore.removeChild(goodText);
+            }, 1000);
+            blocks.splice(blocks.indexOf(block), 1);
+            score += singlepoint / 2;
+          }
         }
       }
       if (keyPressed === "6") {
         const block = blocks.find((block) => block.element.id === "blockug3");
         console.log(keyPressed);
         if (block && block.top >= 330 && block.top <= 370) {
-          block.isAlive = false;
-          playingBlock.removeChild(block.element);
-          blocks.splice(blocks.indexOf(block), 1);
-          score += singlepoint;
+          if (block && block.top >= 345 && block.top <= 355) {
+            block.isAlive = false;
+            playingBlock.removeChild(block.element);
+            const perfectText = document.createElement("div");
+            perfectText.className = "perfect-text";
+            perfectText.textContent = "Perfect";
+            forscore.appendChild(perfectText);
+            setTimeout(() => {
+              forscore.removeChild(perfectText);
+            }, 1000);
+            blocks.splice(blocks.indexOf(block), 1);
+            score += singlepoint;
+          } else {
+            block.isAlive = false;
+            playingBlock.removeChild(block.element);
+            const goodText = document.createElement("div");
+            goodText.className = "good-text";
+            goodText.textContent = "Good";
+            forscore.appendChild(goodText);
+            setTimeout(() => {
+              forscore.removeChild(goodText);
+            }, 1000);
+            blocks.splice(blocks.indexOf(block), 1);
+            score += singlepoint / 2;
+          }
         }
       }
       if (keyPressed === "7") {
         const block = blocks.find((block) => block.element.id === "blockua3");
         console.log(keyPressed);
         if (block && block.top >= 330 && block.top <= 370) {
-          block.isAlive = false;
-          playingBlock.removeChild(block.element);
-          blocks.splice(blocks.indexOf(block), 1);
-          score += singlepoint;
+          if (block && block.top >= 345 && block.top <= 355) {
+            block.isAlive = false;
+            playingBlock.removeChild(block.element);
+            const perfectText = document.createElement("div");
+            perfectText.className = "perfect-text";
+            perfectText.textContent = "Perfect";
+            forscore.appendChild(perfectText);
+            setTimeout(() => {
+              forscore.removeChild(perfectText);
+            }, 1000);
+            blocks.splice(blocks.indexOf(block), 1);
+            score += singlepoint;
+          } else {
+            block.isAlive = false;
+            playingBlock.removeChild(block.element);
+            const goodText = document.createElement("div");
+            goodText.className = "good-text";
+            goodText.textContent = "Good";
+            forscore.appendChild(goodText);
+            setTimeout(() => {
+              forscore.removeChild(goodText);
+            }, 1000);
+            blocks.splice(blocks.indexOf(block), 1);
+            score += singlepoint / 2;
+          }
         }
       }
       if (keyPressed === "F") {
         const block = blocks.find((block) => block.element.id === "blockuc4");
         console.log(keyPressed);
         if (block && block.top >= 330 && block.top <= 370) {
-          block.isAlive = false;
-          playingBlock.removeChild(block.element);
-          blocks.splice(blocks.indexOf(block), 1);
-          score += singlepoint;
+          if (block && block.top >= 345 && block.top <= 355) {
+            block.isAlive = false;
+            playingBlock.removeChild(block.element);
+            const perfectText = document.createElement("div");
+            perfectText.className = "perfect-text";
+            perfectText.textContent = "Perfect";
+            forscore.appendChild(perfectText);
+            setTimeout(() => {
+              forscore.removeChild(perfectText);
+            }, 1000);
+            blocks.splice(blocks.indexOf(block), 1);
+            score += singlepoint;
+          } else {
+            block.isAlive = false;
+            playingBlock.removeChild(block.element);
+            const goodText = document.createElement("div");
+            goodText.className = "good-text";
+            goodText.textContent = "Good";
+            forscore.appendChild(goodText);
+            setTimeout(() => {
+              forscore.removeChild(goodText);
+            }, 1000);
+            blocks.splice(blocks.indexOf(block), 1);
+            score += singlepoint / 2;
+          }
         }
       }
       if (keyPressed === "G") {
         const block = blocks.find((block) => block.element.id === "blockud4");
 
         if (block && block.top >= 330 && block.top <= 370) {
-          block.status = "perfect";
-          score += singlepoint;
-          //   block.isAlive = false;
-
-          //   playingBlock.removeChild(block.element);
-          //   blocks.splice(blocks.indexOf(block), 1);
+          if (block && block.top >= 345 && block.top <= 355) {
+            block.isAlive = false;
+            playingBlock.removeChild(block.element);
+            const perfectText = document.createElement("div");
+            perfectText.className = "perfect-text";
+            perfectText.textContent = "Perfect";
+            forscore.appendChild(perfectText);
+            setTimeout(() => {
+              forscore.removeChild(perfectText);
+            }, 1000);
+            blocks.splice(blocks.indexOf(block), 1);
+            score += singlepoint;
+          } else {
+            block.isAlive = false;
+            playingBlock.removeChild(block.element);
+            const goodText = document.createElement("div");
+            goodText.className = "good-text";
+            goodText.textContent = "Good";
+            forscore.appendChild(goodText);
+            setTimeout(() => {
+              forscore.removeChild(goodText);
+            }, 1000);
+            blocks.splice(blocks.indexOf(block), 1);
+            score += singlepoint / 2;
+          }
         }
       }
       if (keyPressed === "J") {
         const block = blocks.find((block) => block.element.id === "blockuf4");
         console.log(keyPressed);
         if (block && block.top >= 330 && block.top <= 370) {
-          block.isAlive = false;
-          playingBlock.removeChild(block.element);
-          blocks.splice(blocks.indexOf(block), 1);
-          score += singlepoint;
+          if (block && block.top >= 345 && block.top <= 355) {
+            block.isAlive = false;
+            playingBlock.removeChild(block.element);
+            const perfectText = document.createElement("div");
+            perfectText.className = "perfect-text";
+            perfectText.textContent = "Perfect";
+            forscore.appendChild(perfectText);
+            setTimeout(() => {
+              forscore.removeChild(perfectText);
+            }, 1000);
+            blocks.splice(blocks.indexOf(block), 1);
+            score += singlepoint;
+          } else {
+            block.isAlive = false;
+            playingBlock.removeChild(block.element);
+            const goodText = document.createElement("div");
+            goodText.className = "good-text";
+            goodText.textContent = "Good";
+            forscore.appendChild(goodText);
+            setTimeout(() => {
+              forscore.removeChild(goodText);
+            }, 1000);
+            blocks.splice(blocks.indexOf(block), 1);
+            score += singlepoint / 2;
+          }
         }
       }
       if (keyPressed === "K") {
         const block = blocks.find((block) => block.element.id === "blockug4");
         console.log(keyPressed);
         if (block && block.top >= 330 && block.top <= 370) {
-          block.isAlive = false;
-          playingBlock.removeChild(block.element);
-          blocks.splice(blocks.indexOf(block), 1);
-          score += singlepoint;
+          if (block && block.top >= 345 && block.top <= 355) {
+            block.isAlive = false;
+            playingBlock.removeChild(block.element);
+            const perfectText = document.createElement("div");
+            perfectText.className = "perfect-text";
+            perfectText.textContent = "Perfect";
+            forscore.appendChild(perfectText);
+            setTimeout(() => {
+              forscore.removeChild(perfectText);
+            }, 1000);
+            blocks.splice(blocks.indexOf(block), 1);
+            score += singlepoint;
+          } else {
+            block.isAlive = false;
+            playingBlock.removeChild(block.element);
+            const goodText = document.createElement("div");
+            goodText.className = "good-text";
+            goodText.textContent = "Good";
+            forscore.appendChild(goodText);
+            setTimeout(() => {
+              forscore.removeChild(goodText);
+            }, 1000);
+            blocks.splice(blocks.indexOf(block), 1);
+            score += singlepoint / 2;
+          }
         }
       }
       if (keyPressed === "L") {
         const block = blocks.find((block) => block.element.id === "blockua4");
         console.log(keyPressed);
         if (block && block.top >= 330 && block.top <= 370) {
-          block.isAlive = false;
-          container.removeChild(block.element);
-          blocks.splice(blocks.indexOf(block), 1);
-          score += singlepoint;
+          if (block && block.top >= 345 && block.top <= 355) {
+            block.isAlive = false;
+            playingBlock.removeChild(block.element);
+            const perfectText = document.createElement("div");
+            perfectText.className = "perfect-text";
+            perfectText.textContent = "Perfect";
+            forscore.appendChild(perfectText);
+            setTimeout(() => {
+              forscore.removeChild(perfectText);
+            }, 1000);
+            blocks.splice(blocks.indexOf(block), 1);
+            score += singlepoint;
+          } else {
+            block.isAlive = false;
+            playingBlock.removeChild(block.element);
+            const goodText = document.createElement("div");
+            goodText.className = "good-text";
+            goodText.textContent = "Good";
+            forscore.appendChild(goodText);
+            setTimeout(() => {
+              forscore.removeChild(goodText);
+            }, 1000);
+            blocks.splice(blocks.indexOf(block), 1);
+            score += singlepoint / 2;
+          }
         }
       }
     };
     const container = document.getElementById("container");
     const playingBlock = document.querySelector(".playingBlock");
+    const forscore = document.querySelector(".forscore");
     const blocks = [];
     let currentIndex = 0;
     // 创建方块函数
@@ -523,15 +1047,9 @@ const PlayGame = () => {
       for (let i = 0; i < blocks.length; i++) {
         const block = blocks[i];
         if (block.isAlive) {
-          if (block.status === "perfect") {
-            console.log("perfect");
-            block.element.textContent = "Perfect!";
-          }
           block.top += 2;
           block.element.style.top = block.top + "px";
-
-          if (block.top >= 400 || block.status === "perfect") {
-            // 将方块从数组和容器中移除
+          if (block.top >= 400) {
             block.isAlive = false;
             playingBlock.removeChild(block.element);
             blocks.splice(i, 1);
@@ -589,7 +1107,8 @@ const PlayGame = () => {
 
   return (
     <Container>
-      <p className="test"> {score}</p>
+      <div className="forscore"></div>
+
       <div className="playingBlockBlock">
         <div className="playingBlock">
           <div id="container"></div>

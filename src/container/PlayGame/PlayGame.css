@@ -305,4 +305,24 @@
   font-weight: bold;
 }
 
-  
+.forscore{
+  height: 100px;
+}
+.perfect-text{
+  font-size: 36px;
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: bold;
+  color: #FF4500;
+  text-shadow: 1px 1px 2px #000000;
+  position: relative;
+  left: 40%;
+}
+.good-text{
+  font-size: 36px;
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: bold;
+  color: grey;
+  text-shadow: 1px 1px 2px #000000;
+  position: relative;
+  left: 40%;
+}
