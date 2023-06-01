@@ -5,12 +5,23 @@ import * as Tone from "tone";
 import { useState, useEffect } from "react";
 import db from "../../index";
 import bigyellowbee from "../../ spectrum/bigyellowbee.json";
-
+let score = 0;
+let currentPoint = 0;
 const PlayGame = () => {
   const currentSong = sessionStorage.getItem("currentSong");
+
+  let singlepoint = 0;
   let notes = [];
+  let validnote = 0;
   if (currentSong === "Big Yellow Bee") {
     notes = bigyellowbee;
+    console.log("notelen:", notes.length);
+    for (let i = 0; i < notes.length; i++) {
+      if (notes[i].note !== "") {
+        validnote++;
+      }
+      singlepoint = 10000 / validnote;
+    }
   }
   useEffect(() => {
     const synth = new Tone.Sampler({
@@ -187,6 +198,7 @@ const PlayGame = () => {
           block.isAlive = false;
           playingBlock.removeChild(block.element);
           blocks.splice(blocks.indexOf(block), 1);
+          score += singlepoint;
         }
       }
       if (keyPressed === "W") {
@@ -196,6 +208,7 @@ const PlayGame = () => {
           block.isAlive = false;
           playingBlock.removeChild(block.element);
           blocks.splice(blocks.indexOf(block), 1);
+          score += singlepoint;
         }
       }
       if (keyPressed === "E") {
@@ -205,6 +218,7 @@ const PlayGame = () => {
           block.isAlive = false;
           playingBlock.removeChild(block.element);
           blocks.splice(blocks.indexOf(block), 1);
+          score += singlepoint;
         }
       }
       if (keyPressed === "R") {
@@ -214,6 +228,7 @@ const PlayGame = () => {
           block.isAlive = false;
           playingBlock.removeChild(block.element);
           blocks.splice(blocks.indexOf(block), 1);
+          score += singlepoint;
         }
       }
       if (keyPressed === "T") {
@@ -223,6 +238,7 @@ const PlayGame = () => {
           block.isAlive = false;
           playingBlock.removeChild(block.element);
           blocks.splice(blocks.indexOf(block), 1);
+          score += singlepoint;
         }
       }
       if (keyPressed === "Y") {
@@ -232,6 +248,7 @@ const PlayGame = () => {
           block.isAlive = false;
           playingBlock.removeChild(block.element);
           blocks.splice(blocks.indexOf(block), 1);
+          score += singlepoint;
         }
       }
       if (keyPressed === "U") {
@@ -241,6 +258,7 @@ const PlayGame = () => {
           block.isAlive = false;
           playingBlock.removeChild(block.element);
           blocks.splice(blocks.indexOf(block), 1);
+          score += singlepoint;
         }
       }
       if (keyPressed === "C") {
@@ -251,6 +269,7 @@ const PlayGame = () => {
           block.isAlive = false;
           playingBlock.removeChild(block.element);
           blocks.splice(blocks.indexOf(block), 1);
+          score += singlepoint;
         }
       }
       if (keyPressed === "V") {
@@ -260,6 +279,7 @@ const PlayGame = () => {
           block.isAlive = false;
           playingBlock.removeChild(block.element);
           blocks.splice(blocks.indexOf(block), 1);
+          score += singlepoint;
         }
       }
       if (keyPressed === "B") {
@@ -269,6 +289,7 @@ const PlayGame = () => {
           block.isAlive = false;
           playingBlock.removeChild(block.element);
           blocks.splice(blocks.indexOf(block), 1);
+          score += singlepoint;
         }
       }
       if (keyPressed === "N") {
@@ -278,6 +299,7 @@ const PlayGame = () => {
           block.isAlive = false;
           playingBlock.removeChild(block.element);
           blocks.splice(blocks.indexOf(block), 1);
+          score += singlepoint;
         }
       }
       if (keyPressed === "M") {
@@ -287,6 +309,9 @@ const PlayGame = () => {
           block.isAlive = false;
           playingBlock.removeChild(block.element);
           blocks.splice(blocks.indexOf(block), 1);
+          score += singlepoint;
+          console.log(singlepoint);
+          console.log(score);
         }
       }
       if (keyPressed === ",") {
@@ -296,6 +321,7 @@ const PlayGame = () => {
           block.isAlive = false;
           playingBlock.removeChild(block.element);
           blocks.splice(blocks.indexOf(block), 1);
+          score += singlepoint;
         }
       }
       if (keyPressed === ".") {
@@ -305,6 +331,7 @@ const PlayGame = () => {
           block.isAlive = false;
           playingBlock.removeChild(block.element);
           blocks.splice(blocks.indexOf(block), 1);
+          score += singlepoint;
         }
       }
       if (keyPressed === "/") {
@@ -314,6 +341,7 @@ const PlayGame = () => {
           block.isAlive = false;
           playingBlock.removeChild(block.element);
           blocks.splice(blocks.indexOf(block), 1);
+          score += singlepoint;
         }
       }
       if (keyPressed === "2") {
@@ -323,6 +351,7 @@ const PlayGame = () => {
           block.isAlive = false;
           playingBlock.removeChild(block.element);
           blocks.splice(blocks.indexOf(block), 1);
+          score += singlepoint;
         }
       }
       if (keyPressed === "3") {
@@ -332,6 +361,7 @@ const PlayGame = () => {
           block.isAlive = false;
           playingBlock.removeChild(block.element);
           blocks.splice(blocks.indexOf(block), 1);
+          score += singlepoint;
         }
       }
       if (keyPressed === "5") {
@@ -341,6 +371,7 @@ const PlayGame = () => {
           block.isAlive = false;
           playingBlock.removeChild(block.element);
           blocks.splice(blocks.indexOf(block), 1);
+          score += singlepoint;
         }
       }
       if (keyPressed === "6") {
@@ -350,6 +381,7 @@ const PlayGame = () => {
           block.isAlive = false;
           playingBlock.removeChild(block.element);
           blocks.splice(blocks.indexOf(block), 1);
+          score += singlepoint;
         }
       }
       if (keyPressed === "7") {
@@ -359,6 +391,7 @@ const PlayGame = () => {
           block.isAlive = false;
           playingBlock.removeChild(block.element);
           blocks.splice(blocks.indexOf(block), 1);
+          score += singlepoint;
         }
       }
       if (keyPressed === "F") {
@@ -368,6 +401,7 @@ const PlayGame = () => {
           block.isAlive = false;
           playingBlock.removeChild(block.element);
           blocks.splice(blocks.indexOf(block), 1);
+          score += singlepoint;
         }
       }
       if (keyPressed === "G") {
@@ -377,6 +411,7 @@ const PlayGame = () => {
           block.isAlive = false;
           playingBlock.removeChild(block.element);
           blocks.splice(blocks.indexOf(block), 1);
+          score += singlepoint;
         }
       }
       if (keyPressed === "J") {
@@ -386,6 +421,7 @@ const PlayGame = () => {
           block.isAlive = false;
           playingBlock.removeChild(block.element);
           blocks.splice(blocks.indexOf(block), 1);
+          score += singlepoint;
         }
       }
       if (keyPressed === "K") {
@@ -395,6 +431,7 @@ const PlayGame = () => {
           block.isAlive = false;
           playingBlock.removeChild(block.element);
           blocks.splice(blocks.indexOf(block), 1);
+          score += singlepoint;
         }
       }
       if (keyPressed === "L") {
@@ -404,6 +441,7 @@ const PlayGame = () => {
           block.isAlive = false;
           container.removeChild(block.element);
           blocks.splice(blocks.indexOf(block), 1);
+          score += singlepoint;
         }
       }
     };
@@ -416,6 +454,8 @@ const PlayGame = () => {
       // 创建新方块元素
       const block = document.createElement("div");
       block.className = "block";
+      currentPoint++;
+      console.log(currentPoint);
       if (note === "C3") {
         block.id = "blockc3";
       } else if (note === "D3") {
@@ -471,19 +511,20 @@ const PlayGame = () => {
         playingBlock.appendChild(block);
         blocks.push({
           element: block,
-          top: 100,
+          top: 0,
           isAlive: true,
         });
       }
     };
 
-    // 定义动画函数
     const animate = () => {
+      let droppedBlocks = 0;
       for (let i = 0; i < blocks.length; i++) {
         const block = blocks[i];
         if (block.isAlive) {
           block.top += 2;
           block.element.style.top = block.top + "px";
+
           if (block.top >= 400) {
             // 将方块从数组和容器中移除
             block.isAlive = false;
@@ -493,21 +534,33 @@ const PlayGame = () => {
           }
         }
       }
+
       requestAnimationFrame(animate);
     };
 
     // 设置方块的初始位置
 
     window.addEventListener("keydown", handleKeyDown);
+
     const loadNotes = (notes) => {
       setInterval(() => {
         if (currentIndex < notes.length) {
           createBlock(notes[currentIndex].note);
           currentIndex++;
         }
-      }, 500);
+        if (currentIndex === notes.length - 1) {
+          // 在最后一个方块创建后的五秒钟后显示成绩
+          setTimeout(() => {
+            const scoreDisplay = document.createElement("p");
+            scoreDisplay.textContent = `Score: ${score}`;
+            playingBlock.appendChild(scoreDisplay);
+            console.log("Score:", score);
+          }, 5000);
+        }
+      }, 1000);
     };
     loadNotes(notes);
+
     animate();
   }, []);
 
@@ -515,7 +568,7 @@ const PlayGame = () => {
 
   return (
     <Container>
-      <p className="test"> test</p>
+      <p className="test"> {score}</p>
       <div className="playingBlockBlock">
         <div className="playingBlock">
           <div id="container"></div>
