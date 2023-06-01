@@ -1,5 +1,5 @@
 import React from "react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Container } from "reactstrap";
 import "./CreateYourselfPage.css";
 import * as Tone from "tone";
@@ -131,29 +131,60 @@ const CreateYourselfPage = () => {
   const handleTempoPlus = () => {
     setTempoNumber(parseInt(tempoNumber) + 1);
   };
+  async function pikachuShot() {
+    sampler.triggerAttackRelease(["A#4"], "8n");
+  }
+  const handleSwitchOnTempoRun = () => {
+    setIsTempoRun((prevIsTempoRun) => !prevIsTempoRun);
+  };
   const [tempoNumber, setTempoNumber] = useState("100");
+  const [IsTempoRun, setIsTempoRun] = useState(false);
+  useEffect(() => {
+    let intervalId;
+    async function playWithDelay() {
+      if (IsTempoRun) {
+        intervalId = setInterval(async () => {
+          await pikachuShot();
+        }, 60000 / parseInt(tempoNumber));
+      }
+    }
+    playWithDelay();
+    // console.log(60000 / parseInt(tempoNumber));
+    return () => {
+      clearInterval(intervalId);
+    };
+  }, [IsTempoRun, tempoNumber]);
   return (
     <Container>
       <div className="tempo">
-        <button>
-          <img src={tempoRun} className="pikachu"></img>
-        </button>
-
-        <button className="keyMin" onClick={handleTempoMin}>
-          -
-        </button>
-        <input
-          id="bpmInput"
-          value={tempoNumber}
-          max="244"
-          min="30"
-          type="range"
-          onChange={handleTempoChange}
-        ></input>
-        <button className="keyPlus" onClick={handleTempoPlus}>
-          +
-        </button>
-        <p id="tempoNumber">{tempoNumber}</p>
+        <div className="pikachuButtonBlock">
+          <button
+            style={{ backgroundColor: IsTempoRun ? "red" : "blue" }}
+            className="pikachuButton"
+            onClick={handleSwitchOnTempoRun}
+          >
+            <img src={tempoRun} className="pikachu"></img>
+          </button>
+        </div>
+        <div className="bpmBlock">
+          <button className="keyMin" onClick={handleTempoMin}>
+            -
+          </button>
+          <input
+            id="bpmInput"
+            value={tempoNumber}
+            max="244"
+            min="30"
+            type="range"
+            onChange={handleTempoChange}
+          ></input>
+          <button className="keyPlus" onClick={handleTempoPlus}>
+            +
+          </button>
+        </div>
+        <div className="tempoNumberBlock">
+          <p id="tempoNumber">{tempoNumber}bpm</p>
+        </div>
       </div>
       <div className="pianoBlock">
         <div className="pianoBlockForBlack">

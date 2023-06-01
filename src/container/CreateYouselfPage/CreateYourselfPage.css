@@ -90,5 +90,37 @@ input[type="range"] {
   margin: 0 1rem;
 }
 .pikachu {
-  width: 150px;
+  width: 100px;
+}
+.pikachuButton {
+  margin-top: 30px;
+  border-radius: 30px;
+  cursor: pointer;
+}
+.pikachuButton:active {
+  background: #6127ff;
+}
+.tempo {
+  width: 500px;
+}
+.pikachuButtonBlock {
+  width: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.bpmBlock {
+  width: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.tempoNumberBlock {
+  width: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#tempoNumber {
+  font-size: 0.8cm;
 }
