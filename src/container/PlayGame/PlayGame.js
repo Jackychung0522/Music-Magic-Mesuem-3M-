@@ -5,6 +5,7 @@ import * as Tone from "tone";
 import { useState, useEffect } from "react";
 import db from "../../index";
 import bigyellowbee from "../../ spectrum/bigyellowbee.json";
+import littlestar from "../../ spectrum/littlestar.json";
 let score = 0;
 let currentPoint = 0;
 const PlayGame = () => {
@@ -15,6 +16,15 @@ const PlayGame = () => {
   let validnote = 0;
   if (currentSong === "Big Yellow Bee") {
     notes = bigyellowbee;
+    console.log("notelen:", notes.length);
+    for (let i = 0; i < notes.length; i++) {
+      if (notes[i].note !== "") {
+        validnote++;
+      }
+      singlepoint = 10000 / validnote;
+    }
+  } else if (currentSong === "Little Star") {
+    notes = littlestar;
     console.log("notelen:", notes.length);
     for (let i = 0; i < notes.length; i++) {
       if (notes[i].note !== "") {
@@ -141,54 +151,79 @@ const PlayGame = () => {
     const handleKeyDown = (event) => {
       if (event.code === "KeyQ") {
         synth.triggerAttackRelease("C3", "4n");
+        buttons[0].classList.add("active");
       } else if (event.code === "KeyW") {
         synth.triggerAttackRelease("D3", "4n");
+        buttons[1].classList.add("active");
       } else if (event.code === "KeyE") {
         synth.triggerAttackRelease("E3", "4n");
+        buttons[2].classList.add("active");
       } else if (event.code === "KeyR") {
         synth.triggerAttackRelease("F3", "4n");
+        buttons[3].classList.add("active");
       } else if (event.code === "KeyT") {
         synth.triggerAttackRelease("G3", "4n");
+        buttons[4].classList.add("active");
       } else if (event.code === "KeyY") {
         synth.triggerAttackRelease("A3", "4n");
+        buttons[5].classList.add("active");
       } else if (event.code === "KeyU") {
         synth.triggerAttackRelease("B3", "4n");
+        buttons[6].classList.add("active");
       } else if (event.code === "KeyC") {
         synth.triggerAttackRelease("C4", "4n");
+        buttons[7].classList.add("active");
       } else if (event.code === "KeyV") {
         synth.triggerAttackRelease("D4", "4n");
+        buttons[8].classList.add("active");
       } else if (event.code === "KeyB") {
         synth.triggerAttackRelease("E4", "4n");
+        buttons[9].classList.add("active");
       } else if (event.code === "KeyN") {
         synth.triggerAttackRelease("F4", "4n");
+        buttons[10].classList.add("active");
       } else if (event.code === "KeyM") {
         synth.triggerAttackRelease("G4", "4n");
+        buttons[11].classList.add("active");
       } else if (event.code === "Comma") {
         synth.triggerAttackRelease("A4", "4n");
+        buttons[12].classList.add("active");
       } else if (event.code === "Period") {
         synth.triggerAttackRelease("B4", "4n");
+        buttons[13].classList.add("active");
       } else if (event.code === "Slash") {
         synth.triggerAttackRelease("C5", "4n");
+        buttons[14].classList.add("active");
       } else if (event.code === "Digit2") {
         synth.triggerAttackRelease("C#3", "4n");
+        buttons2[0].classList.add("active");
       } else if (event.code === "Digit3") {
         synth.triggerAttackRelease("D#3'", "4n");
+        buttons2[1].classList.add("active");
       } else if (event.code === "Digit5") {
         synth.triggerAttackRelease("F#3'", "4n");
+        buttons2[2].classList.add("active");
       } else if (event.code === "Digit6") {
         synth.triggerAttackRelease("G#3", "4n");
+        buttons2[3].classList.add("active");
       } else if (event.code === "Digit7") {
         synth.triggerAttackRelease("A#3", "4n");
+        buttons2[4].classList.add("active");
       } else if (event.code === "KeyF") {
         synth.triggerAttackRelease("C#4", "4n");
+        buttons2[5].classList.add("active");
       } else if (event.code === "KeyG") {
         synth.triggerAttackRelease("D#4", "4n");
+        buttons2[6].classList.add("active");
       } else if (event.code === "KeyJ") {
         synth.triggerAttackRelease("F#4", "4n");
+        buttons2[7].classList.add("active");
       } else if (event.code === "KeyK") {
         synth.triggerAttackRelease("G#4", "4n");
+        buttons2[8].classList.add("active");
       } else if (event.code === "KeyL") {
         synth.triggerAttackRelease("A#4", "4n");
+        buttons2[9].classList.add("active");
       }
       const keyPressed = event.key.toUpperCase();
       if (keyPressed === "Q") {
@@ -968,6 +1003,83 @@ const PlayGame = () => {
         }
       }
     };
+    window.addEventListener("keyup", (event) => {
+      if (event.code === "KeyQ") {
+        buttons[0].classList.remove("active");
+      }
+      if (event.code === "KeyW") {
+        buttons[1].classList.remove("active");
+      }
+      if (event.code === "KeyE") {
+        buttons[2].classList.remove("active");
+      }
+      if (event.code === "KeyR") {
+        buttons[3].classList.remove("active");
+      }
+      if (event.code === "KeyT") {
+        buttons[4].classList.remove("active");
+      }
+      if (event.code === "KeyY") {
+        buttons[5].classList.remove("active");
+      }
+      if (event.code === "KeyU") {
+        buttons[6].classList.remove("active");
+      }
+      if (event.code === "KeyC") {
+        buttons[7].classList.remove("active");
+      }
+      if (event.code === "KeyV") {
+        buttons[8].classList.remove("active");
+      }
+      if (event.code === "KeyB") {
+        buttons[9].classList.remove("active");
+      }
+      if (event.code === "KeyN") {
+        buttons[10].classList.remove("active");
+      }
+      if (event.code === "KeyM") {
+        buttons[11].classList.remove("active");
+      }
+      if (event.code === "Comma") {
+        buttons[12].classList.remove("active");
+      }
+      if (event.code === "Period") {
+        buttons[13].classList.remove("active");
+      }
+      if (event.code === "Slash") {
+        buttons[14].classList.remove("active");
+      }
+      if (event.code === "Digit2") {
+        buttons2[0].classList.remove("active");
+      }
+      if (event.code === "Digit3") {
+        buttons2[1].classList.remove("active");
+      }
+      if (event.code === "Digit5") {
+        buttons2[2].classList.remove("active");
+      }
+      if (event.code === "Digit6") {
+        buttons2[3].classList.remove("active");
+      }
+      if (event.code === "Digit7") {
+        buttons2[4].classList.remove("active");
+      }
+      if (event.code === "KeyF") {
+        buttons2[5].classList.remove("active");
+      }
+      if (event.code === "KeyG") {
+        buttons2[6].classList.remove("active");
+      }
+      if (event.code === "KeyJ") {
+        buttons2[7].classList.remove("active");
+      }
+      if (event.code === "KeyK") {
+        buttons2[8].classList.remove("active");
+      }
+      if (event.code === "KeyL") {
+        buttons2[9].classList.remove("active");
+      }
+    });
     const container = document.getElementById("container");
     const playingBlock = document.querySelector(".playingBlock");
     const forscore = document.querySelector(".forscore");

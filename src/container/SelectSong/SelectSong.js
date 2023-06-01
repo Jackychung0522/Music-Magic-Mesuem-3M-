@@ -11,13 +11,16 @@ import db from "../../index";
 const SelectSong = () => {
   const [songs, setSongs] = useState([]);
   const [selectedSongIndex, setSelectedSongIndex] = useState(0);
+  const [stars, setStars] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
         const querySnapshot = await db.collection("Game").get();
         const fetchedSongs = querySnapshot.docs.map((doc) => doc.data().name);
+        const fetchedStars = querySnapshot.docs.map((doc) => doc.data().star);
         setSongs(fetchedSongs);
+        setStars(fetchedStars);
         console.log(fetchedSongs);
       } catch (error) {
         console.log("Error getting songs: ", error);
@@ -57,7 +60,9 @@ const SelectSong = () => {
         <Link to={routes.playgame} className="link">
           <button id="songButton" onClick={handleClick}>
             <span className="songName">{songs[selectedSongIndex]}</span>
-            <span className="difficulty">&#9733;10000</span>
+            <span className="difficulty">
+              &#9733;{stars[selectedSongIndex]}
+            </span>
           </button>
         </Link>
         <button id="down" className="triangleButton" onClick={handleNextSong}>
