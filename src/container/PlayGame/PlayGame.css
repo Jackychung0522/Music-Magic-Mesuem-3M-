@@ -291,3 +291,18 @@
 .test{
   top: 0px;
 }
+
+
+.score-display {
+  
+ 
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 36px;
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: bold;
+}
+
+  

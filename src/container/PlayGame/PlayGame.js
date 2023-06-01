@@ -310,8 +310,6 @@ const PlayGame = () => {
           playingBlock.removeChild(block.element);
           blocks.splice(blocks.indexOf(block), 1);
           score += singlepoint;
-          console.log(singlepoint);
-          console.log(score);
         }
       }
       if (keyPressed === ",") {
@@ -406,12 +404,14 @@ const PlayGame = () => {
       }
       if (keyPressed === "G") {
         const block = blocks.find((block) => block.element.id === "blockud4");
-        console.log(keyPressed);
+
         if (block && block.top >= 330 && block.top <= 370) {
-          block.isAlive = false;
-          playingBlock.removeChild(block.element);
-          blocks.splice(blocks.indexOf(block), 1);
+          block.status = "perfect";
           score += singlepoint;
+          //   block.isAlive = false;
+
+          //   playingBlock.removeChild(block.element);
+          //   blocks.splice(blocks.indexOf(block), 1);
         }
       }
       if (keyPressed === "J") {
@@ -513,6 +513,7 @@ const PlayGame = () => {
           element: block,
           top: 0,
           isAlive: true,
+          status: "alive",
         });
       }
     };
@@ -522,10 +523,14 @@ const PlayGame = () => {
       for (let i = 0; i < blocks.length; i++) {
         const block = blocks[i];
         if (block.isAlive) {
+          if (block.status === "perfect") {
+            console.log("perfect");
+            block.element.textContent = "Perfect!";
+          }
           block.top += 2;
           block.element.style.top = block.top + "px";
 
-          if (block.top >= 400) {
+          if (block.top >= 400 || block.status === "perfect") {
             // 将方块从数组和容器中移除
             block.isAlive = false;
             playingBlock.removeChild(block.element);
@@ -552,12 +557,28 @@ const PlayGame = () => {
           // 在最后一个方块创建后的五秒钟后显示成绩
           setTimeout(() => {
             const scoreDisplay = document.createElement("p");
-            scoreDisplay.textContent = `Score: ${score}`;
+            //scoreDisplay.textContent = `Score: ${Math.floor(score)}`;
+            scoreDisplay.classList.add("score-display");
             playingBlock.appendChild(scoreDisplay);
-            console.log("Score:", score);
+            const targetScore = Math.floor(score); // 目标分数
+            const increment = 1000; // 每次增加的分数
+            let currentScore = 0; // 当前分数
+
+            const updateScore = () => {
+              scoreDisplay.textContent = `Score: ${currentScore}`;
+
+              if (currentScore < targetScore) {
+                currentScore += increment;
+                setTimeout(updateScore, 100); // 延迟100毫秒后再次更新分数
+              } else {
+                scoreDisplay.textContent = `Score: ${targetScore}`;
+              }
+            };
+
+            setTimeout(updateScore, 2000);
           }, 5000);
         }
-      }, 1000);
+      }, 400);
     };
     loadNotes(notes);
 
