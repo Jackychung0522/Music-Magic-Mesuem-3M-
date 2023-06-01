@@ -4,8 +4,13 @@ import { Container } from "reactstrap";
 import "./CreateYourselfPage.css";
 import * as Tone from "tone";
 import tempoRun from "../../image/tempoRun.png";
+import { Player } from "tone";
+import tempoNoise from "../../mp3/1111.mp3";
 
 const CreateYourselfPage = () => {
+  const sound = new Player({
+    url: tempoNoise,
+  }).toDestination();
   const sampler = new Tone.Sampler({
     urls: {
       C3: "C3.mp3",
@@ -119,23 +124,38 @@ const CreateYourselfPage = () => {
       });
     }
   });
-  const handleTempoChange = (event) => {
+  async function handleTempoChange(event) {
     const range = document.getElementById("bpmInput");
+    const tempoNum = document.getElementById("tempoNumber");
     range.addEventListener("input", () => {
-      setTempoNumber(event.target.value);
+      range.value = event.target.value;
+      tempoNum.innerHTML = event.target.value + "bpm";
     });
-  };
+    // setTempoNumber(event.target.value);
+  }
   const handleTempoMin = () => {
-    setTempoNumber(parseInt(tempoNumber) - 1);
+    const range = document.getElementById("bpmInput");
+    const tempoNum = document.getElementById("tempoNumber");
+    if (range.value > 30) {
+      range.value = parseInt(range.value) - 1;
+      tempoNum.innerHTML = parseInt(range.value) + "bpm";
+    }
   };
   const handleTempoPlus = () => {
-    setTempoNumber(parseInt(tempoNumber) + 1);
+    const range = document.getElementById("bpmInput");
+    const tempoNum = document.getElementById("tempoNumber");
+    if (range.value < 244) {
+      range.value = parseInt(range.value) + 1;
+      tempoNum.innerHTML = parseInt(range.value) + "bpm";
+    }
   };
-  async function pikachuShot() {
-    sampler.triggerAttackRelease(["A#4"], "8n");
-  }
+  const pikachuShot = () => {
+    sound.start();
+  };
   const handleSwitchOnTempoRun = () => {
     setIsTempoRun((prevIsTempoRun) => !prevIsTempoRun);
+    let range = document.getElementById("bpmInput");
+    setTempoNumber(parseInt(range.value));
   };
   const [tempoNumber, setTempoNumber] = useState("100");
   const [IsTempoRun, setIsTempoRun] = useState(false);
@@ -149,43 +169,50 @@ const CreateYourselfPage = () => {
       }
     }
     playWithDelay();
-    // console.log(60000 / parseInt(tempoNumber));
+    console.log(60000 / parseInt(tempoNumber));
     return () => {
       clearInterval(intervalId);
     };
   }, [IsTempoRun, tempoNumber]);
   return (
     <Container>
-      <div className="tempo">
-        <div className="pikachuButtonBlock">
-          <button
-            style={{ backgroundColor: IsTempoRun ? "red" : "blue" }}
-            className="pikachuButton"
-            onClick={handleSwitchOnTempoRun}
-          >
-            <img src={tempoRun} className="pikachu"></img>
-          </button>
+      <div className="topOfPiano" style={{ display: "flex" }}>
+        <div className="tempo">
+          <div className="pikachuButtonBlock">
+            <button
+              style={{ backgroundColor: IsTempoRun ? "blue" : "" }}
+              className="pikachuButton"
+              onClick={handleSwitchOnTempoRun}
+            >
+              <img src={tempoRun} className="pikachu"></img>
+            </button>
+          </div>
+          <div className="bpmBlock">
+            <button className="keyMin" onClick={handleTempoMin}>
+              -
+            </button>
+            <input
+              id="bpmInput"
+              value={tempoNumber}
+              max="244"
+              min="30"
+              type="range"
+              onChange={handleTempoChange}
+              // onChange={handleChangeTempoNumber}
+            ></input>
+            <button className="keyPlus" onClick={handleTempoPlus}>
+              +
+            </button>
+          </div>
+          <div className="tempoNumberBlock">
+            <p id="tempoNumber">100bpm</p>
+          </div>
         </div>
-        <div className="bpmBlock">
-          <button className="keyMin" onClick={handleTempoMin}>
-            -
-          </button>
-          <input
-            id="bpmInput"
-            value={tempoNumber}
-            max="244"
-            min="30"
-            type="range"
-            onChange={handleTempoChange}
-          ></input>
-          <button className="keyPlus" onClick={handleTempoPlus}>
-            +
-          </button>
-        </div>
-        <div className="tempoNumberBlock">
-          <p id="tempoNumber">{tempoNumber}bpm</p>
+        <div className="recordBlock">
+          <button></button>
         </div>
       </div>
+
       <div className="pianoBlock">
         <div className="pianoBlockForBlack">
           <button className="black blackType1" id="b2">
