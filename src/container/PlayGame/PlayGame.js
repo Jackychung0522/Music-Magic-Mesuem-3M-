@@ -40,9 +40,9 @@ const PlayGame = () => {
 
     setTimeout(delayStartMusic, 3500);
   } else if (currentSong === "Little Star") {
-    notes = star;
+    notes = littlestar;
     sound = new Howl({
-      src: [littlestar],
+      src: [star],
       volume: 0.5,
     });
     console.log("notelen:", notes.length);
