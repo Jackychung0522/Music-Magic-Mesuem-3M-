@@ -83,8 +83,12 @@ const CreateYourselfPage = () => {
           setCurrentTime(Date.now());
           let beat = Date.now() - startTime;
           console.log(beat);
-          if (beat % (240000 / tempoNumber) < 15) {
-            setPu((prevPu) => [...prevPu, "|"]);
+          if (
+            beat % (240000 / tempoNumber) < 15 &&
+            Math.floor(beat / (240000 / tempoNumber)) !== 0
+          ) {
+            // setPu((prevPu) => [...prevPu, "|"]);
+            setPu((prevPu) => [...prevPu, beat]);
           }
         }, 1);
       }
@@ -98,7 +102,8 @@ const CreateYourselfPage = () => {
   const handleRecordChange = () => {
     setIsRecord((prevIsRecord) => !prevIsRecord);
     if (IsRecord) {
-      console.log(pu);
+      console.log(pu, "123");
+      setIsStart(false);
     } else {
       setPu([]);
       console.log(pu);
@@ -112,18 +117,20 @@ const CreateYourselfPage = () => {
         modifiedList.push(pu[i]);
       }
     }
-    let tmp = modifiedList[0];
-    modifiedList[0] = modifiedList[1];
-    modifiedList[1] = tmp;
+    // let tmp = modifiedList[0];
+    // modifiedList[0] = modifiedList[1];
+    // modifiedList[1] = tmp;
     const result = modifiedList.join(" ");
     const text = JSON.stringify(result);
+    const newText = text.replace(/"/g, " | ");
+    console.log(newText);
     // const blob = new Blob([text], { type: "text/plain;charset=utf-8" });
     // FileSaver.saveAs(blob, "pu.txt");
     console.log("success");
     const docDefinition = {
       content: [
         {
-          text: text,
+          text: newText,
           fontSize: text.includes("|") ? 30 : 15,
           margin: [0, 0, 0, 12], // 上，右，下，左 的邊距
         },
