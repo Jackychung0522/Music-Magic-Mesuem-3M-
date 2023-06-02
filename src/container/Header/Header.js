@@ -4,8 +4,17 @@ import { Link } from "react-router-dom";
 import "./Header.css";
 import routes from "../../AppRouter";
 import logo from "../../image/logo.png";
-
+import buttonSound from "../../mp3/clickButtonSound.mp3";
 const Header = () => {
+  const playButtonSound = () => {
+    const audio = new Audio(buttonSound);
+    audio.play();
+    audio.volume = 0.5;
+  };
+  const buttons = document.querySelectorAll("button");
+  buttons.forEach((button) => {
+    button.addEventListener("click", playButtonSound);
+  });
   return (
     <Container>
       <header className="header">

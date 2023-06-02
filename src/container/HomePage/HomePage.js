@@ -3,8 +3,17 @@ import { Container } from "reactstrap";
 import "./HomePage.css";
 import { Link } from "react-router-dom";
 import routes from "../../AppRouter";
-
+import buttonSound from "../../mp3/clickButtonSound.mp3";
 const HomePage = () => {
+  const playButtonSound = () => {
+    const audio = new Audio(buttonSound);
+    audio.play();
+    audio.volume = 0.5;
+  };
+  const buttons = document.querySelectorAll("button");
+  buttons.forEach((button) => {
+    button.addEventListener("click", playButtonSound);
+  });
   return (
     <Container>
       <div className="homePage">

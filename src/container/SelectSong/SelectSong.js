@@ -7,20 +7,33 @@ import firebase from "firebase/compat/app";
 import "firebase/compat/auth";
 import "firebase/compat/firestore";
 import db from "../../index";
-
+import buttonSound from "../../mp3/clickButtonSound.mp3";
 const SelectSong = () => {
+  const playButtonSound = () => {
+    const audio = new Audio(buttonSound);
+    audio.play();
+    audio.volume = 0.5;
+  };
+  const buttons = document.querySelectorAll("button");
+  buttons.forEach((button) => {
+    button.addEventListener("click", playButtonSound);
+  });
   const [songs, setSongs] = useState([]);
   const [selectedSongIndex, setSelectedSongIndex] = useState(0);
   const [stars, setStars] = useState([]);
-
+  const [records, setRecords] = useState([]);
   useEffect(() => {
     const fetchData = async () => {
       try {
         const querySnapshot = await db.collection("Game").get();
         const fetchedSongs = querySnapshot.docs.map((doc) => doc.data().name);
         const fetchedStars = querySnapshot.docs.map((doc) => doc.data().star);
+        const fetchedRecords = querySnapshot.docs.map(
+          (doc) => doc.data().record
+        );
         setSongs(fetchedSongs);
         setStars(fetchedStars);
+        setRecords(fetchedRecords);
         console.log(fetchedSongs);
       } catch (error) {
         console.log("Error getting songs: ", error);
@@ -53,6 +66,7 @@ const SelectSong = () => {
         </span>{" "}
         Select Song
       </p>
+      <p id="record">{records[selectedSongIndex]}</p>
       <div className="songBlock">
         <button id="up" className="triangleButton" onClick={handlePreviousSong}>
           &#9650;
