@@ -102,22 +102,22 @@ input[type="range"] {
   /* transition: 0.2s; */
 }
 .tempo {
-  width: 500px;
+  width: 30%;
 }
 .pikachuButtonBlock {
-  width: 500px;
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 .bpmBlock {
-  width: 500px;
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 .tempoNumberBlock {
-  width: 500px;
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -131,7 +131,6 @@ input[type="range"] {
 .keyPlus:active {
   transform: scale(1.2);
 }
-
 .recordButton {
   width: 50px;
   height: 50px;
@@ -148,6 +147,28 @@ input[type="range"] {
   width: 50%;
   display: flex;
   justify-content: flex-end;
+}
+.downloadButton {
+  width: 100px;
+  height: 50px;
+  cursor: pointer;
+  margin-top: 250px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+}
+.downloadButton:hover {
+  background-color: antiquewhite;
+}
+.download {
+  height: 80%;
+}
+.downloadBlock {
+  width: 20%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 @keyframes colorChange {
   0% {
@@ -170,4 +191,18 @@ input[type="range"] {
   100% {
     transform: rotate(360deg);
   }
+}
+@keyframes domDomDom {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+.topOfPiano {
+  height: 320px;
 }
