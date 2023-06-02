@@ -7,8 +7,17 @@ import firebase from "firebase/compat/app";
 import "firebase/compat/auth";
 import "firebase/compat/firestore";
 import db from "../../index";
-
+import buttonSound from "../../mp3/clickButtonSound.mp3";
 const SelectSong = () => {
+  const playButtonSound = () => {
+    const audio = new Audio(buttonSound);
+    audio.play();
+    audio.volume = 0.5;
+  };
+  const buttons = document.querySelectorAll("button");
+  buttons.forEach((button) => {
+    button.addEventListener("click", playButtonSound);
+  });
   const [songs, setSongs] = useState([]);
   const [selectedSongIndex, setSelectedSongIndex] = useState(0);
   const [stars, setStars] = useState([]);

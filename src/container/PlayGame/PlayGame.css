@@ -352,6 +352,15 @@
   position: relative;
   left: 40%;
 }
+.miss-text{
+  font-size: 36px;
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: bold;
+  color:rgb(87, 77, 77);
+  text-shadow: 1px 1px 2px #000000;
+  position: relative;
+  left: 40%;
+}
 .active-white{
   background-color: rgb(247, 169, 124);
   

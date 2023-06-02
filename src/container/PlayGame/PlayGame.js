@@ -10,9 +10,10 @@ import bee from "../../mp3/bee.mp3";
 import { Player } from "tone";
 import { Howl } from "howler";
 let currentPoint = 0;
+
 const PlayGame = () => {
-  let sound = "";
   const currentSong = sessionStorage.getItem("currentSong");
+  let sound = "";
   let score = 0;
   let singlepoint = 0;
   let notes = [];
@@ -25,6 +26,7 @@ const PlayGame = () => {
     notes = bigyellowbee;
     sound = new Howl({
       src: [bee],
+      volume: 0.5,
     });
     console.log("notelen:", notes.length);
     for (let i = 0; i < notes.length; i++) {
@@ -243,7 +245,7 @@ const PlayGame = () => {
       if (keyPressed === "Q") {
         const block = blocks.find((block) => block.element.id === "blockc3");
 
-        if (block && block.top >= 330 && block.top <= 370) {
+        if (block && block.top >= 310 && block.top <= 390) {
           if (block && block.top >= 345 && block.top <= 355) {
             block.isAlive = false;
             playingBlock.removeChild(block.element);
@@ -256,7 +258,7 @@ const PlayGame = () => {
             }, 1000);
             blocks.splice(blocks.indexOf(block), 1);
             score += singlepoint;
-          } else {
+          } else if (block && block.top >= 330 && block.top <= 370) {
             block.isAlive = false;
             playingBlock.removeChild(block.element);
             const goodText = document.createElement("div");
@@ -268,13 +270,24 @@ const PlayGame = () => {
             }, 1000);
             blocks.splice(blocks.indexOf(block), 1);
             score += singlepoint / 2;
+          } else {
+            block.isAlive = false;
+            playingBlock.removeChild(block.element);
+            const missText = document.createElement("div");
+            missText.className = "miss-text";
+            missText.textContent = "Miss";
+            forscore.appendChild(missText);
+            setTimeout(() => {
+              forscore.removeChild(missText);
+            }, 1000);
+            blocks.splice(blocks.indexOf(block), 1);
           }
         }
       }
       if (keyPressed === "W") {
         const block = blocks.find((block) => block.element.id === "blockd3");
 
-        if (block && block.top >= 330 && block.top <= 370) {
+        if (block && block.top >= 310 && block.top <= 390) {
           if (block && block.top >= 345 && block.top <= 355) {
             block.isAlive = false;
             playingBlock.removeChild(block.element);
@@ -287,7 +300,7 @@ const PlayGame = () => {
             }, 1000);
             blocks.splice(blocks.indexOf(block), 1);
             score += singlepoint;
-          } else {
+          } else if (block && block.top >= 330 && block.top <= 370) {
             block.isAlive = false;
             playingBlock.removeChild(block.element);
             const goodText = document.createElement("div");
@@ -299,13 +312,24 @@ const PlayGame = () => {
             }, 1000);
             blocks.splice(blocks.indexOf(block), 1);
             score += singlepoint / 2;
+          } else {
+            block.isAlive = false;
+            playingBlock.removeChild(block.element);
+            const missText = document.createElement("div");
+            missText.className = "miss-text";
+            missText.textContent = "Miss";
+            forscore.appendChild(missText);
+            setTimeout(() => {
+              forscore.removeChild(missText);
+            }, 1000);
+            blocks.splice(blocks.indexOf(block), 1);
           }
         }
       }
       if (keyPressed === "E") {
         const block = blocks.find((block) => block.element.id === "blocke3");
 
-        if (block && block.top >= 330 && block.top <= 370) {
+        if (block && block.top >= 310 && block.top <= 390) {
           if (block && block.top >= 345 && block.top <= 355) {
             block.isAlive = false;
             playingBlock.removeChild(block.element);
@@ -318,7 +342,7 @@ const PlayGame = () => {
             }, 1000);
             blocks.splice(blocks.indexOf(block), 1);
             score += singlepoint;
-          } else {
+          } else if (block && block.top >= 330 && block.top <= 370) {
             block.isAlive = false;
             playingBlock.removeChild(block.element);
             const goodText = document.createElement("div");
@@ -330,13 +354,24 @@ const PlayGame = () => {
             }, 1000);
             blocks.splice(blocks.indexOf(block), 1);
             score += singlepoint / 2;
+          } else {
+            block.isAlive = false;
+            playingBlock.removeChild(block.element);
+            const missText = document.createElement("div");
+            missText.className = "miss-text";
+            missText.textContent = "Miss";
+            forscore.appendChild(missText);
+            setTimeout(() => {
+              forscore.removeChild(missText);
+            }, 1000);
+            blocks.splice(blocks.indexOf(block), 1);
           }
         }
       }
       if (keyPressed === "R") {
         const block = blocks.find((block) => block.element.id === "blockf3");
 
-        if (block && block.top >= 330 && block.top <= 370) {
+        if (block && block.top >= 310 && block.top <= 390) {
           if (block && block.top >= 345 && block.top <= 355) {
             block.isAlive = false;
             playingBlock.removeChild(block.element);
@@ -349,7 +384,7 @@ const PlayGame = () => {
             }, 1000);
             blocks.splice(blocks.indexOf(block), 1);
             score += singlepoint;
-          } else {
+          } else if (block && block.top >= 330 && block.top <= 370) {
             block.isAlive = false;
             playingBlock.removeChild(block.element);
             const goodText = document.createElement("div");
@@ -361,13 +396,24 @@ const PlayGame = () => {
             }, 1000);
             blocks.splice(blocks.indexOf(block), 1);
             score += singlepoint / 2;
+          } else {
+            block.isAlive = false;
+            playingBlock.removeChild(block.element);
+            const missText = document.createElement("div");
+            missText.className = "miss-text";
+            missText.textContent = "Miss";
+            forscore.appendChild(missText);
+            setTimeout(() => {
+              forscore.removeChild(missText);
+            }, 1000);
+            blocks.splice(blocks.indexOf(block), 1);
           }
         }
       }
       if (keyPressed === "T") {
         const block = blocks.find((block) => block.element.id === "blockg3");
 
-        if (block && block.top >= 330 && block.top <= 370) {
+        if (block && block.top >= 310 && block.top <= 390) {
           if (block && block.top >= 345 && block.top <= 355) {
             block.isAlive = false;
             playingBlock.removeChild(block.element);
@@ -380,7 +426,7 @@ const PlayGame = () => {
             }, 1000);
             blocks.splice(blocks.indexOf(block), 1);
             score += singlepoint;
-          } else {
+          } else if (block && block.top >= 330 && block.top <= 370) {
             block.isAlive = false;
             playingBlock.removeChild(block.element);
             const goodText = document.createElement("div");
@@ -392,13 +438,24 @@ const PlayGame = () => {
             }, 1000);
             blocks.splice(blocks.indexOf(block), 1);
             score += singlepoint / 2;
+          } else {
+            block.isAlive = false;
+            playingBlock.removeChild(block.element);
+            const missText = document.createElement("div");
+            missText.className = "miss-text";
+            missText.textContent = "Miss";
+            forscore.appendChild(missText);
+            setTimeout(() => {
+              forscore.removeChild(missText);
+            }, 1000);
+            blocks.splice(blocks.indexOf(block), 1);
           }
         }
       }
       if (keyPressed === "Y") {
         const block = blocks.find((block) => block.element.id === "blocka3");
 
-        if (block && block.top >= 330 && block.top <= 370) {
+        if (block && block.top >= 310 && block.top <= 390) {
           if (block && block.top >= 345 && block.top <= 355) {
             block.isAlive = false;
             playingBlock.removeChild(block.element);
@@ -411,7 +468,7 @@ const PlayGame = () => {
             }, 1000);
             blocks.splice(blocks.indexOf(block), 1);
             score += singlepoint;
-          } else {
+          } else if (block && block.top >= 330 && block.top <= 370) {
             block.isAlive = false;
             playingBlock.removeChild(block.element);
             const goodText = document.createElement("div");
@@ -423,13 +480,24 @@ const PlayGame = () => {
             }, 1000);
             blocks.splice(blocks.indexOf(block), 1);
             score += singlepoint / 2;
+          } else {
+            block.isAlive = false;
+            playingBlock.removeChild(block.element);
+            const missText = document.createElement("div");
+            missText.className = "miss-text";
+            missText.textContent = "Miss";
+            forscore.appendChild(missText);
+            setTimeout(() => {
+              forscore.removeChild(missText);
+            }, 1000);
+            blocks.splice(blocks.indexOf(block), 1);
           }
         }
       }
       if (keyPressed === "U") {
         const block = blocks.find((block) => block.element.id === "blockb3");
 
-        if (block && block.top >= 330 && block.top <= 370) {
+        if (block && block.top >= 310 && block.top <= 390) {
           if (block && block.top >= 345 && block.top <= 355) {
             block.isAlive = false;
             playingBlock.removeChild(block.element);
@@ -442,7 +510,7 @@ const PlayGame = () => {
             }, 1000);
             blocks.splice(blocks.indexOf(block), 1);
             score += singlepoint;
-          } else {
+          } else if (block && block.top >= 330 && block.top <= 370) {
             block.isAlive = false;
             playingBlock.removeChild(block.element);
             const goodText = document.createElement("div");
@@ -454,6 +522,17 @@ const PlayGame = () => {
             }, 1000);
             blocks.splice(blocks.indexOf(block), 1);
             score += singlepoint / 2;
+          } else {
+            block.isAlive = false;
+            playingBlock.removeChild(block.element);
+            const missText = document.createElement("div");
+            missText.className = "miss-text";
+            missText.textContent = "Miss";
+            forscore.appendChild(missText);
+            setTimeout(() => {
+              forscore.removeChild(missText);
+            }, 1000);
+            blocks.splice(blocks.indexOf(block), 1);
           }
         }
       }
@@ -461,7 +540,7 @@ const PlayGame = () => {
         console.log("C");
         const block = blocks.find((block) => block.element.id === "blockc4");
 
-        if (block && block.top >= 330 && block.top <= 370) {
+        if (block && block.top >= 310 && block.top <= 390) {
           if (block && block.top >= 345 && block.top <= 355) {
             block.isAlive = false;
             playingBlock.removeChild(block.element);
@@ -474,7 +553,7 @@ const PlayGame = () => {
             }, 1000);
             blocks.splice(blocks.indexOf(block), 1);
             score += singlepoint;
-          } else {
+          } else if (block && block.top >= 330 && block.top <= 370) {
             block.isAlive = false;
             playingBlock.removeChild(block.element);
             const goodText = document.createElement("div");
@@ -486,13 +565,24 @@ const PlayGame = () => {
             }, 1000);
             blocks.splice(blocks.indexOf(block), 1);
             score += singlepoint / 2;
+          } else {
+            block.isAlive = false;
+            playingBlock.removeChild(block.element);
+            const missText = document.createElement("div");
+            missText.className = "miss-text";
+            missText.textContent = "Miss";
+            forscore.appendChild(missText);
+            setTimeout(() => {
+              forscore.removeChild(missText);
+            }, 1000);
+            blocks.splice(blocks.indexOf(block), 1);
           }
         }
       }
       if (keyPressed === "V") {
         const block = blocks.find((block) => block.element.id === "blockd4");
 
-        if (block && block.top >= 330 && block.top <= 370) {
+        if (block && block.top >= 310 && block.top <= 390) {
           if (block && block.top >= 345 && block.top <= 355) {
             block.isAlive = false;
             playingBlock.removeChild(block.element);
@@ -505,7 +595,7 @@ const PlayGame = () => {
             }, 1000);
             blocks.splice(blocks.indexOf(block), 1);
             score += singlepoint;
-          } else {
+          } else if (block && block.top >= 330 && block.top <= 370) {
             block.isAlive = false;
             playingBlock.removeChild(block.element);
             const goodText = document.createElement("div");
@@ -517,13 +607,24 @@ const PlayGame = () => {
             }, 1000);
             blocks.splice(blocks.indexOf(block), 1);
             score += singlepoint / 2;
+          } else {
+            block.isAlive = false;
+            playingBlock.removeChild(block.element);
+            const missText = document.createElement("div");
+            missText.className = "miss-text";
+            missText.textContent = "Miss";
+            forscore.appendChild(missText);
+            setTimeout(() => {
+              forscore.removeChild(missText);
+            }, 1000);
+            blocks.splice(blocks.indexOf(block), 1);
           }
         }
       }
       if (keyPressed === "B") {
         const block = blocks.find((block) => block.element.id === "blocke4");
 
-        if (block && block.top >= 330 && block.top <= 370) {
+        if (block && block.top >= 310 && block.top <= 390) {
           if (block && block.top >= 345 && block.top <= 355) {
             block.isAlive = false;
             playingBlock.removeChild(block.element);
@@ -536,7 +637,7 @@ const PlayGame = () => {
             }, 1000);
             blocks.splice(blocks.indexOf(block), 1);
             score += singlepoint;
-          } else {
+          } else if (block && block.top >= 330 && block.top <= 370) {
             block.isAlive = false;
             playingBlock.removeChild(block.element);
             const goodText = document.createElement("div");
@@ -548,13 +649,24 @@ const PlayGame = () => {
             }, 1000);
             blocks.splice(blocks.indexOf(block), 1);
             score += singlepoint / 2;
+          } else {
+            block.isAlive = false;
+            playingBlock.removeChild(block.element);
+            const missText = document.createElement("div");
+            missText.className = "miss-text";
+            missText.textContent = "Miss";
+            forscore.appendChild(missText);
+            setTimeout(() => {
+              forscore.removeChild(missText);
+            }, 1000);
+            blocks.splice(blocks.indexOf(block), 1);
           }
         }
       }
       if (keyPressed === "N") {
         const block = blocks.find((block) => block.element.id === "blockf4");
 
-        if (block && block.top >= 330 && block.top <= 370) {
+        if (block && block.top >= 310 && block.top <= 390) {
           if (block && block.top >= 345 && block.top <= 355) {
             block.isAlive = false;
             playingBlock.removeChild(block.element);
@@ -567,7 +679,7 @@ const PlayGame = () => {
             }, 1000);
             blocks.splice(blocks.indexOf(block), 1);
             score += singlepoint;
-          } else {
+          } else if (block && block.top >= 330 && block.top <= 370) {
             block.isAlive = false;
             playingBlock.removeChild(block.element);
             const goodText = document.createElement("div");
@@ -579,13 +691,24 @@ const PlayGame = () => {
             }, 1000);
             blocks.splice(blocks.indexOf(block), 1);
             score += singlepoint / 2;
+          } else {
+            block.isAlive = false;
+            playingBlock.removeChild(block.element);
+            const missText = document.createElement("div");
+            missText.className = "miss-text";
+            missText.textContent = "Miss";
+            forscore.appendChild(missText);
+            setTimeout(() => {
+              forscore.removeChild(missText);
+            }, 1000);
+            blocks.splice(blocks.indexOf(block), 1);
           }
         }
       }
       if (keyPressed === "M") {
         const block = blocks.find((block) => block.element.id === "blockg4");
 
-        if (block && block.top >= 330 && block.top <= 370) {
+        if (block && block.top >= 310 && block.top <= 390) {
           if (block && block.top >= 345 && block.top <= 355) {
             block.isAlive = false;
             playingBlock.removeChild(block.element);
@@ -598,7 +721,7 @@ const PlayGame = () => {
             }, 1000);
             blocks.splice(blocks.indexOf(block), 1);
             score += singlepoint;
-          } else {
+          } else if (block && block.top >= 330 && block.top <= 370) {
             block.isAlive = false;
             playingBlock.removeChild(block.element);
             const goodText = document.createElement("div");
@@ -610,13 +733,24 @@ const PlayGame = () => {
             }, 1000);
             blocks.splice(blocks.indexOf(block), 1);
             score += singlepoint / 2;
+          } else {
+            block.isAlive = false;
+            playingBlock.removeChild(block.element);
+            const missText = document.createElement("div");
+            missText.className = "miss-text";
+            missText.textContent = "Miss";
+            forscore.appendChild(missText);
+            setTimeout(() => {
+              forscore.removeChild(missText);
+            }, 1000);
+            blocks.splice(blocks.indexOf(block), 1);
           }
         }
       }
       if (keyPressed === ",") {
         const block = blocks.find((block) => block.element.id === "blocka4");
         console.log(keyPressed);
-        if (block && block.top >= 330 && block.top <= 370) {
+        if (block && block.top >= 310 && block.top <= 390) {
           if (block && block.top >= 345 && block.top <= 355) {
             block.isAlive = false;
             playingBlock.removeChild(block.element);
@@ -629,7 +763,7 @@ const PlayGame = () => {
             }, 1000);
             blocks.splice(blocks.indexOf(block), 1);
             score += singlepoint;
-          } else {
+          } else if (block && block.top >= 330 && block.top <= 370) {
             block.isAlive = false;
             playingBlock.removeChild(block.element);
             const goodText = document.createElement("div");
@@ -641,13 +775,24 @@ const PlayGame = () => {
             }, 1000);
             blocks.splice(blocks.indexOf(block), 1);
             score += singlepoint / 2;
+          } else {
+            block.isAlive = false;
+            playingBlock.removeChild(block.element);
+            const missText = document.createElement("div");
+            missText.className = "miss-text";
+            missText.textContent = "Miss";
+            forscore.appendChild(missText);
+            setTimeout(() => {
+              forscore.removeChild(missText);
+            }, 1000);
+            blocks.splice(blocks.indexOf(block), 1);
           }
         }
       }
       if (keyPressed === ".") {
         const block = blocks.find((block) => block.element.id === "blockb4");
         console.log(keyPressed);
-        if (block && block.top >= 330 && block.top <= 370) {
+        if (block && block.top >= 310 && block.top <= 390) {
           if (block && block.top >= 345 && block.top <= 355) {
             block.isAlive = false;
             playingBlock.removeChild(block.element);
@@ -660,7 +805,7 @@ const PlayGame = () => {
             }, 1000);
             blocks.splice(blocks.indexOf(block), 1);
             score += singlepoint;
-          } else {
+          } else if (block && block.top >= 330 && block.top <= 370) {
             block.isAlive = false;
             playingBlock.removeChild(block.element);
             const goodText = document.createElement("div");
@@ -672,13 +817,24 @@ const PlayGame = () => {
             }, 1000);
             blocks.splice(blocks.indexOf(block), 1);
             score += singlepoint / 2;
+          } else {
+            block.isAlive = false;
+            playingBlock.removeChild(block.element);
+            const missText = document.createElement("div");
+            missText.className = "miss-text";
+            missText.textContent = "Miss";
+            forscore.appendChild(missText);
+            setTimeout(() => {
+              forscore.removeChild(missText);
+            }, 1000);
+            blocks.splice(blocks.indexOf(block), 1);
           }
         }
       }
       if (keyPressed === "/") {
         const block = blocks.find((block) => block.element.id === "blockc5");
         console.log(keyPressed);
-        if (block && block.top >= 330 && block.top <= 370) {
+        if (block && block.top >= 310 && block.top <= 390) {
           if (block && block.top >= 345 && block.top <= 355) {
             block.isAlive = false;
             playingBlock.removeChild(block.element);
@@ -691,7 +847,7 @@ const PlayGame = () => {
             }, 1000);
             blocks.splice(blocks.indexOf(block), 1);
             score += singlepoint;
-          } else {
+          } else if (block && block.top >= 330 && block.top <= 370) {
             block.isAlive = false;
             playingBlock.removeChild(block.element);
             const goodText = document.createElement("div");
@@ -703,13 +859,24 @@ const PlayGame = () => {
             }, 1000);
             blocks.splice(blocks.indexOf(block), 1);
             score += singlepoint / 2;
+          } else {
+            block.isAlive = false;
+            playingBlock.removeChild(block.element);
+            const missText = document.createElement("div");
+            missText.className = "miss-text";
+            missText.textContent = "Miss";
+            forscore.appendChild(missText);
+            setTimeout(() => {
+              forscore.removeChild(missText);
+            }, 1000);
+            blocks.splice(blocks.indexOf(block), 1);
           }
         }
       }
       if (keyPressed === "2") {
         const block = blocks.find((block) => block.element.id === "blockuc3");
         console.log(keyPressed);
-        if (block && block.top >= 330 && block.top <= 370) {
+        if (block && block.top >= 310 && block.top <= 390) {
           if (block && block.top >= 345 && block.top <= 355) {
             block.isAlive = false;
             playingBlock.removeChild(block.element);
@@ -722,7 +889,7 @@ const PlayGame = () => {
             }, 1000);
             blocks.splice(blocks.indexOf(block), 1);
             score += singlepoint;
-          } else {
+          } else if (block && block.top >= 330 && block.top <= 370) {
             block.isAlive = false;
             playingBlock.removeChild(block.element);
             const goodText = document.createElement("div");
@@ -734,13 +901,24 @@ const PlayGame = () => {
             }, 1000);
             blocks.splice(blocks.indexOf(block), 1);
             score += singlepoint / 2;
+          } else {
+            block.isAlive = false;
+            playingBlock.removeChild(block.element);
+            const missText = document.createElement("div");
+            missText.className = "miss-text";
+            missText.textContent = "Miss";
+            forscore.appendChild(missText);
+            setTimeout(() => {
+              forscore.removeChild(missText);
+            }, 1000);
+            blocks.splice(blocks.indexOf(block), 1);
           }
         }
       }
       if (keyPressed === "3") {
         const block = blocks.find((block) => block.element.id === "blockud3");
         console.log(keyPressed);
-        if (block && block.top >= 330 && block.top <= 370) {
+        if (block && block.top >= 310 && block.top <= 390) {
           if (block && block.top >= 345 && block.top <= 355) {
             block.isAlive = false;
             playingBlock.removeChild(block.element);
@@ -753,7 +931,7 @@ const PlayGame = () => {
             }, 1000);
             blocks.splice(blocks.indexOf(block), 1);
             score += singlepoint;
-          } else {
+          } else if (block && block.top >= 330 && block.top <= 370) {
             block.isAlive = false;
             playingBlock.removeChild(block.element);
             const goodText = document.createElement("div");
@@ -765,13 +943,24 @@ const PlayGame = () => {
             }, 1000);
             blocks.splice(blocks.indexOf(block), 1);
             score += singlepoint / 2;
+          } else {
+            block.isAlive = false;
+            playingBlock.removeChild(block.element);
+            const missText = document.createElement("div");
+            missText.className = "miss-text";
+            missText.textContent = "Miss";
+            forscore.appendChild(missText);
+            setTimeout(() => {
+              forscore.removeChild(missText);
+            }, 1000);
+            blocks.splice(blocks.indexOf(block), 1);
           }
         }
       }
       if (keyPressed === "5") {
         const block = blocks.find((block) => block.element.id === "blockuf3");
         console.log(keyPressed);
-        if (block && block.top >= 330 && block.top <= 370) {
+        if (block && block.top >= 310 && block.top <= 390) {
           if (block && block.top >= 345 && block.top <= 355) {
             block.isAlive = false;
             playingBlock.removeChild(block.element);
@@ -784,7 +973,7 @@ const PlayGame = () => {
             }, 1000);
             blocks.splice(blocks.indexOf(block), 1);
             score += singlepoint;
-          } else {
+          } else if (block && block.top >= 330 && block.top <= 370) {
             block.isAlive = false;
             playingBlock.removeChild(block.element);
             const goodText = document.createElement("div");
@@ -796,13 +985,24 @@ const PlayGame = () => {
             }, 1000);
             blocks.splice(blocks.indexOf(block), 1);
             score += singlepoint / 2;
+          } else {
+            block.isAlive = false;
+            playingBlock.removeChild(block.element);
+            const missText = document.createElement("div");
+            missText.className = "miss-text";
+            missText.textContent = "Miss";
+            forscore.appendChild(missText);
+            setTimeout(() => {
+              forscore.removeChild(missText);
+            }, 1000);
+            blocks.splice(blocks.indexOf(block), 1);
           }
         }
       }
       if (keyPressed === "6") {
         const block = blocks.find((block) => block.element.id === "blockug3");
         console.log(keyPressed);
-        if (block && block.top >= 330 && block.top <= 370) {
+        if (block && block.top >= 310 && block.top <= 390) {
           if (block && block.top >= 345 && block.top <= 355) {
             block.isAlive = false;
             playingBlock.removeChild(block.element);
@@ -815,7 +1015,7 @@ const PlayGame = () => {
             }, 1000);
             blocks.splice(blocks.indexOf(block), 1);
             score += singlepoint;
-          } else {
+          } else if (block && block.top >= 330 && block.top <= 370) {
             block.isAlive = false;
             playingBlock.removeChild(block.element);
             const goodText = document.createElement("div");
@@ -827,13 +1027,24 @@ const PlayGame = () => {
             }, 1000);
             blocks.splice(blocks.indexOf(block), 1);
             score += singlepoint / 2;
+          } else {
+            block.isAlive = false;
+            playingBlock.removeChild(block.element);
+            const missText = document.createElement("div");
+            missText.className = "miss-text";
+            missText.textContent = "Miss";
+            forscore.appendChild(missText);
+            setTimeout(() => {
+              forscore.removeChild(missText);
+            }, 1000);
+            blocks.splice(blocks.indexOf(block), 1);
           }
         }
       }
       if (keyPressed === "7") {
         const block = blocks.find((block) => block.element.id === "blockua3");
         console.log(keyPressed);
-        if (block && block.top >= 330 && block.top <= 370) {
+        if (block && block.top >= 310 && block.top <= 390) {
           if (block && block.top >= 345 && block.top <= 355) {
             block.isAlive = false;
             playingBlock.removeChild(block.element);
@@ -846,7 +1057,7 @@ const PlayGame = () => {
             }, 1000);
             blocks.splice(blocks.indexOf(block), 1);
             score += singlepoint;
-          } else {
+          } else if (block && block.top >= 330 && block.top <= 370) {
             block.isAlive = false;
             playingBlock.removeChild(block.element);
             const goodText = document.createElement("div");
@@ -858,13 +1069,24 @@ const PlayGame = () => {
             }, 1000);
             blocks.splice(blocks.indexOf(block), 1);
             score += singlepoint / 2;
+          } else {
+            block.isAlive = false;
+            playingBlock.removeChild(block.element);
+            const missText = document.createElement("div");
+            missText.className = "miss-text";
+            missText.textContent = "Miss";
+            forscore.appendChild(missText);
+            setTimeout(() => {
+              forscore.removeChild(missText);
+            }, 1000);
+            blocks.splice(blocks.indexOf(block), 1);
           }
         }
       }
       if (keyPressed === "F") {
         const block = blocks.find((block) => block.element.id === "blockuc4");
         console.log(keyPressed);
-        if (block && block.top >= 330 && block.top <= 370) {
+        if (block && block.top >= 310 && block.top <= 390) {
           if (block && block.top >= 345 && block.top <= 355) {
             block.isAlive = false;
             playingBlock.removeChild(block.element);
@@ -877,7 +1099,7 @@ const PlayGame = () => {
             }, 1000);
             blocks.splice(blocks.indexOf(block), 1);
             score += singlepoint;
-          } else {
+          } else if (block && block.top >= 330 && block.top <= 370) {
             block.isAlive = false;
             playingBlock.removeChild(block.element);
             const goodText = document.createElement("div");
@@ -889,13 +1111,24 @@ const PlayGame = () => {
             }, 1000);
             blocks.splice(blocks.indexOf(block), 1);
             score += singlepoint / 2;
+          } else {
+            block.isAlive = false;
+            playingBlock.removeChild(block.element);
+            const missText = document.createElement("div");
+            missText.className = "miss-text";
+            missText.textContent = "Miss";
+            forscore.appendChild(missText);
+            setTimeout(() => {
+              forscore.removeChild(missText);
+            }, 1000);
+            blocks.splice(blocks.indexOf(block), 1);
           }
         }
       }
       if (keyPressed === "G") {
         const block = blocks.find((block) => block.element.id === "blockud4");
 
-        if (block && block.top >= 330 && block.top <= 370) {
+        if (block && block.top >= 310 && block.top <= 390) {
           if (block && block.top >= 345 && block.top <= 355) {
             block.isAlive = false;
             playingBlock.removeChild(block.element);
@@ -908,7 +1141,7 @@ const PlayGame = () => {
             }, 1000);
             blocks.splice(blocks.indexOf(block), 1);
             score += singlepoint;
-          } else {
+          } else if (block && block.top >= 330 && block.top <= 370) {
             block.isAlive = false;
             playingBlock.removeChild(block.element);
             const goodText = document.createElement("div");
@@ -920,13 +1153,24 @@ const PlayGame = () => {
             }, 1000);
             blocks.splice(blocks.indexOf(block), 1);
             score += singlepoint / 2;
+          } else {
+            block.isAlive = false;
+            playingBlock.removeChild(block.element);
+            const missText = document.createElement("div");
+            missText.className = "miss-text";
+            missText.textContent = "Miss";
+            forscore.appendChild(missText);
+            setTimeout(() => {
+              forscore.removeChild(missText);
+            }, 1000);
+            blocks.splice(blocks.indexOf(block), 1);
           }
         }
       }
       if (keyPressed === "J") {
         const block = blocks.find((block) => block.element.id === "blockuf4");
         console.log(keyPressed);
-        if (block && block.top >= 330 && block.top <= 370) {
+        if (block && block.top >= 310 && block.top <= 390) {
           if (block && block.top >= 345 && block.top <= 355) {
             block.isAlive = false;
             playingBlock.removeChild(block.element);
@@ -939,7 +1183,7 @@ const PlayGame = () => {
             }, 1000);
             blocks.splice(blocks.indexOf(block), 1);
             score += singlepoint;
-          } else {
+          } else if (block && block.top >= 330 && block.top <= 370) {
             block.isAlive = false;
             playingBlock.removeChild(block.element);
             const goodText = document.createElement("div");
@@ -951,13 +1195,24 @@ const PlayGame = () => {
             }, 1000);
             blocks.splice(blocks.indexOf(block), 1);
             score += singlepoint / 2;
+          } else {
+            block.isAlive = false;
+            playingBlock.removeChild(block.element);
+            const missText = document.createElement("div");
+            missText.className = "miss-text";
+            missText.textContent = "Miss";
+            forscore.appendChild(missText);
+            setTimeout(() => {
+              forscore.removeChild(missText);
+            }, 1000);
+            blocks.splice(blocks.indexOf(block), 1);
           }
         }
       }
       if (keyPressed === "K") {
         const block = blocks.find((block) => block.element.id === "blockug4");
         console.log(keyPressed);
-        if (block && block.top >= 330 && block.top <= 370) {
+        if (block && block.top >= 310 && block.top <= 390) {
           if (block && block.top >= 345 && block.top <= 355) {
             block.isAlive = false;
             playingBlock.removeChild(block.element);
@@ -970,7 +1225,7 @@ const PlayGame = () => {
             }, 1000);
             blocks.splice(blocks.indexOf(block), 1);
             score += singlepoint;
-          } else {
+          } else if (block && block.top >= 330 && block.top <= 370) {
             block.isAlive = false;
             playingBlock.removeChild(block.element);
             const goodText = document.createElement("div");
@@ -982,13 +1237,24 @@ const PlayGame = () => {
             }, 1000);
             blocks.splice(blocks.indexOf(block), 1);
             score += singlepoint / 2;
+          } else {
+            block.isAlive = false;
+            playingBlock.removeChild(block.element);
+            const missText = document.createElement("div");
+            missText.className = "miss-text";
+            missText.textContent = "Miss";
+            forscore.appendChild(missText);
+            setTimeout(() => {
+              forscore.removeChild(missText);
+            }, 1000);
+            blocks.splice(blocks.indexOf(block), 1);
           }
         }
       }
       if (keyPressed === "L") {
         const block = blocks.find((block) => block.element.id === "blockua4");
         console.log(keyPressed);
-        if (block && block.top >= 330 && block.top <= 370) {
+        if (block && block.top >= 310 && block.top <= 390) {
           if (block && block.top >= 345 && block.top <= 355) {
             block.isAlive = false;
             playingBlock.removeChild(block.element);
@@ -1001,7 +1267,7 @@ const PlayGame = () => {
             }, 1000);
             blocks.splice(blocks.indexOf(block), 1);
             score += singlepoint;
-          } else {
+          } else if (block && block.top >= 330 && block.top <= 370) {
             block.isAlive = false;
             playingBlock.removeChild(block.element);
             const goodText = document.createElement("div");
@@ -1013,6 +1279,17 @@ const PlayGame = () => {
             }, 1000);
             blocks.splice(blocks.indexOf(block), 1);
             score += singlepoint / 2;
+          } else {
+            block.isAlive = false;
+            playingBlock.removeChild(block.element);
+            const missText = document.createElement("div");
+            missText.className = "miss-text";
+            missText.textContent = "Miss";
+            forscore.appendChild(missText);
+            setTimeout(() => {
+              forscore.removeChild(missText);
+            }, 1000);
+            blocks.splice(blocks.indexOf(block), 1);
           }
         }
       }
