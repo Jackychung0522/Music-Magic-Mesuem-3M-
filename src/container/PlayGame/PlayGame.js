@@ -6,17 +6,26 @@ import { useState, useEffect } from "react";
 import db from "../../index";
 import bigyellowbee from "../../ spectrum/bigyellowbee.json";
 import littlestar from "../../ spectrum/littlestar.json";
-
+import bee from "../../mp3/bee.mp3";
+import { Player } from "tone";
+import { Howl } from "howler";
 let currentPoint = 0;
 const PlayGame = () => {
+  let sound = "";
   const currentSong = sessionStorage.getItem("currentSong");
   let score = 0;
   let singlepoint = 0;
   let notes = [];
   let validnote = 0;
   let doc = "";
+  const delayStartMusic = () => {
+    sound.play();
+  };
   if (currentSong === "Big Yellow Bee") {
     notes = bigyellowbee;
+    sound = new Howl({
+      src: [bee],
+    });
     console.log("notelen:", notes.length);
     for (let i = 0; i < notes.length; i++) {
       if (notes[i].note !== "") {
@@ -25,6 +34,8 @@ const PlayGame = () => {
       singlepoint = 10000 / validnote;
     }
     doc = "bigbee";
+
+    setTimeout(delayStartMusic, 3500);
   } else if (currentSong === "Little Star") {
     notes = littlestar;
     console.log("notelen:", notes.length);
@@ -1164,7 +1175,7 @@ const PlayGame = () => {
         if (block.isAlive) {
           block.top += 2;
           block.element.style.top = block.top + "px";
-          if (block.top >= 400) {
+          if (block.top >= 500) {
             block.isAlive = false;
             playingBlock.removeChild(block.element);
             blocks.splice(i, 1);
@@ -1179,7 +1190,16 @@ const PlayGame = () => {
     // 设置方块的初始位置
 
     window.addEventListener("keydown", handleKeyDown);
-
+    const headerButton = document.getElementById("M3");
+    const headerButton2 = document.getElementsByClassName("btn");
+    headerButton.addEventListener("click", () => {
+      sound.stop();
+    });
+    for (let i = 0; i < headerButton2.length; i++) {
+      headerButton2[i].addEventListener("click", () => {
+        sound.stop();
+      });
+    }
     const loadNotes = (notes) => {
       setInterval(() => {
         if (currentIndex < notes.length) {
@@ -1228,7 +1248,7 @@ const PlayGame = () => {
             setTimeout(updateScore, 2000);
           }, 5000);
         }
-      }, 400);
+      }, 500);
     };
     loadNotes(notes);
 
