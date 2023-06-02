@@ -9,6 +9,7 @@ import tempoNoise from "../../mp3/1111.mp3";
 import record from "../../image/record.png";
 import download from "../../image/download.png";
 import { saveAs } from "file-saver";
+import pdfMake from "pdfmake/build/pdfmake";
 
 const CreateYourselfPage = () => {
   // let pu = [];
@@ -104,10 +105,28 @@ const CreateYourselfPage = () => {
     }
   };
   const handleDownloadPu = () => {
-    var FileSaver = require("file-saver");
-    const text = JSON.stringify(pu);
-    const blob = new Blob([text], { type: "text/plain;charset=utf-8" });
-    FileSaver.saveAs(blob, "pu.txt");
+    // var FileSaver = require("file-saver");
+    const modifiedList = [];
+    for (let i = 0; i < pu.length; i++) {
+      if (pu[i] !== "|" || pu[i] !== pu[i - 1]) {
+        modifiedList.push(pu[i]);
+      }
+    }
+    const result = modifiedList.join(" ");
+    const text = JSON.stringify(result);
+    // const blob = new Blob([text], { type: "text/plain;charset=utf-8" });
+    // FileSaver.saveAs(blob, "pu.txt");
+    console.log("success");
+    const docDefinition = {
+      content: [
+        {
+          text: text,
+          fontSize: text.includes("|") ? 30 : 15,
+          margin: [0, 0, 0, 12], // 上，右，下，左 的邊距
+        },
+      ],
+    };
+    pdfMake.createPdf(docDefinition).download("pu.pdf");
     console.log("success");
   };
   useEffect(() => {
