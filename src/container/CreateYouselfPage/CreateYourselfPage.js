@@ -7,6 +7,8 @@ import tempoRun from "../../image/tempoRun.png";
 import { Player } from "tone";
 import tempoNoise from "../../mp3/1111.mp3";
 import record from "../../image/record.png";
+import download from "../../image/download.png";
+import { saveAs } from "file-saver";
 
 const CreateYourselfPage = () => {
   // let pu = [];
@@ -38,8 +40,7 @@ const CreateYourselfPage = () => {
       range.value = parseInt(range.value) + 1;
       tempoNum.innerHTML = parseInt(range.value) + "bpm";
     }
-    console.log(startTime);
-    console.log(currentTime);
+    console.log(pu);
   };
   const pikachuShot = () => {
     sound.start();
@@ -78,7 +79,13 @@ const CreateYourselfPage = () => {
       if (IsRecord) {
         startId = setInterval(() => {
           setCurrentTime(Date.now());
-        }, 20);
+          let beat = Date.now() - startTime;
+          // console.log(beat);
+          // console.log(tempoNumber);
+          if (beat % (240000 / tempoNumber) < 15) {
+            setPu((prevPu) => [...prevPu, "|"]);
+          }
+        }, 1);
       }
     }
     playWithDelay();
@@ -90,11 +97,18 @@ const CreateYourselfPage = () => {
   const handleRecordChange = () => {
     setIsRecord((prevIsRecord) => !prevIsRecord);
     if (IsRecord) {
-      setPu([]);
       console.log(pu);
     } else {
+      setPu([]);
       console.log(pu);
     }
+  };
+  const handleDownloadPu = () => {
+    var FileSaver = require("file-saver");
+    const text = JSON.stringify(pu);
+    const blob = new Blob([text], { type: "text/plain;charset=utf-8" });
+    FileSaver.saveAs(blob, "pu.txt");
+    console.log("success");
   };
   useEffect(() => {
     const synth = new Tone.Sampler({
@@ -116,24 +130,38 @@ const CreateYourselfPage = () => {
         synth.triggerAttackRelease("D3", "4n");
         buttons[1].classList.add("active-white");
         if (IsRecord) {
-          console.log(IsRecord);
           setPu((prevPu) => [...prevPu, "W"]);
         }
       } else if (event.code === "KeyE") {
         synth.triggerAttackRelease("E3", "4n");
         buttons[2].classList.add("active-white");
+        if (IsRecord) {
+          setPu((prevPu) => [...prevPu, "E"]);
+        }
       } else if (event.code === "KeyR") {
         synth.triggerAttackRelease("F3", "4n");
         buttons[3].classList.add("active-white");
+        if (IsRecord) {
+          setPu((prevPu) => [...prevPu, "R"]);
+        }
       } else if (event.code === "KeyT") {
         synth.triggerAttackRelease("G3", "4n");
         buttons[4].classList.add("active-white");
+        if (IsRecord) {
+          setPu((prevPu) => [...prevPu, "T"]);
+        }
       } else if (event.code === "KeyY") {
         synth.triggerAttackRelease("A3", "4n");
         buttons[5].classList.add("active-white");
+        if (IsRecord) {
+          setPu((prevPu) => [...prevPu, "Y"]);
+        }
       } else if (event.code === "KeyU") {
         synth.triggerAttackRelease("B3", "4n");
         buttons[6].classList.add("active-white");
+        if (IsRecord) {
+          setPu((prevPu) => [...prevPu, "U"]);
+        }
       } else if (event.code === "KeyC") {
         synth.triggerAttackRelease("C4", "4n");
         buttons[7].classList.add("active-white");
@@ -320,6 +348,22 @@ const CreateYourselfPage = () => {
                 src={record}
                 style={{ animation: IsRecord ? "spin 2s linear infinite" : "" }}
               />
+            </button>
+          </div>
+        </div>
+        <div className="downloadBlock">
+          <div style={{ float: "right" }}>
+            <button
+              disabled={pu.length === 0 ? true : false}
+              className="downloadButton"
+              style={{
+                pointerEvents: pu.length === 0 ? "none" : "auto",
+                animation:
+                  pu.length === 0 || IsRecord ? "" : "domDomDom 1s infinite",
+              }}
+              onClick={handleDownloadPu}
+            >
+              <img className="download" src={download} />
             </button>
           </div>
         </div>
