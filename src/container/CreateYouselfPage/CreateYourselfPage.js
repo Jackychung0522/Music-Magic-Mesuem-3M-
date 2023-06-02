@@ -56,6 +56,7 @@ const CreateYourselfPage = () => {
   const [tempoNumber, setTempoNumber] = useState("100");
   const [IsTempoRun, setIsTempoRun] = useState(false);
   const [IsRecord, setIsRecord] = useState(false);
+  const [IsStart, setIsStart] = useState(false);
   const [pu, setPu] = useState([]);
   useEffect(() => {
     let intervalId;
@@ -72,17 +73,16 @@ const CreateYourselfPage = () => {
     };
   }, [IsTempoRun, tempoNumber]);
   useEffect(() => {
-    const startTime = Date.now();
-    setStartTime(startTime);
-    setCurrentTime(startTime);
+    const nowTime = Date.now();
+    setCurrentTime(nowTime);
     let startId;
     function playWithDelay() {
-      if (IsRecord) {
+      if (IsRecord && IsStart) {
+        console.log(IsStart);
         startId = setInterval(() => {
           setCurrentTime(Date.now());
           let beat = Date.now() - startTime;
-          // console.log(beat);
-          // console.log(tempoNumber);
+          console.log(beat);
           if (beat % (240000 / tempoNumber) < 15) {
             setPu((prevPu) => [...prevPu, "|"]);
           }
@@ -93,7 +93,7 @@ const CreateYourselfPage = () => {
     return () => {
       clearInterval(startId);
     };
-  }, [IsRecord]);
+  }, [IsRecord, IsStart]);
 
   const handleRecordChange = () => {
     setIsRecord((prevIsRecord) => !prevIsRecord);
@@ -112,6 +112,9 @@ const CreateYourselfPage = () => {
         modifiedList.push(pu[i]);
       }
     }
+    let tmp = modifiedList[0];
+    modifiedList[0] = modifiedList[1];
+    modifiedList[1] = tmp;
     const result = modifiedList.join(" ");
     const text = JSON.stringify(result);
     // const blob = new Blob([text], { type: "text/plain;charset=utf-8" });
@@ -139,6 +142,9 @@ const CreateYourselfPage = () => {
     }).toDestination();
 
     const handleKeyDown = (event) => {
+      setStartTime(Date.now());
+      setIsStart(true);
+
       if (event.code === "KeyQ") {
         synth.triggerAttackRelease("C3", "4n");
         buttons[0].classList.add("active-white");
