@@ -8,7 +8,7 @@ const HomePage = () => {
   const playButtonSound = () => {
     const audio = new Audio(buttonSound);
     audio.play();
-    audio.volume = 0.5;
+    audio.volume = 0.1;
   };
   const buttons = document.querySelectorAll("button");
   buttons.forEach((button) => {

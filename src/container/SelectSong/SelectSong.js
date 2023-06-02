@@ -12,7 +12,7 @@ const SelectSong = () => {
   const playButtonSound = () => {
     const audio = new Audio(buttonSound);
     audio.play();
-    audio.volume = 0.5;
+    audio.volume = 0.3;
   };
   const buttons = document.querySelectorAll("button");
   buttons.forEach((button) => {
