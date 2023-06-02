@@ -7,6 +7,7 @@ import db from "../../index";
 import bigyellowbee from "../../ spectrum/bigyellowbee.json";
 import littlestar from "../../ spectrum/littlestar.json";
 import bee from "../../mp3/bee.mp3";
+import star from "../../mp3/littlestar.mp3";
 import { Player } from "tone";
 import { Howl } from "howler";
 let currentPoint = 0;
@@ -39,7 +40,11 @@ const PlayGame = () => {
 
     setTimeout(delayStartMusic, 3500);
   } else if (currentSong === "Little Star") {
-    notes = littlestar;
+    notes = star;
+    sound = new Howl({
+      src: [littlestar],
+      volume: 0.5,
+    });
     console.log("notelen:", notes.length);
     for (let i = 0; i < notes.length; i++) {
       if (notes[i].note !== "") {
@@ -48,6 +53,7 @@ const PlayGame = () => {
       singlepoint = 10000 / validnote;
     }
     doc = "littlestar";
+    setTimeout(delayStartMusic, 3500);
   }
   useEffect(() => {
     const synth = new Tone.Sampler({
