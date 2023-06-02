@@ -68,7 +68,7 @@ const CreateYourselfPage = () => {
     return () => {
       clearInterval(intervalId);
     };
-  }, [IsTempoRun, tempoNumber, pikachuShot]);
+  }, [IsTempoRun, tempoNumber]);
   useEffect(() => {
     const startTime = Date.now();
     setStartTime(startTime);
