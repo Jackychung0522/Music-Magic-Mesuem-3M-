@@ -1,128 +1,152 @@
-#selectsong{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 48px;
-    color: #FF4500; /* 设置为橘红色，可以根据需要调整颜色值 */
-     font-weight: bold; /* 加粗字体 */
-     text-shadow: 1px 1px 2px #000000;
-    }
-#record{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: row;
-    font-size: 48px;
-    color: #440273; /* 设置为橘红色，可以根据需要调整颜色值 */
-     font-weight: bold; /* 加粗字体 */
-     text-shadow: 1px 1px 2px #000000;
-    margin: 0%;
-    margin-bottom:30px;
-     
-     
+#selectsong {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 48px;
+  color: rgb(197, 212, 161);
+  font-weight: bold;
+  text-shadow: 1px 1px 2px #000000;
 }
-#playerName{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: row;
-    font-size: 48px;
-    color: #440273; /* 设置为橘红色，可以根据需要调整颜色值 */
-     font-weight: bold; /* 加粗字体 */
-     text-shadow: 1px 1px 2px #000000;
-    margin-top: 0px;
-    margin-bottom:10px;
+#record {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  font-size: 48px;
+  color: rgb(197, 212, 161);
+  font-weight: bold;
+  text-shadow: 1px 1px 2px #000000;
+  margin: 0%;
+  margin-bottom: 30px;
 }
-.triangleButton{
-    display: flex;
-    align-items: center;
-    cursor: pointer;
-    padding-bottom:10px;
-    margin: 10px;
-    color: red ;
-    text-shadow: 1px 1px 2px #000000;
-    background-color: transparent;
-    border:none;
-    font-size: 48px;
+#playerName {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  font-size: 48px;
+  color: rgb(197, 212, 161);
+  font-weight: bold;
+  text-shadow: 1px 1px 2px #000000;
+  margin-top: 0px;
+  margin-bottom: 10px;
+}
+.triangleButton {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  padding-bottom: 10px;
+  margin: 10px;
+  color: red;
+  text-shadow: 1px 1px 2px #000000;
+  background-color: transparent;
+  border: none;
+  font-size: 48px;
 }
 .songBlock {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
-#songButton{
-    height: 50px;
-    width: 400px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    cursor: pointer;
-    border-radius: 5px;
-    padding: 10px;
-    background-color: rgba(210, 180, 140, 0.7); 
+#songButton {
+  height: 50px;
+  width: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  border-radius: 5px;
+  padding: 10px;
+  background-color: rgba(210, 180, 140, 0.7);
 }
-.songName{
-    margin-left: 0px;
-    font-size: 24px;
-    color: black;
-    font-weight: bold;
-    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.9);
-    font-family: cursive;
-
+.songName {
+  margin-left: 0px;
+  font-size: 24px;
+  color: black;
+  font-weight: bold;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.9);
+  font-family: cursive;
 }
-.difficulty{
-    margin-right: 00px;
-    font-size: 24px;
-    color: black;
-    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.9);
-    font-family: cursive;
-    font-weight: bold;
-
+.difficulty {
+  margin-right: 00px;
+  font-size: 24px;
+  color: black;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.9);
+  font-family: cursive;
+  font-weight: bold;
 }
-.difficultButtonBlock{
-    height: 50px;
-    width: 400px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content:space-between;
-    cursor: pointer;
-    border-radius: 5px;
-    padding: 10px;
+.difficultButtonBlock {
+  height: 50px;
+  width: 400px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  border-radius: 5px;
+  padding: 10px;
 }
-.difficulty{
-    justify-content: center;
-    align-items: center;
-    display: flex;
-    
-    
+.difficulty {
+  justify-content: center;
+  align-items: center;
+  display: flex;
 }
-.difficultButton{
-    height: 50px;
-    width: 100px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    border-radius: 5px;
-    padding: 10px;
-    background-color: rgba(210, 180, 140, 0.7); 
-    font-size: 24px;
-    background-color: #ccc;
+.difficultButton {
+  height: 50px;
+  width: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border-radius: 5px;
+  padding: 10px;
+  background-color: rgba(210, 180, 140, 0.7);
+  font-size: 24px;
+  background-color: #ccc;
 }
-.difficultButton.active{
-    background-color: #999;
+.difficultButton.active {
+  background-color: #999;
 }
-.buttonSection{
-    height: 100%;
-    display: grid;
-    justify-content: center;
-    align-items: center;
+.buttonSection {
+  height: 100%;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+  opacity: 0.8;
+  background-color: antiquewhite;
+  border-radius: 20px;
 }
-.selectPage{
-    display:grid;
-    justify-content: center;
-    align-items: center;
+.selectPage {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+  padding-bottom: 30px;
+}
+.selectPage::before {
+  content: "";
+  background-image: url("../../image/piano.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  opacity: 0.75;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+#selectsong,
+#playerName,
+#record,
+#easy,
+#normal,
+#hard,
+#up,
+#songButton,
+#down {
+  position: relative;
+  z-index: 1;
 }

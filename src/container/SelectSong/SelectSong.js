@@ -3,7 +3,6 @@ import { Container } from "reactstrap";
 import "./SelectSong.css";
 import { Link } from "react-router-dom";
 import routes from "../../AppRouter";
-import firebase from "firebase/compat/app";
 import "firebase/compat/auth";
 import "firebase/compat/firestore";
 import db from "../../index";
@@ -26,7 +25,7 @@ const SelectSong = () => {
   const [normalrecords, setNormalRecords] = useState([]);
   const [hardrecords, setHardRecords] = useState([]);
   const [selectDifficulty, setSelectDifficulty] = useState("easy");
-  const [speed, setSpeed] = useState(1);
+  // const [speed, setSpeed] = useState(1);
   const [easyplayernames, setEasyPlayerName] = useState([]);
   const [normalplayernames, setNormalPlayerName] = useState([]);
   const [hardplayernames, setHardPlayerName] = useState([]);
@@ -86,19 +85,16 @@ const SelectSong = () => {
   };
   const handleEasyButtonClick = () => {
     setSelectDifficulty("easy");
-    setSpeed(1);
     sessionStorage.setItem("speed", 1);
     sessionStorage.setItem("difficulty", "easy");
   };
   const handleNormalButtonClick = () => {
     setSelectDifficulty("normal");
-    setSpeed(3);
     sessionStorage.setItem("speed", 3);
     sessionStorage.setItem("difficulty", "normal");
   };
   const handleHardButtonClick = () => {
     setSelectDifficulty("hard");
-    setSpeed(1);
     sessionStorage.setItem("speed", 1);
     sessionStorage.setItem("difficulty", "hard");
   };
