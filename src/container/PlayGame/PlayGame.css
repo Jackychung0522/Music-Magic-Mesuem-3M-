@@ -323,7 +323,7 @@
   
  
   position: absolute;
-  top: 50%;
+  top: 20%;
   left: 50%;
   transform: translate(-50%, -50%);
   font-size: 36px;
@@ -370,4 +370,38 @@
   background-color: rgb(172, 29, 29);
  
   
+}
+.typeNameBlock{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin-top: 10px;
+  
+}
+#playerName{
+  width: 100%;
+  height: 50%;
+  font-size: large;
+  border-radius: 20px;
+  align-items: center;
+  display:flex;
+  justify-content: center;
+}
+.saveButton{
+  margin-top: 10px;
+  align-items: center;
+  display:flex;
+  justify-content: center;
+  
+}
+.divplayerName{
+  align-items: center;
+  display:flex;
+  justify-content: center;
+}
+.divsaveButton{
+  align-items: center;
+  display:flex;
+  justify-content: center;
 }

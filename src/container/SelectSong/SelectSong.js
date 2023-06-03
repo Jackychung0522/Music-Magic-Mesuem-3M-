@@ -27,6 +27,9 @@ const SelectSong = () => {
   const [hardrecords, setHardRecords] = useState([]);
   const [selectDifficulty, setSelectDifficulty] = useState("easy");
   const [speed, setSpeed] = useState(1);
+  const [easyplayernames, setEasyPlayerName] = useState([]);
+  const [normalplayernames, setNormalPlayerName] = useState([]);
+  const [hardplayernames, setHardPlayerName] = useState([]);
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -42,11 +45,23 @@ const SelectSong = () => {
         const fetchedHardRecords = querySnapshot.docs.map(
           (doc) => doc.data().hardrecord
         );
+        const fetchedEasyPlayerNames = querySnapshot.docs.map(
+          (doc) => doc.data().easyplayername
+        );
+        const fetchedNormalPlayerNames = querySnapshot.docs.map(
+          (doc) => doc.data().normalplayername
+        );
+        const fetchedHardPlayerNames = querySnapshot.docs.map(
+          (doc) => doc.data().hardplayername
+        );
         setSongs(fetchedSongs);
         setStars(fetchedStars);
         setEasyRecords(fetchedEasyRecords);
         setNormalRecords(fetchedNormalRecords);
         setHardRecords(fetchedHardRecords);
+        setEasyPlayerName(fetchedEasyPlayerNames);
+        setNormalPlayerName(fetchedNormalPlayerNames);
+        setHardPlayerName(fetchedHardPlayerNames);
       } catch (error) {
         console.log("Error getting songs: ", error);
       }
@@ -110,13 +125,22 @@ const SelectSong = () => {
       </p>
       <div>
         {selectDifficulty === "easy" && (
-          <p id="record">{easyrecords[selectedSongIndex]}</p>
+          <div>
+            <p id="playerName">{easyplayernames[selectedSongIndex]}</p>
+            <p id="record">{easyrecords[selectedSongIndex]}</p>
+          </div>
         )}
         {selectDifficulty === "normal" && (
-          <p id="record">{normalrecords[selectedSongIndex]}</p>
+          <div>
+            <p id="playerName">{normalplayernames[selectedSongIndex]}</p>
+            <p id="record">{normalrecords[selectedSongIndex]}</p>
+          </div>
         )}
         {selectDifficulty === "hard" && (
-          <p id="record">{hardrecords[selectedSongIndex]}</p>
+          <div>
+            <p id="playerName">{normalplayernames[selectedSongIndex]}</p>
+            <p id="record">{normalrecords[selectedSongIndex]}</p>
+          </div>
         )}
       </div>
       <div className="difficulty">

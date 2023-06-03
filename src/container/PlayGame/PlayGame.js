@@ -14,6 +14,7 @@ let currentPoint = 0;
 
 const PlayGame = () => {
   const currentSong = sessionStorage.getItem("currentSong");
+  const [playerName, setPlayerName] = useState("");
   let sound = "";
   let score = 0;
   let singlepoint = 0;
@@ -139,6 +140,11 @@ const PlayGame = () => {
     };
     const handleButtonMLaClick = () => {
       synth.triggerAttackRelease("A#4", "4n");
+    };
+    const handleTypeNameChange = (e) => {
+      setPlayerName(e.target.value);
+      console.log(e.target.value);
+      sessionStorage.setItem("playerName", e.target.value);
     };
 
     const buttons = document.getElementsByClassName("white");
@@ -1463,7 +1469,8 @@ const PlayGame = () => {
           } else {
             block.top += 2 * sessionStorage.getItem("speed");
             const currentTime = new Date().getTime();
-            if (currentTime % 2000 < 500) {
+            const randomtime = (Math.random() % 500) + 500;
+            if (currentTime % 2000 < randomtime) {
               block.element.style.opacity = 0;
             } else {
               block.element.style.opacity = 1;
@@ -1471,7 +1478,7 @@ const PlayGame = () => {
           }
 
           block.element.style.top = block.top + "px";
-          if (block.top >= 800) {
+          if (block.top >= 400) {
             block.isAlive = false;
             playingBlock.removeChild(block.element);
             blocks.splice(i, 1);
@@ -1508,9 +1515,9 @@ const PlayGame = () => {
 
             scoreDisplay.classList.add("score-display");
             playingBlock.appendChild(scoreDisplay);
-            const targetScore = Math.floor(score); // 目标分数
-            const increment = 1000; // 每次增加的分数
-            let currentScore = 0; // 当前分数
+            const targetScore = Math.floor(score);
+            const increment = 1000;
+            let currentScore = 0;
 
             const updateScore = () => {
               scoreDisplay.textContent = `Score: ${currentScore}`;
@@ -1526,18 +1533,161 @@ const PlayGame = () => {
                   .get()
                   .then((doc) => {
                     if (doc.exists) {
-                      const record = doc.data().record;
-                      if (record < targetScore) {
-                        docRef.update({
-                          record: targetScore,
-                        });
-                        scoreDisplay.innerHTML = `Score: ${targetScore}<br>New Record!`;
+                      if (sessionStorage.getItem("difficulty") === "easy") {
+                        const record = doc.data().easyrecord;
+                        if (record < targetScore) {
+                          docRef.update({
+                            easyrecord: targetScore,
+                          });
+                          scoreDisplay.innerHTML = `Score: ${targetScore}<br>New Record!`;
+                          const typeNameBlock = document.createElement("div");
+                          const divplayerName = document.createElement("div");
+                          const divsaveButton = document.createElement("div");
+                          typeNameBlock.className = "typeNameBlock";
+                          divplayerName.className = "divplayerName";
+                          divsaveButton.className = "divsaveButton";
+                          const inputElement = document.createElement("input");
+                          inputElement.id = "playerName";
+                          inputElement.value = playerName;
+                          inputElement.type = "text";
+                          inputElement.style.textAlign = "center";
+                          inputElement.placeholder = "Your Name";
+                          inputElement.addEventListener(
+                            "change",
+                            handleTypeNameChange
+                          );
+                          const saveButton = document.createElement("button");
+                          saveButton.className = "saveButton";
+                          saveButton.textContent = "Save";
+                          saveButton.addEventListener("click", () => {
+                            docRef
+                              .update({
+                                easyplayername:
+                                  sessionStorage.getItem("playerName"),
+                              })
+                              .then(() => {
+                                console.log("Data saved to Firestore");
+                              })
+                              .catch((error) => {
+                                console.error(
+                                  "Error saving data to Firestore: ",
+                                  error
+                                );
+                              });
+                          });
+                          typeNameBlock.appendChild(divplayerName);
+                          divplayerName.appendChild(inputElement);
+                          typeNameBlock.appendChild(divsaveButton);
+                          divsaveButton.appendChild(saveButton);
+                          playingBlock.appendChild(typeNameBlock);
+                        }
+                      }
+                      if (sessionStorage.getItem("difficulty") === "normal") {
+                        const record = doc.data().normalrecord;
+                        if (record < targetScore) {
+                          docRef.update({
+                            normalrecord: targetScore,
+                          });
+                          scoreDisplay.innerHTML = `Score: ${targetScore}<br>New Record!`;
+                          const typeNameBlock = document.createElement("div");
+                          typeNameBlock.className = "typeNameBlock";
+                          const divplayerName = document.createElement("div");
+                          const divsaveButton = document.createElement("div");
+                          const inputElement = document.createElement("input");
+                          divplayerName.className = "divplayerName";
+                          divsaveButton.className = "divsaveButton";
+                          inputElement.id = "playerName";
+                          inputElement.value = playerName;
+                          inputElement.type = "text";
+                          inputElement.style.textAlign = "center";
+                          inputElement.placeholder = "Your Name";
+                          inputElement.addEventListener(
+                            "change",
+                            handleTypeNameChange
+                          );
+                          const saveButton = document.createElement("button");
+                          saveButton.className = "saveButton";
+                          saveButton.textContent = "Save";
+                          saveButton.addEventListener("click", () => {
+                            docRef
+                              .update({
+                                normalplayername:
+                                  sessionStorage.getItem("playerName"),
+                              })
+                              .then(() => {
+                                console.log("Data saved to Firestore");
+                              })
+                              .catch((error) => {
+                                console.error(
+                                  "Error saving data to Firestore: ",
+                                  error
+                                );
+                              });
+                          });
+
+                          typeNameBlock.appendChild(divplayerName);
+                          divplayerName.appendChild(inputElement);
+                          typeNameBlock.appendChild(divsaveButton);
+                          divsaveButton.appendChild(saveButton);
+
+                          // 将新的 <div> 元素添加到页面中的合适位置
+                          playingBlock.appendChild(typeNameBlock);
+                        }
+                      }
+                      if (sessionStorage.getItem("difficulty") === "hard") {
+                        const record = doc.data().hardrecord;
+                        if (record < targetScore) {
+                          docRef.update({
+                            hardrecord: targetScore,
+                          });
+                          scoreDisplay.innerHTML = `Score: ${targetScore}<br>New Record!`;
+                          const divplayerName = document.createElement("div");
+                          const divsaveButton = document.createElement("div");
+                          const typeNameBlock = document.createElement("div");
+                          typeNameBlock.className = "typeNameBlock";
+                          divplayerName.className = "divplayerName";
+                          divsaveButton.className = "divsaveButton";
+                          const inputElement = document.createElement("input");
+                          inputElement.id = "playerName";
+                          inputElement.value = playerName;
+                          inputElement.type = "text";
+                          inputElement.style.textAlign = "center";
+                          inputElement.placeholder = "Your Name";
+                          inputElement.addEventListener(
+                            "change",
+                            handleTypeNameChange
+                          );
+                          const saveButton = document.createElement("button");
+                          saveButton.className = "saveButton";
+                          saveButton.textContent = "Save";
+                          saveButton.addEventListener("click", () => {
+                            docRef
+                              .update({
+                                hardplayername: inputElement.value,
+                              })
+                              .then(() => {
+                                console.log("Data saved to Firestore");
+                              })
+                              .catch((error) => {
+                                console.error(
+                                  "Error saving data to Firestore: ",
+                                  error
+                                );
+                              });
+                          });
+
+                          typeNameBlock.appendChild(divplayerName);
+                          divplayerName.appendChild(inputElement);
+                          typeNameBlock.appendChild(divsaveButton);
+                          divsaveButton.appendChild(saveButton);
+
+                          // 将新的 <div> 元素添加到页面中的合适位置
+                          playingBlock.appendChild(typeNameBlock);
+                        }
                       }
                     }
                   })
-                  .catch((error) => {
-                    // 处理获取记录时的错误
-                  });
+                  .catch((error) => {});
               }
             };
 
@@ -1550,8 +1700,6 @@ const PlayGame = () => {
 
     animate();
   }, []);
-
-  // 启动动画
 
   return (
     <Container>
