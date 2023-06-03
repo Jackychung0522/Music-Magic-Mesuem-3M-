@@ -117,73 +117,85 @@ const SelectSong = () => {
   }, []);
   return (
     <Container>
-      <p id="selectsong">
-        <span role="img" aria-label="fire">
-          🔥
-        </span>{" "}
-        Select Song
-      </p>
-      <div>
-        {selectDifficulty === "easy" && (
-          <div>
-            <p id="playerName">{easyplayernames[selectedSongIndex]}</p>
-            <p id="record">{easyrecords[selectedSongIndex]}</p>
-          </div>
-        )}
-        {selectDifficulty === "normal" && (
-          <div>
-            <p id="playerName">{normalplayernames[selectedSongIndex]}</p>
-            <p id="record">{normalrecords[selectedSongIndex]}</p>
-          </div>
-        )}
-        {selectDifficulty === "hard" && (
-          <div>
-            <p id="playerName">{normalplayernames[selectedSongIndex]}</p>
-            <p id="record">{normalrecords[selectedSongIndex]}</p>
-          </div>
-        )}
-      </div>
-      <div className="difficulty">
-        <div className="difficultButtonBlock">
-          <button
-            id="easy"
-            className="difficultButton"
-            onClick={handleEasyButtonClick}
-          >
-            Easy
-          </button>
-          <button
-            id="normal"
-            className="difficultButton"
-            onClick={handleNormalButtonClick}
-          >
-            Normal
-          </button>
-          <button
-            id="hard"
-            className="difficultButton"
-            onClick={handleHardButtonClick}
-          >
-            Hard
-          </button>
+      <div className="selectPage">
+        <p id="selectsong">
+          <span role="img" aria-label="fire">
+            🔥
+          </span>{" "}
+          Select Song
+        </p>
+        <div>
+          {selectDifficulty === "easy" && (
+            <div>
+              <p id="playerName">{easyplayernames[selectedSongIndex]}</p>
+              <p id="record">{easyrecords[selectedSongIndex]}</p>
+            </div>
+          )}
+          {selectDifficulty === "normal" && (
+            <div>
+              <p id="playerName">{normalplayernames[selectedSongIndex]}</p>
+              <p id="record">{normalrecords[selectedSongIndex]}</p>
+            </div>
+          )}
+          {selectDifficulty === "hard" && (
+            <div>
+              <p id="playerName">{hardplayernames[selectedSongIndex]}</p>
+              <p id="record">{hardrecords[selectedSongIndex]}</p>
+            </div>
+          )}
         </div>
-      </div>
+        <div className="buttonSection">
+          <div className="difficulty">
+            <div className="difficultButtonBlock">
+              <button
+                id="easy"
+                className="difficultButton"
+                onClick={handleEasyButtonClick}
+              >
+                Easy
+              </button>
+              <button
+                id="normal"
+                className="difficultButton"
+                onClick={handleNormalButtonClick}
+              >
+                Normal
+              </button>
+              <button
+                id="hard"
+                className="difficultButton"
+                onClick={handleHardButtonClick}
+              >
+                Hard
+              </button>
+            </div>
+          </div>
 
-      <div className="songBlock">
-        <button id="up" className="triangleButton" onClick={handlePreviousSong}>
-          &#9650;
-        </button>
-        <Link to={routes.playgame} className="link">
-          <button id="songButton" onClick={handleClick}>
-            <span className="songName">{songs[selectedSongIndex]}</span>
-            <span className="difficulty">
-              &#9733;{stars[selectedSongIndex]}
-            </span>
-          </button>
-        </Link>
-        <button id="down" className="triangleButton" onClick={handleNextSong}>
-          &#9660;
-        </button>
+          <div className="songBlock">
+            <button
+              id="up"
+              className="triangleButton"
+              onClick={handlePreviousSong}
+            >
+              &#9650;
+            </button>
+            <Link to={routes.playgame} className="link">
+              <button id="songButton" onClick={handleClick}>
+                <span className="songName">{songs[selectedSongIndex]}</span>
+                <span className="difficulty">
+                  &#9733;{stars[selectedSongIndex]}
+                </span>
+              </button>
+            </Link>
+            <button
+              id="down"
+              className="triangleButton"
+              onClick={handleNextSong}
+            >
+              &#9660;
+            </button>
+          </div>
+        </div>
       </div>
     </Container>
   );
