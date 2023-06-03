@@ -403,7 +403,7 @@ const CreateYourselfPage = () => {
               <button
                 // disabled
                 style={{
-                  backgroundColor: IsTempoRun ? "rgb(125, 178, 224)" : "",
+                  backgroundColor: IsTempoRun ? "rgb(159, 118, 96)" : "",
                 }}
                 id="pikachuButton"
                 onClick={handleSwitchOnTempoRun}

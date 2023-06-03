@@ -1,12 +1,12 @@
 .homePage {
   position: relative;
-  height: 1000px;
+  height: 600px;
   display: flex;
   justify-content: center;
   align-items: center;
   z-index: 1;
 }
-.homePage::after {
+.homePage::before {
   content: "";
   background-image: url("../../image/piano.jpg");
   background-size: cover;
@@ -30,6 +30,7 @@
 }
 .project_full_name {
   font-size: 2cm;
+  font-family: Caveat;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -43,7 +44,7 @@
   width: 200px;
   height: 120px;
   border-radius: 20px;
-  font-family: cursive;
+  font-family: Caveat;
 }
 .button_right {
   font-size: 30px;
@@ -53,7 +54,7 @@
   width: 200px;
   height: 120px;
   border-radius: 20px;
-  font-family: cursive;
+  font-family: Caveat;
 }
 .buttons {
   display: flex;
