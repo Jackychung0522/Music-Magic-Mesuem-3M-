@@ -38,7 +38,7 @@ const PlayGame = () => {
     }
     doc = "bigbee";
 
-    setTimeout(delayStartMusic, 3500);
+    setTimeout(delayStartMusic, 2900 / sessionStorage.getItem("speed") + 600);
   } else if (currentSong === "Little Star") {
     notes = littlestar;
     sound = new Howl({
@@ -53,7 +53,7 @@ const PlayGame = () => {
       singlepoint = 10000 / validnote;
     }
     doc = "littlestar";
-    setTimeout(delayStartMusic, 3500);
+    setTimeout(delayStartMusic, 2900 / sessionStorage.getItem("speed") + 600);
   }
   useEffect(() => {
     const synth = new Tone.Sampler({
@@ -1447,18 +1447,31 @@ const PlayGame = () => {
           top: 0,
           isAlive: true,
           status: "alive",
+          isVisible: "false",
         });
       }
     };
 
     const animate = () => {
       let droppedBlocks = 0;
+      let step = 1;
       for (let i = 0; i < blocks.length; i++) {
         const block = blocks[i];
         if (block.isAlive) {
-          block.top += 2;
+          if (sessionStorage.getItem("difficulty") !== "hard") {
+            block.top += 2 * sessionStorage.getItem("speed");
+          } else {
+            block.top += 2 * sessionStorage.getItem("speed");
+            const currentTime = new Date().getTime();
+            if (currentTime % 2000 < 500) {
+              block.element.style.opacity = 0;
+            } else {
+              block.element.style.opacity = 1;
+            }
+          }
+
           block.element.style.top = block.top + "px";
-          if (block.top >= 500) {
+          if (block.top >= 800) {
             block.isAlive = false;
             playingBlock.removeChild(block.element);
             blocks.splice(i, 1);
