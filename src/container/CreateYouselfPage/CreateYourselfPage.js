@@ -87,8 +87,8 @@ const CreateYourselfPage = () => {
             beat % (240000 / tempoNumber) < 15 &&
             Math.floor(beat / (240000 / tempoNumber)) !== 0
           ) {
-            // setPu((prevPu) => [...prevPu, "|"]);
-            setPu((prevPu) => [...prevPu, beat]);
+            setPu((prevPu) => [...prevPu, "|"]);
+            //setPu((prevPu) => [...prevPu, beat]);
           }
         }, 1);
       }
@@ -117,9 +117,6 @@ const CreateYourselfPage = () => {
         modifiedList.push(pu[i]);
       }
     }
-    // let tmp = modifiedList[0];
-    // modifiedList[0] = modifiedList[1];
-    // modifiedList[1] = tmp;
     const result = modifiedList.join(" ");
     const text = JSON.stringify(result);
     const newText = text.replace(/"/g, " | ");
