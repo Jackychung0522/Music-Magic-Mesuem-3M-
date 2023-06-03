@@ -11,6 +11,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: row;
     font-size: 48px;
     color: #440273; /* 设置为橘红色，可以根据需要调整颜色值 */
      font-weight: bold; /* 加粗字体 */
@@ -64,4 +65,38 @@
     font-family: cursive;
     font-weight: bold;
 
+}
+.difficultButtonBlock{
+    height: 50px;
+    width: 400px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content:space-between;
+    cursor: pointer;
+    border-radius: 5px;
+    padding: 10px;
+}
+.difficulty{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    
+    
+}
+.difficultButton{
+    height: 50px;
+    width: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border-radius: 5px;
+    padding: 10px;
+    background-color: rgba(210, 180, 140, 0.7); 
+    font-size: 24px;
+    background-color: #ccc;
+}
+.difficultButton.active{
+    background-color: #999;
 }
