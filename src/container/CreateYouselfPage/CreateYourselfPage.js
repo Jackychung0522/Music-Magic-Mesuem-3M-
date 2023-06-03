@@ -87,8 +87,8 @@ const CreateYourselfPage = () => {
             beat % (240000 / tempoNumber) < 15 &&
             Math.floor(beat / (240000 / tempoNumber)) !== 0
           ) {
-            setPu((prevPu) => [...prevPu, "|"]);
-            //setPu((prevPu) => [...prevPu, beat]);
+            // setPu((prevPu) => [...prevPu, "|"]);
+            setPu((prevPu) => [...prevPu, beat]);
           }
         }, 1);
       }
