@@ -24,6 +24,7 @@
   margin-bottom: 20px;
   position: absolute;
   z-index: 1;
+  border-width: 3px;
 }
 .buttonText {
   margin-bottom: 5px;
@@ -96,6 +97,8 @@ input[type="range"] {
   margin-top: 30px;
   border-radius: 30px;
   cursor: pointer;
+  z-index: 2;
+  border-width: 0cm;
 }
 #pikachuButton:active {
   transform: scale(0.8);
@@ -123,7 +126,16 @@ input[type="range"] {
   justify-content: center;
 }
 #tempoNumber {
+  position: relative;
   font-size: 0.8cm;
+  z-index: 1;
+  color: aliceblue;
+}
+.keyMin,
+.keyPlus,
+#bpmInput {
+  position: relative;
+  z-index: 1;
 }
 .keyMin:active {
   transform: scale(1.2);
@@ -131,13 +143,16 @@ input[type="range"] {
 .keyPlus:active {
   transform: scale(1.2);
 }
-.recordButton {
+#recordButton {
+  position: relative;
   width: 50px;
   height: 50px;
   border-radius: 50%;
+  border-width: 0cm;
   cursor: pointer;
   background-color: rgb(163, 185, 111);
   margin-top: 250px;
+  z-index: 2;
 }
 .record {
   width: 100%;
@@ -148,7 +163,8 @@ input[type="range"] {
   display: flex;
   justify-content: flex-end;
 }
-.downloadButton {
+#downloadButton {
+  position: relative;
   width: 100px;
   height: 50px;
   cursor: pointer;
@@ -157,8 +173,10 @@ input[type="range"] {
   align-items: center;
   justify-content: center;
   border-radius: 10px;
+  border-width: 0cm;
+  z-index: 2;
 }
-.downloadButton:hover {
+#downloadButton:hover {
   background-color: antiquewhite;
 }
 .download {
@@ -211,10 +229,27 @@ input[type="range"] {
   height: 20%;
   font-size: large;
   border-radius: 20px;
+  z-index: 2;
+  border-width: 0cm;
 }
 .puNameBlock {
   width: 30%;
   display: flex;
   align-items: center;
   justify-content: flex-end;
+}
+.createPage {
+  position: relative;
+}
+.createPage::before {
+  content: "";
+  background-image: url("../../image/piano.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  opacity: 0.75;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }

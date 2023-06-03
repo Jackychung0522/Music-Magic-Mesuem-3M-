@@ -8,7 +8,6 @@ import { Player } from "tone";
 import tempoNoise from "../../mp3/1111.mp3";
 import record from "../../image/record.png";
 import download from "../../image/download.png";
-import { saveAs } from "file-saver";
 import pdfMake from "pdfmake/build/pdfmake";
 
 const CreateYourselfPage = () => {
@@ -52,7 +51,7 @@ const CreateYourselfPage = () => {
     setTempoNumber(parseInt(range.value));
   };
   const [startTime, setStartTime] = useState(0);
-  const [currentTime, setCurrentTime] = useState(0);
+  // const [currentTime, setCurrentTime] = useState(0);
   const [tempoNumber, setTempoNumber] = useState("100");
   const [IsTempoRun, setIsTempoRun] = useState(false);
   const [IsRecord, setIsRecord] = useState(false);
@@ -75,13 +74,13 @@ const CreateYourselfPage = () => {
   }, [IsTempoRun, tempoNumber]);
   useEffect(() => {
     const nowTime = Date.now();
-    setCurrentTime(nowTime);
+    // setCurrentTime(nowTime);
     let startId;
     function playWithDelay() {
       if (IsRecord && IsStart) {
         console.log(IsStart);
         startId = setInterval(() => {
-          setCurrentTime(Date.now());
+          // setCurrentTime(Date.now());
           let beat = Date.now() - startTime;
           // console.log(beat);
           if (
@@ -397,161 +396,164 @@ const CreateYourselfPage = () => {
 
   return (
     <Container>
-      <div className="topOfPiano" style={{ display: "flex" }}>
-        <div className="tempo">
-          <div className="pikachuButtonBlock">
-            <button
-              // disabled
-              style={{ backgroundColor: IsTempoRun ? "blue" : "" }}
-              id="pikachuButton"
-              onClick={handleSwitchOnTempoRun}
-            >
-              <img src={tempoRun} className="pikachu"></img>
-            </button>
+      <div className="createPage">
+        <div className="topOfPiano" style={{ display: "flex" }}>
+          <div className="tempo">
+            <div className="pikachuButtonBlock">
+              <button
+                // disabled
+                style={{ backgroundColor: IsTempoRun ? "blue" : "" }}
+                id="pikachuButton"
+                onClick={handleSwitchOnTempoRun}
+              >
+                <img src={tempoRun} className="pikachu"></img>
+              </button>
+            </div>
+            <div className="bpmBlock">
+              <button className="keyMin" onClick={handleTempoMin}>
+                -
+              </button>
+              <input
+                id="bpmInput"
+                value={tempoNumber}
+                max="244"
+                min="30"
+                type="range"
+                onChange={handleTempoChange}
+                // onChange={handleChangeTempoNumber}
+              ></input>
+              <button className="keyPlus" onClick={handleTempoPlus}>
+                +
+              </button>
+            </div>
+            <div className="tempoNumberBlock">
+              <p id="tempoNumber">100bpm</p>
+            </div>
           </div>
-          <div className="bpmBlock">
-            <button className="keyMin" onClick={handleTempoMin}>
-              -
-            </button>
+          <div className="puNameBlock">
             <input
-              id="bpmInput"
-              value={tempoNumber}
-              max="244"
-              min="30"
-              type="range"
-              onChange={handleTempoChange}
-              // onChange={handleChangeTempoNumber}
+              id="puName"
+              value={puName}
+              type="text"
+              style={{ textAlign: "center" }}
+              onChange={handlePuNameChange}
+              placeholder="Name Your Song "
             ></input>
-            <button className="keyPlus" onClick={handleTempoPlus}>
-              +
+          </div>
+          <div className="recordBlock">
+            <div style={{ float: "right" }}>
+              <button
+                id="recordButton"
+                style={{ animation: IsRecord ? "colorChange 1s infinite" : "" }}
+                onClick={handleRecordChange}
+              >
+                <img
+                  className="record"
+                  src={record}
+                  style={{
+                    animation: IsRecord ? "spin 2s linear infinite" : "",
+                  }}
+                />
+              </button>
+            </div>
+          </div>
+          <div className="downloadBlock">
+            <div style={{ float: "right" }}>
+              <button
+                disabled={pu.length === 0 ? true : false}
+                id="downloadButton"
+                style={{
+                  pointerEvents: pu.length === 0 ? "none" : "auto",
+                  animation:
+                    pu.length === 0 || IsRecord ? "" : "domDomDom 1s infinite",
+                }}
+                onClick={handleDownloadPu}
+              >
+                <img className="download" src={download} />
+              </button>
+            </div>
+          </div>
+        </div>
+        <div className="pianoBlock">
+          <div className="pianoBlockForBlack">
+            <button className="black blackType1" id="b2">
+              <span className="blackButtonText">2</span>
+            </button>
+            <button className="black blackType2" id="b3">
+              <span className="blackButtonText">3</span>
+            </button>
+            <button className="black blackType3" id="b5">
+              <span className="blackButtonText">5</span>
+            </button>
+            <button className="black blackType1" id="b6">
+              <span className="blackButtonText">6</span>
+            </button>
+            <button className="black blackType2" id="b7">
+              <span className="blackButtonText">7</span>
+            </button>
+            <button className="black blackType3" id="bG">
+              <span className="blackButtonText">F</span>
+            </button>
+            <button className="black blackType2" id="bH">
+              <span className="blackButtonText">G</span>
+            </button>
+            <button className="black blackType3" id="bK">
+              <span className="blackButtonText">J</span>
+            </button>
+            <button className="black blackType1" id="bL">
+              <span className="blackButtonText">K</span>
+            </button>
+            <button className="black blackType1" id="b">
+              <span className="blackButtonText">L</span>
             </button>
           </div>
-          <div className="tempoNumberBlock">
-            <p id="tempoNumber">100bpm</p>
-          </div>
-        </div>
-        <div className="puNameBlock">
-          <input
-            id="puName"
-            value={puName}
-            type="text"
-            style={{ textAlign: "center" }}
-            onChange={handlePuNameChange}
-            placeholder="Name Your Song "
-          ></input>
-        </div>
-        <div className="recordBlock">
-          <div style={{ float: "right" }}>
-            <button
-              className="recordButton"
-              style={{ animation: IsRecord ? "colorChange 1s infinite" : "" }}
-              onClick={handleRecordChange}
-            >
-              <img
-                className="record"
-                src={record}
-                style={{ animation: IsRecord ? "spin 2s linear infinite" : "" }}
-              />
+          <div className="pianoBlockForWhite">
+            <button className="white" id="Q">
+              <span className="buttonText">Q</span>
+            </button>
+            <button className="white" id="W">
+              <span className="buttonText">W</span>
+            </button>
+            <button className="white" id="E">
+              <span className="buttonText">E</span>
+            </button>
+            <button className="white" id="R">
+              <span className="buttonText">R</span>
+            </button>
+            <button className="white" id="T">
+              <span className="buttonText">T</span>
+            </button>
+            <button className="white" id="Y">
+              <span className="buttonText">Y</span>
+            </button>
+            <button className="white" id="U">
+              <span className="buttonText">U</span>
+            </button>
+            <button className="white" id="C">
+              <span className="buttonText">C</span>
+            </button>
+            <button className="white" id="V">
+              <span className="buttonText">V</span>
+            </button>
+            <button className="white" id="B">
+              <span className="buttonText">B</span>
+            </button>
+            <button className="white" id="N">
+              <span className="buttonText">N</span>
+            </button>
+            <button className="white" id="M">
+              <span className="buttonText">M</span>
+            </button>
+            <button className="white" id=",">
+              <span className="buttonText">,</span>
+            </button>
+            <button className="white" id=".">
+              <span className="buttonText">.</span>
+            </button>
+            <button className="white" id="/">
+              <span className="buttonText">/</span>
             </button>
           </div>
-        </div>
-        <div className="downloadBlock">
-          <div style={{ float: "right" }}>
-            <button
-              disabled={pu.length === 0 ? true : false}
-              className="downloadButton"
-              style={{
-                pointerEvents: pu.length === 0 ? "none" : "auto",
-                animation:
-                  pu.length === 0 || IsRecord ? "" : "domDomDom 1s infinite",
-              }}
-              onClick={handleDownloadPu}
-            >
-              <img className="download" src={download} />
-            </button>
-          </div>
-        </div>
-      </div>
-
-      <div className="pianoBlock">
-        <div className="pianoBlockForBlack">
-          <button className="black blackType1" id="b2">
-            <span className="blackButtonText">2</span>
-          </button>
-          <button className="black blackType2" id="b3">
-            <span className="blackButtonText">3</span>
-          </button>
-          <button className="black blackType3" id="b5">
-            <span className="blackButtonText">5</span>
-          </button>
-          <button className="black blackType1" id="b6">
-            <span className="blackButtonText">6</span>
-          </button>
-          <button className="black blackType2" id="b7">
-            <span className="blackButtonText">7</span>
-          </button>
-          <button className="black blackType3" id="bG">
-            <span className="blackButtonText">F</span>
-          </button>
-          <button className="black blackType2" id="bH">
-            <span className="blackButtonText">G</span>
-          </button>
-          <button className="black blackType3" id="bK">
-            <span className="blackButtonText">J</span>
-          </button>
-          <button className="black blackType1" id="bL">
-            <span className="blackButtonText">K</span>
-          </button>
-          <button className="black blackType1" id="b">
-            <span className="blackButtonText">L</span>
-          </button>
-        </div>
-        <div className="pianoBlockForWhite">
-          <button className="white" id="Q">
-            <span className="buttonText">Q</span>
-          </button>
-          <button className="white" id="W">
-            <span className="buttonText">W</span>
-          </button>
-          <button className="white" id="E">
-            <span className="buttonText">E</span>
-          </button>
-          <button className="white" id="R">
-            <span className="buttonText">R</span>
-          </button>
-          <button className="white" id="T">
-            <span className="buttonText">T</span>
-          </button>
-          <button className="white" id="Y">
-            <span className="buttonText">Y</span>
-          </button>
-          <button className="white" id="U">
-            <span className="buttonText">U</span>
-          </button>
-          <button className="white" id="C">
-            <span className="buttonText">C</span>
-          </button>
-          <button className="white" id="V">
-            <span className="buttonText">V</span>
-          </button>
-          <button className="white" id="B">
-            <span className="buttonText">B</span>
-          </button>
-          <button className="white" id="N">
-            <span className="buttonText">N</span>
-          </button>
-          <button className="white" id="M">
-            <span className="buttonText">M</span>
-          </button>
-          <button className="white" id=",">
-            <span className="buttonText">,</span>
-          </button>
-          <button className="white" id=".">
-            <span className="buttonText">.</span>
-          </button>
-          <button className="white" id="/">
-            <span className="buttonText">/</span>
-          </button>
         </div>
       </div>
     </Container>
