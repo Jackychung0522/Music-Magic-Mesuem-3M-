@@ -130,7 +130,7 @@ const CreateYourselfPage = () => {
           text: newText,
           // fontSize: text.includes("|") ? 30 : 15,
           fontSize: 30,
-          margin: [0, 0, 0, 12], // 上，右，下，左 的邊距
+          margin: [0, 0, 0, 12],
         },
       ],
     };
@@ -402,7 +402,9 @@ const CreateYourselfPage = () => {
             <div className="pikachuButtonBlock">
               <button
                 // disabled
-                style={{ backgroundColor: IsTempoRun ? "blue" : "" }}
+                style={{
+                  backgroundColor: IsTempoRun ? "rgb(125, 178, 224)" : "",
+                }}
                 id="pikachuButton"
                 onClick={handleSwitchOnTempoRun}
               >
@@ -460,7 +462,7 @@ const CreateYourselfPage = () => {
           <div className="downloadBlock">
             <div style={{ float: "right" }}>
               <button
-                disabled={pu.length === 0 ? true : false}
+                disabled={pu.length === 0 || IsRecord ? true : false}
                 id="downloadButton"
                 style={{
                   pointerEvents: pu.length === 0 ? "none" : "auto",
