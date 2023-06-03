@@ -58,6 +58,7 @@ const CreateYourselfPage = () => {
   const [IsRecord, setIsRecord] = useState(false);
   const [IsStart, setIsStart] = useState(false);
   const [pu, setPu] = useState([]);
+  const [puName, setPuName] = useState();
   useEffect(() => {
     let intervalId;
     async function playWithDelay() {
@@ -82,13 +83,13 @@ const CreateYourselfPage = () => {
         startId = setInterval(() => {
           setCurrentTime(Date.now());
           let beat = Date.now() - startTime;
-          console.log(beat);
+          // console.log(beat);
           if (
             beat % (240000 / tempoNumber) < 15 &&
-            Math.floor(beat / (240000 / tempoNumber)) !== 0
+            beat / (240000 / tempoNumber) > 1
           ) {
             setPu((prevPu) => [...prevPu, "|"]);
-            //setPu((prevPu) => [...prevPu, beat]);
+            // setPu((prevPu) => [...prevPu, beat]);
           }
         }, 1);
       }
@@ -128,13 +129,23 @@ const CreateYourselfPage = () => {
       content: [
         {
           text: newText,
-          fontSize: text.includes("|") ? 30 : 15,
+          // fontSize: text.includes("|") ? 30 : 15,
+          fontSize: 30,
           margin: [0, 0, 0, 12], // 上，右，下，左 的邊距
         },
       ],
     };
-    pdfMake.createPdf(docDefinition).download("pu.pdf");
+    if (puName === undefined) {
+      pdfMake.createPdf(docDefinition).download("spectrum.pdf");
+    } else {
+      pdfMake.createPdf(docDefinition).download(puName + ".pdf");
+    }
+
     console.log("success");
+  };
+  const handlePuNameChange = (e) => {
+    setPuName(e.target.value);
+    // console.log(e.target.value);
   };
   useEffect(() => {
     const synth = new Tone.Sampler({
@@ -153,98 +164,152 @@ const CreateYourselfPage = () => {
         synth.triggerAttackRelease("C3", "4n");
         buttons[0].classList.add("active-white");
         if (IsRecord) {
-          setPu((prevPu) => [...prevPu, "Q"]);
+          setPu((prevPu) => [...prevPu, "do"]);
         }
       } else if (event.code === "KeyW") {
         synth.triggerAttackRelease("D3", "4n");
         buttons[1].classList.add("active-white");
         if (IsRecord) {
-          setPu((prevPu) => [...prevPu, "W"]);
+          setPu((prevPu) => [...prevPu, "re"]);
         }
       } else if (event.code === "KeyE") {
         synth.triggerAttackRelease("E3", "4n");
         buttons[2].classList.add("active-white");
         if (IsRecord) {
-          setPu((prevPu) => [...prevPu, "E"]);
+          setPu((prevPu) => [...prevPu, "me"]);
         }
       } else if (event.code === "KeyR") {
         synth.triggerAttackRelease("F3", "4n");
         buttons[3].classList.add("active-white");
         if (IsRecord) {
-          setPu((prevPu) => [...prevPu, "R"]);
+          setPu((prevPu) => [...prevPu, "fa"]);
         }
       } else if (event.code === "KeyT") {
         synth.triggerAttackRelease("G3", "4n");
         buttons[4].classList.add("active-white");
         if (IsRecord) {
-          setPu((prevPu) => [...prevPu, "T"]);
+          setPu((prevPu) => [...prevPu, "so"]);
         }
       } else if (event.code === "KeyY") {
         synth.triggerAttackRelease("A3", "4n");
         buttons[5].classList.add("active-white");
         if (IsRecord) {
-          setPu((prevPu) => [...prevPu, "Y"]);
+          setPu((prevPu) => [...prevPu, "la"]);
         }
       } else if (event.code === "KeyU") {
         synth.triggerAttackRelease("B3", "4n");
         buttons[6].classList.add("active-white");
         if (IsRecord) {
-          setPu((prevPu) => [...prevPu, "U"]);
+          setPu((prevPu) => [...prevPu, "si"]);
         }
       } else if (event.code === "KeyC") {
         synth.triggerAttackRelease("C4", "4n");
         buttons[7].classList.add("active-white");
+        if (IsRecord) {
+          setPu((prevPu) => [...prevPu, "Do"]);
+        }
       } else if (event.code === "KeyV") {
         synth.triggerAttackRelease("D4", "4n");
         buttons[8].classList.add("active-white");
+        if (IsRecord) {
+          setPu((prevPu) => [...prevPu, "Re"]);
+        }
       } else if (event.code === "KeyB") {
         synth.triggerAttackRelease("E4", "4n");
         buttons[9].classList.add("active-white");
+        if (IsRecord) {
+          setPu((prevPu) => [...prevPu, "Me"]);
+        }
       } else if (event.code === "KeyN") {
         synth.triggerAttackRelease("F4", "4n");
         buttons[10].classList.add("active-white");
+        if (IsRecord) {
+          setPu((prevPu) => [...prevPu, "Fa"]);
+        }
       } else if (event.code === "KeyM") {
         synth.triggerAttackRelease("G4", "4n");
         buttons[11].classList.add("active-white");
+        if (IsRecord) {
+          setPu((prevPu) => [...prevPu, "So"]);
+        }
       } else if (event.code === "Comma") {
         synth.triggerAttackRelease("A4", "4n");
         buttons[12].classList.add("active-white");
+        if (IsRecord) {
+          setPu((prevPu) => [...prevPu, "La"]);
+        }
       } else if (event.code === "Period") {
         synth.triggerAttackRelease("B4", "4n");
         buttons[13].classList.add("active-white");
+        if (IsRecord) {
+          setPu((prevPu) => [...prevPu, "Si"]);
+        }
       } else if (event.code === "Slash") {
         synth.triggerAttackRelease("C5", "4n");
         buttons[14].classList.add("active-white");
+        if (IsRecord) {
+          setPu((prevPu) => [...prevPu, "DO"]);
+        }
       } else if (event.code === "Digit2") {
         synth.triggerAttackRelease("C#3", "4n");
         buttons2[0].classList.add("active-black");
+        if (IsRecord) {
+          setPu((prevPu) => [...prevPu, "#do"]);
+        }
       } else if (event.code === "Digit3") {
         synth.triggerAttackRelease("D#3'", "4n");
         buttons2[1].classList.add("active-black");
+        if (IsRecord) {
+          setPu((prevPu) => [...prevPu, "#re"]);
+        }
       } else if (event.code === "Digit5") {
         synth.triggerAttackRelease("F#3'", "4n");
         buttons2[2].classList.add("active-black");
+        if (IsRecord) {
+          setPu((prevPu) => [...prevPu, "#fa"]);
+        }
       } else if (event.code === "Digit6") {
         synth.triggerAttackRelease("G#3", "4n");
         buttons2[3].classList.add("active-black");
+        if (IsRecord) {
+          setPu((prevPu) => [...prevPu, "#so"]);
+        }
       } else if (event.code === "Digit7") {
         synth.triggerAttackRelease("A#3", "4n");
         buttons2[4].classList.add("active-black");
+        if (IsRecord) {
+          setPu((prevPu) => [...prevPu, "#la"]);
+        }
       } else if (event.code === "KeyF") {
         synth.triggerAttackRelease("C#4", "4n");
         buttons2[5].classList.add("active-black");
+        if (IsRecord) {
+          setPu((prevPu) => [...prevPu, "#Do"]);
+        }
       } else if (event.code === "KeyG") {
         synth.triggerAttackRelease("D#4", "4n");
         buttons2[6].classList.add("active-black");
+        if (IsRecord) {
+          setPu((prevPu) => [...prevPu, "#Re"]);
+        }
       } else if (event.code === "KeyJ") {
         synth.triggerAttackRelease("F#4", "4n");
         buttons2[7].classList.add("active-black");
+        if (IsRecord) {
+          setPu((prevPu) => [...prevPu, "#Fa"]);
+        }
       } else if (event.code === "KeyK") {
         synth.triggerAttackRelease("G#4", "4n");
         buttons2[8].classList.add("active-black");
+        if (IsRecord) {
+          setPu((prevPu) => [...prevPu, "#So"]);
+        }
       } else if (event.code === "KeyL") {
         synth.triggerAttackRelease("A#4", "4n");
         buttons2[9].classList.add("active-black");
+        if (IsRecord) {
+          setPu((prevPu) => [...prevPu, "#La"]);
+        }
       }
     };
     window.addEventListener("keydown", handleKeyDown);
@@ -364,6 +429,16 @@ const CreateYourselfPage = () => {
           <div className="tempoNumberBlock">
             <p id="tempoNumber">100bpm</p>
           </div>
+        </div>
+        <div className="puNameBlock">
+          <input
+            id="puName"
+            value={puName}
+            type="text"
+            style={{ textAlign: "center" }}
+            onChange={handlePuNameChange}
+            placeholder="Name Your Song "
+          ></input>
         </div>
         <div className="recordBlock">
           <div style={{ float: "right" }}>
