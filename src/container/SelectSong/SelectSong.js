@@ -173,7 +173,7 @@ const SelectSong = () => {
               className="triangleButton"
               onClick={handlePreviousSong}
             >
-              &#9650;
+              <span className="triangle">&#9650;</span>
             </button>
             <Link to={routes.playgame} className="link">
               <button id="songButton" onClick={handleClick}>
@@ -188,7 +188,7 @@ const SelectSong = () => {
               className="triangleButton"
               onClick={handleNextSong}
             >
-              &#9660;
+              <span className="triangle">&#9660;</span>
             </button>
           </div>
         </div>
