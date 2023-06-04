@@ -1,6 +1,6 @@
 .homePage {
   position: relative;
-  height: 600px;
+  height: calc(100vh - 181px);
   display: flex;
   justify-content: center;
   align-items: center;

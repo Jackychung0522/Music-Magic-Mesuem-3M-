@@ -244,6 +244,7 @@ input[type="range"] {
 }
 .createPage {
   position: relative;
+  /* height: calc(100vh - 181px); */
 }
 .createPage::before {
   content: "";
