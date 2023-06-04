@@ -71,9 +71,10 @@ const CreateYourselfPage = () => {
     return () => {
       clearInterval(intervalId);
     };
+    // eslint-disable-next-line
   }, [IsTempoRun, tempoNumber]);
   useEffect(() => {
-    const nowTime = Date.now();
+    // const nowTime = Date.now();
     // setCurrentTime(nowTime);
     let startId;
     function playWithDelay() {
@@ -97,6 +98,7 @@ const CreateYourselfPage = () => {
     return () => {
       clearInterval(startId);
     };
+    // eslint-disable-next-line
   }, [IsRecord, IsStart]);
 
   const handleRecordChange = () => {
@@ -408,7 +410,7 @@ const CreateYourselfPage = () => {
                 id="pikachuButton"
                 onClick={handleSwitchOnTempoRun}
               >
-                <img src={tempoRun} className="pikachu"></img>
+                <img src={tempoRun} className="pikachu" alt=""></img>
               </button>
             </div>
             <div className="bpmBlock">
@@ -455,6 +457,7 @@ const CreateYourselfPage = () => {
                   style={{
                     animation: IsRecord ? "spin 2s linear infinite" : "",
                   }}
+                  alt=""
                 />
               </button>
             </div>
@@ -471,7 +474,7 @@ const CreateYourselfPage = () => {
                 }}
                 onClick={handleDownloadPu}
               >
-                <img className="download" src={download} />
+                <img className="download" src={download} alt="download" />
               </button>
             </div>
           </div>

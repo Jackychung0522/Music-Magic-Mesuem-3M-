@@ -115,9 +115,9 @@ const SelectSong = () => {
     <Container>
       <div className="selectPage">
         <p id="selectsong">
-          <span role="img" aria-label="fire">
+          {/* <span role="img" aria-label="fire">
             🔥
-          </span>{" "}
+          </span>{" "} */}
           Select Song
         </p>
         <div>

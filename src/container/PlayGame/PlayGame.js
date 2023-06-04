@@ -8,7 +8,7 @@ import bigyellowbee from "../../ spectrum/bigyellowbee.json";
 import littlestar from "../../ spectrum/littlestar.json";
 import bee from "../../mp3/bee.mp3";
 import star from "../../mp3/littlestar.mp3";
-import { Player } from "tone";
+// import { Player } from "tone";
 import { Howl } from "howler";
 let currentPoint = 0;
 

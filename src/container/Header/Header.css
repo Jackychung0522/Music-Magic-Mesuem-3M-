@@ -1,5 +1,5 @@
 .header {
-  background-color: #7d521b;
+  background-color: #645544;
   padding: 15px;
   display: flex;
 }
@@ -30,7 +30,7 @@
   height: 100px;
   border: none;
   outline: none;
-  background-color: #7d521b;
+  background-color: #645544;
   box-shadow: none;
 }
 
