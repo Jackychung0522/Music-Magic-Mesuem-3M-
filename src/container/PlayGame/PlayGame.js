@@ -272,6 +272,7 @@ const PlayGame = () => {
               forscore.removeChild(perfectText);
             }, 1000);
             blocks.splice(blocks.indexOf(block), 1);
+            // eslint-disable-next-line
             score += singlepoint;
           } else if (block && block.top >= 330 && block.top <= 370) {
             block.isAlive = false;
@@ -1386,7 +1387,6 @@ const PlayGame = () => {
         buttons2[9].classList.remove("active-black");
       }
     });
-    const container = document.getElementById("container");
     const playingBlock = document.querySelector(".playingBlock");
     const forscore = document.querySelector(".forscore");
     const blocks = [];
@@ -1462,8 +1462,6 @@ const PlayGame = () => {
     };
 
     const animate = () => {
-      let droppedBlocks = 0;
-      let step = 1;
       for (let i = 0; i < blocks.length; i++) {
         const block = blocks[i];
         if (block.isAlive) {
@@ -1496,6 +1494,9 @@ const PlayGame = () => {
     // 设置方块的初始位置
 
     window.addEventListener("keydown", handleKeyDown);
+    window.addEventListener("beforeunload", function () {
+      sound.stop();
+    });
     const headerButton = document.getElementById("M3");
     const headerButton2 = document.getElementsByClassName("btn");
     headerButton.addEventListener("click", () => {
@@ -1569,7 +1570,13 @@ const PlayGame = () => {
                                   sessionStorage.getItem("playerName"),
                               })
                               .then(() => {
-                                navigate(routes.selectsong);
+                                sound.stop();
+
+                                setTimeout(() => {
+                                  navigate(routes.selectsong);
+                                  navigate(0);
+                                }, 1000);
+
                                 console.log("Data saved to Firestore");
                               })
                               .catch((error) => {
@@ -1620,6 +1627,8 @@ const PlayGame = () => {
                               })
                               .then(() => {
                                 navigate(routes.selectsong);
+                                navigate(0);
+
                                 console.log("Data saved to Firestore");
                               })
                               .catch((error) => {
@@ -1672,6 +1681,7 @@ const PlayGame = () => {
                               })
                               .then(() => {
                                 navigate(routes.selectsong);
+                                navigate(0);
                                 console.log("Data saved to Firestore");
                               })
                               .catch((error) => {
