@@ -10,9 +10,12 @@ import bee from "../../mp3/bee.mp3";
 import star from "../../mp3/littlestar.mp3";
 // import { Player } from "tone";
 import { Howl } from "howler";
+import { useNavigate } from "react-router-dom";
+import routes from "../../AppRouter";
 let currentPoint = 0;
 
 const PlayGame = () => {
+  const navigate = useNavigate();
   const currentSong = sessionStorage.getItem("currentSong");
   const [playerName, setPlayerName] = useState("");
   let sound = "";
@@ -1547,7 +1550,7 @@ const PlayGame = () => {
                           divplayerName.className = "divplayerName";
                           divsaveButton.className = "divsaveButton";
                           const inputElement = document.createElement("input");
-                          inputElement.id = "playerName";
+                          inputElement.id = "newPlayerName";
                           inputElement.value = playerName;
                           inputElement.type = "text";
                           inputElement.style.textAlign = "center";
@@ -1566,6 +1569,7 @@ const PlayGame = () => {
                                   sessionStorage.getItem("playerName"),
                               })
                               .then(() => {
+                                navigate(routes.selectsong);
                                 console.log("Data saved to Firestore");
                               })
                               .catch((error) => {
@@ -1596,7 +1600,7 @@ const PlayGame = () => {
                           const inputElement = document.createElement("input");
                           divplayerName.className = "divplayerName";
                           divsaveButton.className = "divsaveButton";
-                          inputElement.id = "playerName";
+                          inputElement.id = "newPlayerName";
                           inputElement.value = playerName;
                           inputElement.type = "text";
                           inputElement.style.textAlign = "center";
@@ -1615,6 +1619,7 @@ const PlayGame = () => {
                                   sessionStorage.getItem("playerName"),
                               })
                               .then(() => {
+                                navigate(routes.selectsong);
                                 console.log("Data saved to Firestore");
                               })
                               .catch((error) => {
@@ -1648,7 +1653,7 @@ const PlayGame = () => {
                           divplayerName.className = "divplayerName";
                           divsaveButton.className = "divsaveButton";
                           const inputElement = document.createElement("input");
-                          inputElement.id = "playerName";
+                          inputElement.id = "newPlayerName";
                           inputElement.value = playerName;
                           inputElement.type = "text";
                           inputElement.style.textAlign = "center";
@@ -1666,6 +1671,7 @@ const PlayGame = () => {
                                 hardplayername: inputElement.value,
                               })
                               .then(() => {
+                                navigate(routes.selectsong);
                                 console.log("Data saved to Firestore");
                               })
                               .catch((error) => {

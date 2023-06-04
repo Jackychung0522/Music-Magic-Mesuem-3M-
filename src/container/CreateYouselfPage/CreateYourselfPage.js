@@ -42,7 +42,7 @@ const CreateYourselfPage = () => {
     }
     console.log(pu);
   };
-  const pikachuShot = () => {
+  const tempoRunShot = () => {
     sound.start();
   };
   const handleSwitchOnTempoRun = () => {
@@ -63,7 +63,7 @@ const CreateYourselfPage = () => {
     async function playWithDelay() {
       if (IsTempoRun) {
         intervalId = setInterval(async () => {
-          pikachuShot();
+          tempoRunShot();
         }, 60000 / parseInt(tempoNumber));
       }
     }
@@ -401,16 +401,16 @@ const CreateYourselfPage = () => {
       <div className="createPage">
         <div className="topOfPiano" style={{ display: "flex" }}>
           <div className="tempo">
-            <div className="pikachuButtonBlock">
+            <div className="tempoRunButtonBlock">
               <button
                 // disabled
                 style={{
                   backgroundColor: IsTempoRun ? "rgb(159, 118, 96)" : "",
                 }}
-                id="pikachuButton"
+                id="tempoRunButton"
                 onClick={handleSwitchOnTempoRun}
               >
-                <img src={tempoRun} className="pikachu" alt=""></img>
+                <img src={tempoRun} className="tempoRun" alt=""></img>
               </button>
             </div>
             <div className="bpmBlock">
